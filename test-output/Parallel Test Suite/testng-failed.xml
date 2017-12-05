@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Parallel Test Suite]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
+  <test name="Test on Chrome">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.oxford.login.pkg.Login_Scripts"/>
+    </classes>
+  </test> <!-- Test on Chrome -->
+</suite> <!-- Failed suite [Parallel Test Suite] -->

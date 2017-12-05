@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Test Suite" thread-count="1"  parallel="tests">
+ 	 <test name="Test on Chrome">
+         <parameter name="browser" value="chrome" />
+         
+        <classes>
+           <class name="com.oxford.login.pkg.Login_Scripts"/> 
+   		</classes>
+  	 
+  	 </test> 
+  
+  
+
+
+
+<!--      <test name="Test only regression scenarios"> -->
+<!--       <groups> -->
+<!--       <run> -->
+<!--         <include name="Regression" /> -->
+<!--       </run> -->
+<!--     </groups> -->
+<!--          <classes> -->
+<!--            <class name="com.dominos.order.pkg.Order_Scripts"/>  -->
+<!--    		 </classes> -->
+
+<!--       </test> -->
+
+
+
+
+
+
+
+
+
+
+
+<!--    	<test name="Test on Firefox">  -->
+<!--   		<parameter name="browser" value="Firefox" /> -->
+<!--     		<classes>  -->
+<!--            	 <class name="Package_Jay.Scripts"/>  -->
+     				 
+<!--    			 </classes>  -->
+<!--    	</test>  -->
+    </suite> 

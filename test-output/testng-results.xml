@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Parallel Test Suite" duration-ms="26333" started-at="2017-12-04T05:15:25Z" finished-at="2017-12-04T05:15:51Z">
+    <groups>
+    </groups>
+    <test name="Test on Chrome" duration-ms="26333" started-at="2017-12-04T05:15:25Z" finished-at="2017-12-04T05:15:51Z">
+      <class name="com.oxford.login.pkg.Login_Scripts">
+        <test-method status="PASS" signature="ExtentReportGen()[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7]" name="ExtentReportGen" is-config="true" duration-ms="1327" started-at="2017-12-04T10:45:25Z" finished-at="2017-12-04T10:45:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExtentReportGen -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7]" name="setup" is-config="true" duration-ms="11628" started-at="2017-12-04T10:45:26Z" finished-at="2017-12-04T10:45:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="fn_ValidLogin()[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7]" name="fn_ValidLogin" duration-ms="12801" started-at="2017-12-04T10:45:38Z" finished-at="2017-12-04T10:45:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_ValidLogin -->
+        <test-method status="PASS" signature="TearDown(org.testng.ITestResult)[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7]" name="TearDown" is-config="true" duration-ms="560" started-at="2017-12-04T10:45:51Z" finished-at="2017-12-04T10:45:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=fn_ValidLogin status=SUCCESS method=Login_Scripts.fn_ValidLogin()[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- com.oxford.login.pkg.Login_Scripts -->
+    </test> <!-- Test on Chrome -->
+  </suite> <!-- Parallel Test Suite -->
+</testng-results>
