@@ -140,7 +140,7 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
     
-    @Test(priority=4)
+ //   @Test(priority=4)
 	public void fn_InValidLoginNameAndValidPass() throws InterruptedException, IOException{
 		logger=report.startTest("fn_InValidLoginNameAndValidPass");
 		try{
@@ -158,7 +158,7 @@ public class Login_Scripts extends Generic_Methods {
     
     
     
-    @Test(priority=5)
+ //   @Test(priority=5)
 	public void fn_ValidLoginNameAndInvalidPass() throws InterruptedException, IOException{
 		logger=report.startTest("fn_ValidLoginNameAndInvalidPass");
 		try{
@@ -175,6 +175,49 @@ public class Login_Scripts extends Generic_Methods {
 	}
     
 	
+    
+  //  @Test(priority=6)
+	public void fn_ProfileDetails() throws InterruptedException, IOException{
+		logger=report.startTest("fn_ProfileDetails");
+		try{
+		fn_LandingHome();
+		logger.log(LogStatus.INFO, "Application is up and running");
+        Thread.sleep(3000);
+        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+		login.fn_ProfileDetails();
+//		logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+		}
+		catch(FileNotFoundException e){
+	//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+			}
+	}
+    
+    
+    
+	 @Test(priority=7)
+		public void fn_EditProfile() throws InterruptedException, IOException{
+			logger=report.startTest("fn_EditProfile");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_EditProfile();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+	
+	
+	
+	
+	
+	
+	
+    
+    
 	
 	
 	@AfterMethod

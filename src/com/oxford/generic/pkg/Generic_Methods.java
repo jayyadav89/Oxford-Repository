@@ -117,7 +117,10 @@ import org.testng.Assert;
 		  
 		  
 		  
-		  
+		  public static void fn_SelectbyIndex(WebElement element,int index){
+			Select select=new Select(element);
+			select.selectByIndex(index);
+		  }
 		  
 		  
 		  
@@ -386,12 +389,13 @@ import org.testng.Assert;
 		   
 		   
 		   
-		   
+//		   String ActualText=WebObj.getText().trim().toUpperCase();
+//	       if(ActualText.indexOf(ExpectedText.trim().toUpperCase())>-1){
 		   
 		   public static void verifyTextExistance(WebElement WebObj,String ExpectedText){
 		   	
-		   	String ActualText=WebObj.getText().trim().toUpperCase();
-		       if(ActualText.indexOf(ExpectedText.trim().toUpperCase())>-1){
+		   	String ActualText=WebObj.getText().trim();
+		       if(ActualText.trim().equals(ExpectedText)){
 		       	Reporter.log("Passed. Expected Text Exist in Actual Text. Expected Text="+ExpectedText+" Actual Text-"+ActualText);
 		       }else{
 		       	String msg="Failed. Expected Text doesn't Exist in Actual Text. Expected Text="+ExpectedText+" Actual Text-"+ActualText;
@@ -746,7 +750,39 @@ import org.testng.Assert;
 	    
 	    
 	    
-	    
+	    public void readWriteExcel2(String testname,String filepath,String Sheetname,String statusvalue) throws  IOException {
+			//	String FilePath = "D:\\sampledoc.xls";
+				try
+		        {
+		            FileInputStream input= new FileInputStream(filepath);
+		            XSSFWorkbook wb=new XSSFWorkbook(input);
+		           
+		            XSSFSheet sh=wb.getSheet(Sheetname);
+		    //        XSSFRow row=sh.getRow(rowcount);
+		            
+		            
+		          int lastrownum =sh.getLastRowNum();
+		          
+		          for(int i=0; i<=lastrownum-1; i++){
+		        	  XSSFRow row=sh.getRow(i);
+		        	 XSSFCell cell1=row.getCell(0);
+		        	String cellval=cell1.getStringCellValue();
+		          if(cellval.equals(testname)){
+		        		FileOutputStream fos=new FileOutputStream(filepath);
+			        	 row.createCell(10).setCellValue(statusvalue);  //working
+			    //    	 row.createCell(7).setCellValue(statusvalue);
+			             wb.write(fos);
+			         }
+		          
+		          }
+		        }
+		           
+		        catch(Exception e)
+		        {
+		            System.out.println(e);
+		        }
+		
+		        }
 	    
 	    
 	    

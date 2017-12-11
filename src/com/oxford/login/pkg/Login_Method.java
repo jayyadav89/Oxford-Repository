@@ -1,5 +1,7 @@
 package com.oxford.login.pkg;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -48,6 +50,59 @@ public class Login_Method extends Generic_Methods {
 	
 	@FindBy(id= "logout")
 	public WebElement LogOut_BT;
+	
+	
+	@FindBy(xpath = "//div[@class='user_pro']/div")
+	public WebElement Name_Label;
+	
+	@FindBy(id= "lblLoginName")
+	public WebElement LoginName_Text;
+	
+	@FindBy(xpath = "//div[@id='classteach']/div")
+	public WebElement ClassTeach_Label;
+	
+	@FindBy(xpath = "//div[@id='classes']/div")
+	public WebElement Classes_Label;
+	
+	@FindBy(xpath = "//div[@id='subjects']//div/div")
+	public WebElement Subjects_Label;
+	
+	
+	@FindBy(linkText= "Edit profile")
+	public WebElement EditProfile_LK;
+	
+	@FindBy(id= "CPH_txtFirstName")
+	public WebElement FirstName_Text;
+	
+	@FindBy(id= "CPH_txtLastName")
+	public WebElement LastName_Text;
+	
+	@FindBy(id= "CPH_txtEmail")
+	public WebElement Email_Text;
+	
+	@FindBy(id= "CPH_txtPhone")
+	public WebElement PhoneMobile_Text;
+	
+	@FindBy(id= "CPH_txtAddress")
+	public WebElement Address_Text;
+	
+	@FindBy(id= "CPH_ddlSecurityQues")
+	public WebElement SecurityQues_DD;
+	
+	@FindBy(id= "CPH_txtSecurityAns")
+	public WebElement SecurityAns_Text;
+	
+	@FindBy(id= "CPH_fileUploadPhoto")
+	public WebElement UploadPhoto_Img;
+	
+	@FindBy(id= "CPH_lnkbtnUpdate")
+	public WebElement Update_BT;
+	
+	@FindBy(xpath = "//div[@id='popup_content']/div")
+	public WebElement PopUp_Text;
+	
+	@FindBy(id= "popup_ok")
+	public WebElement Ok_BT;
 	
 	
 	
@@ -189,11 +244,87 @@ public class Login_Method extends Generic_Methods {
 	
 	
 	
+	public void fn_ProfileDetails() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	     fn_Login();
+  	     Thread.sleep(5000);
+  	    if(Profile_Img.isDisplayed()){
+  	     Thread.sleep(3000);
+  	     fn_Click(Profile_Img);
+  	     Thread.sleep(3000);
+  	     Assert.assertTrue(Name_Label.isDisplayed(), "Name label is not available");
+  	     Assert.assertTrue(Name_Label.getText().equals("Name:"), "Name label Does not match:  Fail");
+  	     Assert.assertTrue(LoginName_Text.isDisplayed(), "User Name text is not available");
+	     Assert.assertTrue(LoginName_Text.getText().trim().equals(obj.getProperty("UserName")), "User Name text Does not match:  Fail");
+		 Assert.assertTrue(ClassTeach_Label.isDisplayed(), "Class teacher label is not available");
+  	     Assert.assertTrue(ClassTeach_Label.getText().trim().equals("Class teacher:"), "Class teacher label Does not match:  Fail");
+		 Assert.assertTrue(Classes_Label.isDisplayed(), "Classes label is not available");
+	     Assert.assertTrue(Classes_Label.getText().trim().equals("Classes:"), "Classes label Does not match:  Fail");
+		 Assert.assertTrue(Subjects_Label.isDisplayed(), "Subjects label is not available");
+	     Assert.assertTrue(Subjects_Label.getText().trim().equals("Subjects:"), "Subjects label Does not match:  Fail");
+	     
+	     readWriteExcel(11,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ProfileDetails","Pass");
+//	     readWriteExcel2("fn_ProfileDetails","D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","Pass");
+  	      driver.navigate().refresh();
+  	    }
+	     
+  	    else{
+  	    	readWriteExcel(11,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ProfileDetails","Fail");
+  	    	driver.navigate().refresh();
+  //	    	readWriteExcel2("fn_ProfileDetails","D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","Fail");
+  	    }
+	}
 	
 	
 	
 	
-	
+	public void fn_EditProfile() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(EditProfile_LK);
+		  Thread.sleep(3000);
+		  FirstName_Text.clear();
+	  	  fn_Input(FirstName_Text, obj.getProperty("UpdateFirstName"));
+	  	  LastName_Text.clear();
+	  	  fn_Input(LastName_Text, obj.getProperty("UpdateLastName"));
+	  	  Email_Text.clear();
+	  	  fn_Input(Email_Text, obj.getProperty("UpdateEmail"));
+	  	  PhoneMobile_Text.clear();
+	  	  fn_Input(PhoneMobile_Text, obj.getProperty("UpdateMobile"));
+	      Address_Text.clear();
+	  	  fn_Input(Address_Text, obj.getProperty("Address"));
+	  	  fn_ScrollDown100();
+	  	  fn_ScrollDown100();
+	  	  fn_SelectbyIndex(SecurityQues_DD,2);
+	  	  SecurityAns_Text.clear();
+	  	  Thread.sleep(1000);
+	  	  fn_Input(SecurityAns_Text, obj.getProperty("UpdateSecurityAns"));
+	  	  Thread.sleep(2000);
+	  	  fn_ScrollUP500();
+	  	  Thread.sleep(2000);
+	  	  UploadPhoto_Img.sendKeys("C:\\Users\\incaendo\\Desktop\\images.jpg");
+	  	  Thread.sleep(3000);
+	  	  fn_ScrollDown500();
+	  	  fn_Click(Update_BT);
+	  	  Thread.sleep(3000);
+	  	Assert.assertTrue(PopUp_Text.getText().equals("Profile updated successfully"), "Message Does not match:  Fail");
+	  	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Pass");
+	  	 fn_Click(Ok_BT);
+  	  }
+  	else{
+	    	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Fail");
+	    	}
+  	  
+	   }
 	
 	
 	
