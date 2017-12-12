@@ -104,6 +104,11 @@ public class Login_Method extends Generic_Methods {
 	@FindBy(id= "popup_ok")
 	public WebElement Ok_BT;
 	
+	@FindBy(id= "popup_message")
+	public WebElement Popup_TX;
+	
+	@FindBy(id= "CPH_fileDeletePhoto")
+	public WebElement RemoveImg_BT;
 	
 	
 	
@@ -319,12 +324,332 @@ public class Login_Method extends Generic_Methods {
 	  	Assert.assertTrue(PopUp_Text.getText().equals("Profile updated successfully"), "Message Does not match:  Fail");
 	  	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Pass");
 	  	 fn_Click(Ok_BT);
-  	  }
-  	else{
+	  	 
+	  	  Thread.sleep(3000);
+	  	 //	  if(Profile_Img.isDisplayed()){
+	  	 		  Thread.sleep(3000);
+	  		  	  fn_Click(Profile_Img);
+	  		  	  Thread.sleep(3000);
+	  			  fn_Click(EditProfile_LK);
+	  			  Thread.sleep(3000);
+	//  			Assert.assertTrue(FirstName_Text.getText().trim().equals(obj.getProperty("UpdateFirstName")));
+	  			  FirstName_Text.clear();
+	  		  	  fn_Input(FirstName_Text, obj.getProperty("FirstName"));
+	 // 		  	Assert.assertTrue(LastName_Text.getText().trim().equals(obj.getProperty("UpdateLastName")));
+	  		  	  LastName_Text.clear();
+	  		  	  fn_Input(LastName_Text, obj.getProperty("LastName"));
+	  //		  	Assert.assertTrue(Email_Text.getText().trim().equals(obj.getProperty("UpdateEmail")));
+	  		  	  Email_Text.clear();
+	  		  	  fn_Input(Email_Text, obj.getProperty("Email"));
+	  //		  	Assert.assertTrue(PhoneMobile_Text.getText().trim().equals(obj.getProperty("UpdateMobile")));
+	  		  	  PhoneMobile_Text.clear();
+	  		  	  fn_Input(PhoneMobile_Text, obj.getProperty("Mobile"));
+	  //		  	Assert.assertTrue(Address_Text.getText().trim().equals(obj.getProperty("Address")));
+	  		  	  Address_Text.clear();
+	  		//  	  fn_Input(Address_Text, obj.getProperty("Address"));
+	  		  	  fn_ScrollDown100();
+	  		  	  fn_ScrollDown100();
+	  		  	  fn_SelectbyIndex(SecurityQues_DD,1);
+	  		  	  SecurityAns_Text.clear();
+	  		  	  Thread.sleep(1000);
+	  		  	  fn_Input(SecurityAns_Text, obj.getProperty("SecurityAns"));
+	  		  	  Thread.sleep(2000);
+	  		  	  fn_ScrollUP500();
+	  		  	  Thread.sleep(2000);
+	  		  	  UploadPhoto_Img.sendKeys("C:\\Users\\incaendo\\Desktop\\oxford profile.jpg");
+	  		  	  Thread.sleep(3000);
+	  		  	  fn_ScrollDown500();
+	  		  	  fn_Click(Update_BT);
+	  		  	  Thread.sleep(3000);
+	  		  	  fn_Click(Ok_BT);
+	  		  	Thread.sleep(5000);
+  	       }
+  	      else{
 	    	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Fail");
-	    	}
+	    	Thread.sleep(5000);
+  	       }
   	  
 	   }
+	
+	
+	
+	public void fn_Validation() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(EditProfile_LK);
+		  Thread.sleep(3000);
+		  FirstName_Text.clear();
+		  fn_ScrollDown500();
+		  fn_Click(Update_BT);
+		  Thread.sleep(2000);
+		 if(Popup_TX.isDisplayed()){
+		Assert.assertTrue(Popup_TX.getText().trim().equals("First name cannot be blank"));
+		Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 
+		 fn_ScrollUP500();
+		 Thread.sleep(2000);
+		 fn_Input(FirstName_Text, obj.getProperty("FirstName"));
+		 fn_ScrollDown500();
+		 Thread.sleep(3000);
+		 
+		 fn_SelectbyIndex(SecurityQues_DD,0);
+		 Thread.sleep(2000);
+		 fn_Click(Update_BT);
+		 Thread.sleep(2000);
+		 Assert.assertTrue(Popup_TX.getText().trim().equals("Select security question"));
+		 Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(2000);
+		 fn_SelectbyIndex(SecurityQues_DD,1);
+		 Thread.sleep(2000);
+	  	 SecurityAns_Text.clear();
+	  	 Thread.sleep(2000);
+	  	 fn_Click(Update_BT);
+	  	Thread.sleep(2000);
+		 Assert.assertTrue(Popup_TX.getText().trim().equals("Enter security answer"));
+		 Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(2000);
+		 fn_Input(SecurityAns_Text, obj.getProperty("SecurityAns"));
+		 fn_Click(Update_BT);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(5000);
+		 readWriteExcel(13,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_Validation","Pass");
+		 
+		 }
+		 else{
+		    	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Fail");
+		    	Thread.sleep(5000);
+		 }
+		       }
+	
+  	        }
+	
+	
+	
+	public void fn_InvalidEmail() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(EditProfile_LK);
+		  Thread.sleep(3000);
+		  Email_Text.clear();
+		  Thread.sleep(2000);
+		  fn_Input(Email_Text, obj.getProperty("InvalidEmail"));
+		  fn_ScrollDown500();
+		  fn_Click(Update_BT);
+		  Thread.sleep(2000);
+		 if(Popup_TX.isDisplayed()){
+		Assert.assertTrue(Popup_TX.getText().trim().equals("Entered Email is not in the correct format"));
+		Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 fn_ScrollUP500();
+		 Thread.sleep(2000);
+		 Email_Text.clear();
+		 Thread.sleep(2000);
+		 fn_Input(Email_Text, obj.getProperty("Email"));
+		 fn_ScrollDown500();
+		 fn_Click(Update_BT);
+		 Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(5000);
+		 readWriteExcel(14,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidEmail","Pass");
+		 
+		 }
+		 else{
+		    	readWriteExcel(14,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidEmail","Fail");
+		    	Thread.sleep(5000);
+		 }
+		 }
+  	  }
+	
+	
+	
+	public void fn_InvalidPhone() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(EditProfile_LK);
+		  Thread.sleep(3000);
+		  PhoneMobile_Text.clear();
+		  Thread.sleep(2000);
+		  fn_Input(PhoneMobile_Text, obj.getProperty("InvalidMobile"));
+          Thread.sleep(2000);
+		 if(Popup_TX.isDisplayed()){
+		Assert.assertTrue(Popup_TX.getText().trim().equals("Special characters/Alphabets other than ()+.- are not allowed."));
+		Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 fn_ScrollUP500();
+		 Thread.sleep(2000);
+		 PhoneMobile_Text.clear();
+		 Thread.sleep(2000);
+		 fn_Input(PhoneMobile_Text, obj.getProperty("Mobile"));
+		 fn_ScrollDown500();
+		 fn_Click(Update_BT);
+		 Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(5000);
+		 readWriteExcel(15,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidPhone","Pass");
+		 
+		 }
+		 else{
+		    	readWriteExcel(15,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidPhone","Fail");
+		    	Thread.sleep(5000);
+		 }
+		 }
+  	  }
+	
+	
+	
+	
+	
+	public void fn_InvalidSecurityAns() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(EditProfile_LK);
+		  fn_ScrollDown500();
+		  Thread.sleep(2000);
+		  SecurityAns_Text.clear();
+		  Thread.sleep(2000);
+		  fn_Input(SecurityAns_Text, obj.getProperty("InvalidSecurityAns"));
+		  fn_Click(Update_BT);
+		  Thread.sleep(2000);
+		 if(Popup_TX.isDisplayed()){
+		Assert.assertTrue(Popup_TX.getText().trim().equals("Security answer should have at least 4 characters"));
+		Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(2000);
+		 SecurityAns_Text.clear();
+		 Thread.sleep(2000);
+		 fn_Input(SecurityAns_Text, obj.getProperty("SecurityAns"));
+		 fn_Click(Update_BT);
+		 Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(5000);
+		 readWriteExcel(16,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityAns","Pass");
+		 
+		 }
+		 else{
+		    	readWriteExcel(16,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityAns","Fail");
+		    	Thread.sleep(5000);
+		 }
+		 }
+  	  }
+	
+	
+	
+	public void fn_InvalidSecurityDOB() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(EditProfile_LK);
+		  fn_ScrollDown500();
+		  fn_SelectbyIndex(SecurityQues_DD,3);
+		  Thread.sleep(2000);
+		  SecurityAns_Text.clear();
+		  Thread.sleep(2000);
+		 fn_Input(SecurityAns_Text, obj.getProperty("InvalidSecurityDob"));
+		  fn_Click(Update_BT);
+		  Thread.sleep(2000);
+	try{
+		if(Popup_TX.isDisplayed()){
+	//	Assert.assertTrue(Popup_TX.getText().trim().equals("Security answer should have at least 4 characters"));
+		Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(2000);
+		 fn_SelectbyIndex(SecurityQues_DD,1);
+		 SecurityAns_Text.clear();
+		 Thread.sleep(2000);
+		 fn_Input(SecurityAns_Text, obj.getProperty("SecurityAns"));
+		 fn_Click(Update_BT);
+		 Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(5000);
+		 readWriteExcel(17,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityDOB","Pass");
+		 
+		 }}
+		 catch(Exception e){
+			   fn_Click(Ok_BT);
+		    	readWriteExcel(17,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityDOB","Fail");
+		    	Thread.sleep(5000);
+		 }
+		 }
+  	  }
+	
+	
+	
+	
+	public void fn_RemoveImg() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(EditProfile_LK);
+		  Thread.sleep(2000);
+		  
+		 if(RemoveImg_BT.isDisplayed()){
+			  fn_Click(RemoveImg_BT);
+			  Thread.sleep(3000);
+			  Assert.assertFalse(RemoveImg_BT.isDisplayed(), "Image not removed: Fail");
+			  Thread.sleep(3000);
+			  UploadPhoto_Img.sendKeys("C:\\Users\\incaendo\\Desktop\\oxford profile.jpg");
+  		  	  Thread.sleep(3000);
+  		  	  fn_ScrollDown500();
+  		  	  fn_Click(Update_BT);
+  		  	  Thread.sleep(3000);
+  		  	  fn_Click(Ok_BT);
+  		  	  Thread.sleep(5000);
+			  readWriteExcel(18,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveImg","Pass");
+				 
+		 }
+		 else{
+		    	readWriteExcel(18,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveImg","Fail");
+		    	Thread.sleep(5000);
+		 }
+		  
+		  
+  	  }}
+	
+	
+	
 	
 	
 	

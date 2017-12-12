@@ -194,7 +194,7 @@ public class Login_Scripts extends Generic_Methods {
     
     
     
-	 @Test(priority=7)
+//	 @Test(priority=7)
 		public void fn_EditProfile() throws InterruptedException, IOException{
 			logger=report.startTest("fn_EditProfile");
 			try{
@@ -213,15 +213,121 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
 	
-	
+//	 @Test(priority=8)
+		public void fn_Validation() throws InterruptedException, IOException{
+			logger=report.startTest("fn_Validation");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_Validation();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
 	
 	
     
-    
+//		@Test(priority=9)
+		public void fn_InvalidEmail() throws InterruptedException, IOException{
+			logger=report.startTest("fn_InvalidEmail");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_InvalidEmail();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+		
+		
+		
+//		@Test(priority=10)
+		public void fn_InvalidPhone() throws InterruptedException, IOException{
+			logger=report.startTest("fn_InvalidPhone");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_InvalidPhone();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}	
+		
+		
+	
+	//	@Test(priority=11)
+		public void fn_InvalidSecurityAns() throws InterruptedException, IOException{
+			logger=report.startTest("fn_InvalidSecurityAns");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_InvalidSecurityAns();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+		
+		
+		
+		@Test(priority=12)
+		public void fn_InvalidSecurityDOB() throws InterruptedException, IOException{
+			logger=report.startTest("fn_InvalidSecurityDOB");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_InvalidSecurityDOB();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+		
+		
+		
+		
+		@Test(priority=13)
+		public void fn_RemoveImg() throws InterruptedException, IOException{
+			logger=report.startTest("fn_RemoveImg");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_RemoveImg();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+		
+		
+		
+		
+		
 	
 	
 	@AfterMethod
-	public void TearDown(ITestResult result) throws IOException{
+	public void TearDown(ITestResult result) throws IOException, InterruptedException{
 		if(result.getStatus()==ITestResult.FAILURE){
 			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("D:/Oxford Workspace/Screenshots/screenshot" + result.getName().toString().trim()+".png"));
@@ -229,7 +335,8 @@ public class Login_Scripts extends Generic_Methods {
 		
 		report.endTest(logger);
 		report.flush();
-		
+		Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+		login.fn_LogOut();
 //		driver.get("C:\\Login\\automation.html");
 	}
 	
