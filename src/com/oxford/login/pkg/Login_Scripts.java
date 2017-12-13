@@ -285,7 +285,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=12)
+//		@Test(priority=12)
 		public void fn_InvalidSecurityDOB() throws InterruptedException, IOException{
 			logger=report.startTest("fn_InvalidSecurityDOB");
 			try{
@@ -304,7 +304,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=13)
+//		@Test(priority=13)
 		public void fn_RemoveImg() throws InterruptedException, IOException{
 			logger=report.startTest("fn_RemoveImg");
 			try{
@@ -322,6 +322,95 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
+//		@Test(priority=14)
+		public void fn_CancelProfilePage() throws InterruptedException, IOException{
+			logger=report.startTest("fn_CancelProfilePage");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_CancelProfilePage();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+		
+		
+		
+		
+//		@Test(priority=15)
+		public void fn_ChangePassword() throws InterruptedException, IOException{
+			logger=report.startTest("fn_ChangePassword");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_ChangePassword();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+		
+		
+		
+	//	@Test(priority=16)
+		public void fn_ChangeCurrentPassword() throws InterruptedException, IOException{
+			logger=report.startTest("fn_ChangeCurrentPassword");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_ChangeCurrentPassword();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+		
+		
+		
+		
+//		@Test(priority=17)
+		public void fn_ValidationPassword() throws InterruptedException, IOException{
+			logger=report.startTest("fn_ValidationPassword");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fn_ValidationPassword();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
+		
+		
+		
+		@Test(priority=18)
+		public void fh_CancelChangePassword() throws InterruptedException, IOException{
+			logger=report.startTest("fh_CancelChangePassword");
+			try{
+			fn_LandingHome();
+			logger.log(LogStatus.INFO, "Application is up and running");
+	        Thread.sleep(3000);
+	        Login_Method login=PageFactory.initElements(driver, Login_Method.class);
+			login.fh_CancelChangePassword();
+//			logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+			}
+			catch(FileNotFoundException e){
+		//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
+				}
+		}
 		
 		
 	

@@ -110,6 +110,32 @@ public class Login_Method extends Generic_Methods {
 	@FindBy(id= "CPH_fileDeletePhoto")
 	public WebElement RemoveImg_BT;
 	
+	@FindBy(id= "CPH_lnkbtnBack")
+	public WebElement CancelProfilePage_LK;
+	
+	@FindBy(xpath = "//div[@id='dvClass']/span")
+	public WebElement Class_Label;
+	
+	@FindBy(linkText= "Change password")
+	public WebElement ChangePasswprd_LK;
+	
+	@FindBy(id= "CPH_UCpwd_Npwd")
+	public WebElement NewPassword_TX;
+	
+	@FindBy(id= "CPH_UCpwd_ConPwd")
+	public WebElement ConfirmPassword_TX;
+	
+	@FindBy(id= "CPH_lnkSave")
+	public WebElement PasswordUpdate_BT;
+	
+	@FindBy(id= "CPH_UCpwd_Cpwd")
+	public WebElement CurrentPassword_TX;
+	
+	@FindBy(id= "CPH_lnkCancel")
+	public WebElement CancelChangePasswordPage_LK;
+	
+	
+	
 	
 	
 	
@@ -602,7 +628,7 @@ public class Login_Method extends Generic_Methods {
 		 
 		 }}
 		 catch(Exception e){
-			   fn_Click(Ok_BT);
+	//		   fn_Click(Ok_BT);
 		    	readWriteExcel(17,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityDOB","Fail");
 		    	Thread.sleep(5000);
 		 }
@@ -647,6 +673,172 @@ public class Login_Method extends Generic_Methods {
 		  
 		  
   	  }}
+	
+	
+	
+	
+	public void fn_CancelProfilePage() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(EditProfile_LK);
+		  Thread.sleep(2000);
+		  fn_ScrollDown500();
+	  	  fn_Click(CancelProfilePage_LK);
+	  	  Thread.sleep(3000);
+	if(Class_Label.isDisplayed()){
+		Thread.sleep(5000);
+		readWriteExcel(19,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelProfilePage","Pass");
+	  }
+	 else{
+	    	readWriteExcel(19,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelProfilePage","Fail");
+	    	Thread.sleep(5000);
+	    }
+	     }
+	   }
+	
+	
+	
+	public void fn_ChangePassword() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(ChangePasswprd_LK);
+		  Thread.sleep(2000);
+		  fn_Input(NewPassword_TX, obj.getProperty("NewPassword"));
+		  Thread.sleep(2000);
+		  fn_Input(ConfirmPassword_TX, obj.getProperty("NewPassword"));
+		  Thread.sleep(2000);
+	  	  fn_Click(PasswordUpdate_BT);
+	  	  Thread.sleep(3000);
+	  	  
+	  	if(Popup_TX.isDisplayed()){
+			Assert.assertTrue(Popup_TX.getText().trim().equals("Password changed successfully"));
+			Thread.sleep(2000);
+			fn_Click(Ok_BT);
+			Thread.sleep(5000);
+			fn_LogOut();
+			Thread.sleep(2000);
+			fn_Input(LoginName_TX, obj.getProperty("LoginName"));
+	  	    fn_Input(Password_TX, obj.getProperty("NewPassword"));
+	        fn_Click(SignIn_BT);
+	        Thread.sleep(10000);
+	        fn_Click(Profile_Img);
+		  	  Thread.sleep(3000);
+			  fn_Click(ChangePasswprd_LK);
+			  Thread.sleep(2000);
+			  fn_Input(NewPassword_TX, obj.getProperty("Password"));
+			  Thread.sleep(2000);
+			  fn_Input(ConfirmPassword_TX, obj.getProperty("Password"));
+			  Thread.sleep(2000);
+		  	  fn_Click(PasswordUpdate_BT);
+		  	  Thread.sleep(3000);
+		  	  fn_Click(Ok_BT);
+			  Thread.sleep(5000);
+			  readWriteExcel(20,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangePassword","Pass");
+		    }
+			 else{
+			    	readWriteExcel(20,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangePassword","Fail");
+			    	Thread.sleep(5000);
+			    }
+			     }
+	  	       }
+	
+	
+	
+	public void fn_ChangeCurrentPassword() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(ChangePasswprd_LK);
+		  Thread.sleep(2000);
+		  
+		  if(CurrentPassword_TX.isDisplayed()){
+				Assert.assertFalse(CurrentPassword_TX.isEnabled(),"Current Password is Enabled: Fail");
+				Thread.sleep(5000);
+				readWriteExcel(21,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangeCurrentPassword","Pass");
+			    }
+				 else{
+				    	readWriteExcel(21,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangeCurrentPassword","Fail");
+				    	Thread.sleep(5000);
+				    }
+				  }
+	          }
+	
+	
+	
+	public void fn_ValidationPassword() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(ChangePasswprd_LK);
+		  Thread.sleep(3000);
+		  fn_Click(PasswordUpdate_BT);
+		  
+		  if(Popup_TX.isDisplayed()){
+				Assert.assertTrue(Popup_TX.getText().trim().equals("New password and Confirm password should not be empty"));
+				Thread.sleep(2000);
+				 fn_Click(Ok_BT);
+				 Thread.sleep(2000);
+				 readWriteExcel(22,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationPassword","Pass");
+		    }
+			 else{
+			    	readWriteExcel(22,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationPassword","Fail");
+			    	Thread.sleep(5000);
+			    }
+		        }
+	          }
+	
+	
+	
+	public void fh_CancelChangePassword() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    fn_Login();
+  	    Thread.sleep(5000);
+  	  if(Profile_Img.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(Profile_Img);
+	  	  Thread.sleep(3000);
+		  fn_Click(ChangePasswprd_LK);
+		  Thread.sleep(3000);
+		  fn_Click(CancelChangePasswordPage_LK);
+		  Thread.sleep(3000);
+		  if(Class_Label.isDisplayed()){
+				Thread.sleep(5000);
+				readWriteExcel(23,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fh_CancelChangePassword","Pass");
+			  }
+			 else{
+			    	readWriteExcel(23,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fh_CancelChangePassword","Fail");
+			    	Thread.sleep(5000);
+			    }
+			     }
+			   }
 	
 	
 	

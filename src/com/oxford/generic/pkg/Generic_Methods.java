@@ -59,7 +59,7 @@ import org.testng.Assert;
 				  DriverObj=new InternetExplorerDriver();
 				//return driver;
 				 }
-			DriverObj.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+			DriverObj.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			
 			
 //			driver.manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
@@ -80,7 +80,7 @@ import org.testng.Assert;
 		    	  obj.load(objfile);
 			    driver.get(obj.getProperty("URL"));
 			    driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 				driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
 	//			driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
 	         }
