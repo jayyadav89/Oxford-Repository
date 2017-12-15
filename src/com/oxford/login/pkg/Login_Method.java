@@ -134,7 +134,37 @@ public class Login_Method extends Generic_Methods {
 	@FindBy(id= "CPH_lnkCancel")
 	public WebElement CancelChangePasswordPage_LK;
 	
+	@FindBy(linkText= "Forgot password?")
+	public WebElement ForgotPassword_LK;
 	
+	@FindBy(id= "txtUsername_Id")
+	public WebElement LoginnameForgotPass_TX;
+	
+	@FindBy(id= "ddlSecurityQues")
+	public WebElement SecurityQuesForgotPass_DD;
+	
+	@FindBy(id= "SecAns_Id")
+	public WebElement SecurityAnsForgotPass_TX;
+	
+	@FindBy(id= "lnkbtnContinue")
+	public WebElement Continue_BT;
+	
+	@FindBy(id= "Npwd")
+	public WebElement NewPasswordForgotPass_TX;
+	
+	@FindBy(id= "ConPwd")
+	public WebElement ConfirmPasswordForgotPass_TX;
+	
+	@FindBy(id= "lnkSave")
+	public WebElement PasswordUpdateForgotPass_BT;
+	
+	@FindBy(id= "LinkButton1")
+	public WebElement CancelForgotPass1_BT;
+	
+	@FindBy(id= "lnkCancel")
+	public WebElement CancelForgotPass_BT;
+	
+
 	
 	
 	
@@ -815,7 +845,7 @@ public class Login_Method extends Generic_Methods {
 	
 	
 	
-	public void fh_CancelChangePassword() throws InterruptedException, IOException{
+	public void fn_CancelChangePassword() throws InterruptedException, IOException{
 		Properties obj = new Properties();   
   	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
   	    obj.load(objfile);
@@ -841,6 +871,229 @@ public class Login_Method extends Generic_Methods {
 			   }
 	
 	
+	
+	
+	public void fn_ForgotPassword() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  //	fn_Login();
+  	    Thread.sleep(5000);
+  	  if(ForgotPassword_LK.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(ForgotPassword_LK);
+	  	  Thread.sleep(3000);
+		  LoginnameForgotPass_TX.clear();
+	  	  fn_Input(LoginnameForgotPass_TX, obj.getProperty("LoginName"));
+	  	  fn_SelectbyIndex(SecurityQuesForgotPass_DD,1);
+	  	  SecurityAnsForgotPass_TX.clear();
+	  	  Thread.sleep(1000);
+	  	  fn_Input(SecurityAnsForgotPass_TX, obj.getProperty("SecurityAns"));
+	  	  Thread.sleep(2000);
+	  	  fn_Click(Continue_BT);
+	  	  Thread.sleep(3000);
+	  	  fn_Input(NewPasswordForgotPass_TX, obj.getProperty("NewPassword"));
+	  	  Thread.sleep(2000);
+	  	  fn_Input(ConfirmPasswordForgotPass_TX, obj.getProperty("NewPassword"));
+	  	  Thread.sleep(2000);
+	  	  fn_Click(PasswordUpdateForgotPass_BT);
+	  	  Thread.sleep(3000);
+	  	Assert.assertTrue(Popup_TX.getText().trim().equals("Password changed successfully. Please re-login with updated password"));
+		Thread.sleep(2000);
+		 fn_Click(Ok_BT);
+		 Thread.sleep(2000); 
+	  	  fn_Input(LoginName_TX, obj.getProperty("LoginName"));
+	  	    fn_Input(Password_TX, obj.getProperty("NewPassword"));
+	        fn_Click(SignIn_BT);
+	        Thread.sleep(10000);
+	        fn_LogOut();
+	        Thread.sleep(3000);
+	       fn_Click(ForgotPassword_LK);
+		  	  Thread.sleep(3000);
+			LoginnameForgotPass_TX.clear();
+		  	fn_Input(LoginnameForgotPass_TX, obj.getProperty("LoginName"));
+		  	  fn_SelectbyIndex(SecurityQuesForgotPass_DD,1);
+		  	  SecurityAnsForgotPass_TX.clear();
+		  	  Thread.sleep(1000);
+		  	  fn_Input(SecurityAnsForgotPass_TX, obj.getProperty("SecurityAns"));
+		  	  Thread.sleep(2000);
+		  	  fn_Click(Continue_BT);
+		  	  Thread.sleep(3000);
+		  	  fn_Input(NewPasswordForgotPass_TX, obj.getProperty("Password"));
+		  	  Thread.sleep(2000);
+		  	  fn_Input(ConfirmPasswordForgotPass_TX, obj.getProperty("Password"));
+		  	  Thread.sleep(2000);
+		  	  fn_Click(PasswordUpdateForgotPass_BT);
+		  	  Thread.sleep(3000);
+		  	Assert.assertTrue(Popup_TX.getText().trim().equals("Password changed successfully. Please re-login with updated password"));
+			Thread.sleep(2000);
+			 fn_Click(Ok_BT);
+			 Thread.sleep(2000);
+			 fn_Login();
+			 Thread.sleep(3000);
+			readWriteExcel(24,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ForgotPassword","Pass");
+	  	   }
+  	      else{
+	    	readWriteExcel(24,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ForgotPassword","Fail");
+	    	Thread.sleep(5000);
+  	       }
+  	      }
+	
+	
+	
+	
+	public void fn_ValidationForgotPassFields() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	    
+  	    if(ForgotPassword_LK.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(ForgotPassword_LK);
+	  	  Thread.sleep(3000);
+		  fn_Click(Continue_BT);
+		  Thread.sleep(3000);
+		  
+		if(Popup_TX.isDisplayed()){
+				Assert.assertTrue(Popup_TX.getText().trim().equals("Enter Login name"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				fn_Input(LoginnameForgotPass_TX, obj.getProperty("LoginName"));
+				fn_Click(Continue_BT);
+				Thread.sleep(3000);
+				Assert.assertTrue(Popup_TX.getText().trim().equals("Select security question"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				fn_SelectbyIndex(SecurityQuesForgotPass_DD,1);
+				fn_Click(Continue_BT);
+				Thread.sleep(3000);
+				Assert.assertTrue(Popup_TX.getText().trim().equals("Enter security answer"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				fn_Input(SecurityAnsForgotPass_TX, obj.getProperty("SecurityAns"));
+				fn_Click(Continue_BT);
+				Thread.sleep(3000);
+				
+				fn_Click(PasswordUpdateForgotPass_BT);
+				Thread.sleep(3000);
+				Assert.assertTrue(Popup_TX.getText().trim().equals("New password cannot be blank"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				fn_Input(NewPasswordForgotPass_TX, obj.getProperty("Password"));
+				fn_Click(PasswordUpdateForgotPass_BT);
+				Thread.sleep(3000);
+				Assert.assertTrue(Popup_TX.getText().trim().equals("Confirm password cannot be blank"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				fn_Click(CancelForgotPass_BT);
+				Thread.sleep(2000);
+				fn_Click(CancelForgotPass1_BT);
+				Thread.sleep(2000);
+				fn_Login();
+				Thread.sleep(3000);
+				readWriteExcel(25,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationForgotPassFields","Pass");
+		    }
+			 else{
+			    	readWriteExcel(25,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationForgotPassFields","Fail");
+			    	Thread.sleep(5000);
+			    }
+		        }
+	          }
+	
+	
+	
+	
+	public void fn_InvalidValidationForgotPassFields() throws InterruptedException, IOException{
+		Properties obj = new Properties();   
+  	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	    obj.load(objfile);
+  	   if(ForgotPassword_LK.isDisplayed()){
+  		  Thread.sleep(3000);
+	  	  fn_Click(ForgotPassword_LK);
+	  	  Thread.sleep(3000);
+	  	  fn_Input(LoginnameForgotPass_TX, obj.getProperty("InvalidName"));
+	  	  Thread.sleep(2000);
+	  	  fn_SelectbyIndex(SecurityQuesForgotPass_DD,1);
+	  	  Thread.sleep(2000);
+	  	fn_Input(SecurityAnsForgotPass_TX, obj.getProperty("SecurityAns"));
+	  	  fn_Click(Continue_BT);
+		   Thread.sleep(2000);
+		if(Popup_TX.isDisplayed()){
+				Assert.assertTrue(Popup_TX.getText().trim().equals("Please enter valid Login name or Contact school admin to retrieve your login name"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				LoginnameForgotPass_TX.clear();
+				fn_Input(LoginnameForgotPass_TX, obj.getProperty("LoginName"));
+				fn_SelectbyIndex(SecurityQuesForgotPass_DD,0);
+			  	Thread.sleep(2000);
+			  	fn_Input(SecurityAnsForgotPass_TX, obj.getProperty("SecurityAns"));
+			  	fn_Click(Continue_BT);
+			  	Thread.sleep(2000);
+				Assert.assertTrue(Popup_TX.getText().trim().equals("Select security question"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				fn_SelectbyIndex(SecurityQuesForgotPass_DD,1);
+			  	Thread.sleep(2000);
+				SecurityAnsForgotPass_TX.clear();
+				fn_Input(SecurityAnsForgotPass_TX, obj.getProperty("UpdateSecurityAns"));
+			  	fn_Click(Continue_BT);
+			  	Thread.sleep(2000);
+				Assert.assertTrue(Popup_TX.getText().trim().equals("Invalid Security question and answer"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				SecurityAnsForgotPass_TX.clear();
+				fn_Input(SecurityAnsForgotPass_TX, obj.getProperty("SecurityAns"));
+			  	fn_Click(Continue_BT);
+			  	Thread.sleep(2000);
+			  	fn_Input(NewPasswordForgotPass_TX, obj.getProperty("Password"));
+			  	Thread.sleep(2000);
+			  	fn_Input(ConfirmPasswordForgotPass_TX, obj.getProperty("InvalidPassword"));
+			  	Thread.sleep(2000);
+				fn_Click(PasswordUpdateForgotPass_BT);
+				Thread.sleep(3000);
+				Assert.assertTrue(Popup_TX.getText().trim().equals("New password and Confirm password fields do not match"));
+				Thread.sleep(2000);
+				fn_Click(Ok_BT);
+				Thread.sleep(2000);
+				fn_Click(CancelForgotPass_BT);
+				Thread.sleep(2000);
+				fn_Click(CancelForgotPass1_BT);
+				Thread.sleep(2000);
+				fn_Login();
+				Thread.sleep(3000);
+				readWriteExcel(26,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidValidationForgotPassFields","Pass");
+		    }
+			 else{
+			    	readWriteExcel(26,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidValidationForgotPassFields","Fail");
+			    	Thread.sleep(5000);
+			    }
+		        }
+	          }
+	
+	
+	
+	
+	public void fn_SignOut() throws InterruptedException, IOException{
+		if(SignIn_BT.isDisplayed()){
+			fn_Login();
+			Thread.sleep(3000);
+			fn_LogOut();
+			Thread.sleep(3000);
+			fn_Login();
+			readWriteExcel(27,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignOut","Pass");
+			}
+		else{
+			readWriteExcel(27,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignOut","Fail");
+			}
+		    }
 	
 	
 	
