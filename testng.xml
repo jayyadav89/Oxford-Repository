@@ -6,6 +6,7 @@
          
         <classes>
            <class name="com.oxford.login.pkg.Login_Scripts"/> 
+           <class name="com.oxford.dashboard.pkg.Dashboard_Script"/>
    		</classes>
   	 
   	 </test> 
