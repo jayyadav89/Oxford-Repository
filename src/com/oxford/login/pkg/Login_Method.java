@@ -1097,11 +1097,6 @@ public class Login_Method extends Generic_Methods {
 	
 	
 	
-	
-	
-	
-	
-	
 	public void fn_LogOut() throws InterruptedException{
 		fn_Click(Profile_Img);
 		Thread.sleep(3000);
