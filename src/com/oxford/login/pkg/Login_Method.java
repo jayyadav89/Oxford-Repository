@@ -833,7 +833,7 @@ public class Login_Method extends Generic_Methods {
 				Assert.assertTrue(Popup_TX.getText().trim().equals("New password and Confirm password should not be empty"));
 				Thread.sleep(2000);
 				 fn_Click(Ok_BT);
-				 Thread.sleep(2000);
+				 Thread.sleep(5000);
 				 readWriteExcel(22,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationPassword","Pass");
 		    }
 			 else{
@@ -930,7 +930,7 @@ public class Login_Method extends Generic_Methods {
 			 fn_Click(Ok_BT);
 			 Thread.sleep(2000);
 			 fn_Login();
-			 Thread.sleep(3000);
+			 Thread.sleep(5000);
 			readWriteExcel(24,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ForgotPassword","Pass");
 	  	   }
   	      else{
@@ -995,7 +995,7 @@ public class Login_Method extends Generic_Methods {
 				fn_Click(CancelForgotPass1_BT);
 				Thread.sleep(2000);
 				fn_Login();
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				readWriteExcel(25,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationForgotPassFields","Pass");
 		    }
 			 else{
@@ -1068,7 +1068,7 @@ public class Login_Method extends Generic_Methods {
 				fn_Click(CancelForgotPass1_BT);
 				Thread.sleep(2000);
 				fn_Login();
-				Thread.sleep(3000);
+				Thread.sleep(5000);
 				readWriteExcel(26,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidValidationForgotPassFields","Pass");
 		    }
 			 else{

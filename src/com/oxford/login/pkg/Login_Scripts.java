@@ -35,7 +35,7 @@ public class Login_Scripts extends Generic_Methods {
 	
 	@BeforeTest
 	public void ExtentReportGen(){
-	  report=new ExtentReports("D:\\Oxford Workspace\\Automation Result\\automation.html");
+	  report=new ExtentReports("D:\\Oxford Workspace\\Automation Result\\Login.html");
 	}
 	
 	
@@ -512,12 +512,6 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
 	
-	
-	//	@AfterMethod
-//	public void HomePage_Delivery() throws InterruptedException{
-//		Pizza_Order pizzaorder=PageFactory.initElements(driver, Pizza_Order.class);
-//		pizzaorder.fn_ClickLocationTab();
-//	}
 
 	
 //	@Test(priority=1, groups="Regression", enabled=false)
