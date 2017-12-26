@@ -16,8 +16,11 @@ import java.util.Random;
 
 	import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -684,30 +687,25 @@ import org.testng.Assert;
 	        {
 	            FileInputStream input= new FileInputStream(filepath);
 	            XSSFWorkbook wb=new XSSFWorkbook(input);
-	           
-	            XSSFSheet sh=wb.getSheet(Sheetname);
+	             XSSFSheet sh=wb.getSheet(Sheetname);
 	            XSSFRow row=sh.getRow(rowcount);
 	           String cellval =row.getCell(columncount).toString();
 	           System.out.println(cellval);
-	           
-	         if(cellval.equalsIgnoreCase(expcellval)){
+	            if(cellval.equalsIgnoreCase(expcellval)){
 	        	 FileOutputStream fos=new FileOutputStream(filepath);
 	        	 row.createCell(10).setCellValue(statusvalue);  //working
-	             	 
-	        	 wb.write(fos);
-	         }
+	             	 wb.write(fos);
+	                }
 	         else{
 	    //    	 System.out.println("Test case name not matching");
 	        	 row.createCell(10).setCellValue("Test case name not matching");
 	         }
-	           
-	        }
+	           }
 	        catch(Exception e)
 	        {
 	            System.out.println(e);
 	        }
-	
-	       }
+	        }
 	
 	
 	    
@@ -786,6 +784,38 @@ import org.testng.Assert;
 	    
 	    
 	    
+	    public void UpdateCellColor(int rowcount,String filepath,String Sheetname) throws  IOException {
+			//	String FilePath = "D:\\sampledoc.xls";
+				try
+		        {
+					FileOutputStream fos= new FileOutputStream(filepath);
+		            XSSFWorkbook wb=new XSSFWorkbook();
+		             XSSFSheet sh=wb.getSheet(Sheetname);
+		            XSSFRow row=sh.getRow(rowcount);
+		           String cellval =row.getCell(10).toString();
+		           System.out.println(cellval);
+		            if(cellval.equalsIgnoreCase("Pass")){
+		            	XSSFCellStyle style=wb.createCellStyle();
+		            	style.setFillForegroundColor(IndexedColors.GREEN.getIndex());
+		        	    style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+		        	    
+		            }
+		            else if(cellval.equalsIgnoreCase("Fail")){
+		            	XSSFCellStyle style=wb.createCellStyle();
+		            	style.setFillForegroundColor(IndexedColors.RED.getIndex());
+		        	    style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+		            	
+		        	 
+		                }
+		         else{
+		        	 System.out.println("Cell is empty");
+		        	 }
+		           }
+		        catch(Exception e)
+		        {
+		            System.out.println(e);
+		        }
+		        }
 	    
 	    
 	    
