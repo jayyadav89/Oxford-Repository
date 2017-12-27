@@ -1098,12 +1098,18 @@ public class Login_Method extends Generic_Methods {
 	
 	
 	public void fn_LogOut() throws InterruptedException{
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+//		if(Profile_Img.isDisplayed()){
+//		fn_MouseClick(Profile_Img);
+//		fn_mouseOver(Profile_Img);
 		fn_Click(Profile_Img);
 		Thread.sleep(3000);
 		fn_Click(LogOut_BT);
 		Thread.sleep(5000);
-		
+//		}
+//		else{
+//			System.out.println("Profile img not visible");
+//		}
 	}
 	
 	

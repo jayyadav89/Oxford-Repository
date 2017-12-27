@@ -1,43 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Parallel Test Suite" duration-ms="26333" started-at="2017-12-04T05:15:25Z" finished-at="2017-12-04T05:15:51Z">
+  <suite name="Default suite" duration-ms="342" started-at="2017-12-27T09:41:59Z" finished-at="2017-12-27T09:42:00Z">
     <groups>
     </groups>
-    <test name="Test on Chrome" duration-ms="26333" started-at="2017-12-04T05:15:25Z" finished-at="2017-12-04T05:15:51Z">
-      <class name="com.oxford.login.pkg.Login_Scripts">
-        <test-method status="PASS" signature="ExtentReportGen()[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7]" name="ExtentReportGen" is-config="true" duration-ms="1327" started-at="2017-12-04T10:45:25Z" finished-at="2017-12-04T10:45:26Z">
+    <test name="Default test" duration-ms="342" started-at="2017-12-27T09:41:59Z" finished-at="2017-12-27T09:42:00Z">
+      <class name="com.oxford.dashboard.pkg.Notificatios_Script">
+        <test-method status="PASS" signature="ExtentReportGen()[pri:0, instance:com.oxford.dashboard.pkg.Notificatios_Script@91161c7]" name="ExtentReportGen" is-config="true" duration-ms="300" started-at="2017-12-27T15:11:59Z" finished-at="2017-12-27T15:12:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExtentReportGen -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7]" name="setup" is-config="true" duration-ms="11628" started-at="2017-12-04T10:45:26Z" finished-at="2017-12-04T10:45:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="FAIL" signature="setup(java.lang.String)[pri:0, instance:com.oxford.dashboard.pkg.Notificatios_Script@91161c7]" name="setup" is-config="true" duration-ms="0" started-at="2017-12-27T15:12:00Z" finished-at="2017-12-27T15:12:00Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by @Configuration on method setup but has not been marked @Optional or defined
+in C:\Users\incaendo\AppData\Local\Temp\testng-eclipse-572134627\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by @Configuration on method setup but has not been marked @Optional or defined
+in C:\Users\incaendo\AppData\Local\Temp\testng-eclipse-572134627\testng-customsuite.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:154)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:361)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:84)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:201)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:178)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="fn_ValidLogin()[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7]" name="fn_ValidLogin" duration-ms="12801" started-at="2017-12-04T10:45:38Z" finished-at="2017-12-04T10:45:51Z">
+        <test-method status="SKIP" signature="Login()[pri:0, instance:com.oxford.dashboard.pkg.Notificatios_Script@91161c7]" name="Login" is-config="true" duration-ms="0" started-at="2017-12-27T15:12:00Z" finished-at="2017-12-27T15:12:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fn_ValidLogin -->
-        <test-method status="PASS" signature="TearDown(org.testng.ITestResult)[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7]" name="TearDown" is-config="true" duration-ms="560" started-at="2017-12-04T10:45:51Z" finished-at="2017-12-04T10:45:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=fn_ValidLogin status=SUCCESS method=Login_Scripts.fn_ValidLogin()[pri:0, instance:com.oxford.login.pkg.Login_Scripts@91161c7] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- Login -->
+        <test-method status="SKIP" signature="fn_SortingUsers()[pri:13, instance:com.oxford.dashboard.pkg.Notificatios_Script@91161c7]" name="fn_SortingUsers" duration-ms="4" started-at="2017-12-27T15:12:00Z" finished-at="2017-12-27T15:12:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fn_SortingUsers -->
+        <test-method status="SKIP" signature="TearDown(org.testng.ITestResult)[pri:0, instance:com.oxford.dashboard.pkg.Notificatios_Script@91161c7]" name="TearDown" is-config="true" duration-ms="0" started-at="2017-12-27T15:12:00Z" finished-at="2017-12-27T15:12:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-      </class> <!-- com.oxford.login.pkg.Login_Scripts -->
-    </test> <!-- Test on Chrome -->
-  </suite> <!-- Parallel Test Suite -->
+      </class> <!-- com.oxford.dashboard.pkg.Notificatios_Script -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

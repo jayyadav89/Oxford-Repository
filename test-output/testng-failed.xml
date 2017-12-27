@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Parallel Test Suite]" parallel="tests">
-  <parameter name="browser" value="chrome"/>
-  <test name="Test on Chrome">
-    <parameter name="browser" value="chrome"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
     <classes>
-      <class name="com.oxford.login.pkg.Login_Scripts"/>
+      <class name="com.oxford.dashboard.pkg.Notificatios_Script"/>
     </classes>
-  </test> <!-- Test on Chrome -->
-</suite> <!-- Failed suite [Parallel Test Suite] -->
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.oxford.dashboard.pkg.Notificatios_Script">
+        <methods>
+          <include name="fn_SortingUsers"/>
+          <include name="ExtentReportGen"/>
+        </methods>
+      </class> <!-- com.oxford.dashboard.pkg.Notificatios_Script -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

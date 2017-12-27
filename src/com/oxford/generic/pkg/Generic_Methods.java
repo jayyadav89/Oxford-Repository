@@ -93,7 +93,7 @@ import org.testng.Assert;
 		  public static void fn_Click(WebElement ElementToClick){ 
 	//		  driver.manage().timeouts().pageLoadTimeout(90, TimeUnit.SECONDS);
 			    try{
-			     WebDriverWait wait = new WebDriverWait(driver, 15);
+			     WebDriverWait wait = new WebDriverWait(driver, 60);
 			     wait.until(ExpectedConditions.visibilityOf(ElementToClick));
 			     ElementToClick.click();
 			    }
@@ -230,9 +230,9 @@ import org.testng.Assert;
 		   
 		           
 		   	public static void fn_mouseOver(WebElement ElementToMouseOver){
-		   		WebDriverWait wait = new WebDriverWait(driver, 15);
+		   		WebDriverWait wait = new WebDriverWait(driver, 30);
 			     wait.until(ExpectedConditions.visibilityOf(ElementToMouseOver));
-		   		   new Actions(driver).moveToElement(ElementToMouseOver).build().perform();
+		   		   new Actions(driver).moveToElement(ElementToMouseOver).click().build().perform();
 		   		}
 		   	
 		   	
