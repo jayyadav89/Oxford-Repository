@@ -215,7 +215,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=11,enabled=true)
+	@Test(priority=11,enabled=false)
 	public void fn_ViewTrackingLearningReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewTrackingLearningReport");
 		try{
@@ -229,7 +229,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=12,enabled=true)
+	@Test(priority=12,enabled=false)
 	public void fn_ViewAvrgPerformanceofLessonandActivitywisePerformance() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewAvrgPerformanceofLessonandActivitywisePerformance");
 		try{
@@ -259,10 +259,33 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
+	@Test(priority=14,enabled=true)
+	public void fn_ViewNumberofVisitsandTimeSpentonDevices() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewNumberofVisitsandTimeSpentonDevices");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewNumberofVisitsandTimeSpentonDevices();
+			logger.log(LogStatus.INFO, "View Number of Visits and Time Spent on all Devices method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Number of Visits and Time Spent on all Devices method not executed successfully: Fail");
+			}
+	       }
 	
 	
 	
-	
+	@Test(priority=15,enabled=true)
+	public void fn_ViewNumberofVisitsandTimeSpentonAllRolls() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewNumberofVisitsandTimeSpentonAllRolls");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewNumberofVisitsandTimeSpentonAllRolls();
+			logger.log(LogStatus.INFO, "View Number of Visits and Time Spent on all Rolls method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Number of Visits and Time Spent on all Rolls method not executed successfully: Fail");
+			}
+	       }
 	
 	
 	

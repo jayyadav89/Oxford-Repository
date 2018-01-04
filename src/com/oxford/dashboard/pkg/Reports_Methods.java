@@ -175,6 +175,84 @@ public class Reports_Methods extends Generic_Methods{
 	
 	
 	
+	@FindBy(id = "ancUsageRpt")
+	public WebElement ApplicationUsageReport_LK;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[3]/div/a/span")
+	public WebElement Desktop_LK;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[3]/div/div/span")
+	public WebElement DesktopNoVisits_Text;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[3]/div/div/div/span")
+	public WebElement DesktopTimeSpent_Text;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[4]/div/a/span")
+	public WebElement Mobile_LK;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[4]/div/div/span")
+	public WebElement MobileNoVisits_Text;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[4]/div/div/div/span")
+	public WebElement MobileTimeSpent_Text;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[5]/div/a/span")
+	public WebElement School_LK;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[5]/div/div/span")
+	public WebElement SchoolNoVisits_Text;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[5]/div/div/div/span")
+	public WebElement SchoolTimeSpent_Text;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[6]/div/a/span")
+	public WebElement Web_LK;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[6]/div/div/span")
+	public WebElement WebNoVisits_Text;
+	
+	@FindBy(xpath = "//div[@id='containerUsage']/div[3]/div/div/div[6]/div/div/div/span")
+	public WebElement WebTimeSpent_Text;
+	
+	@FindBy(xpath = "//table/tbody/tr/td[3]")
+	public WebElement Date_LK;
+	
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[3]/div/a/span")
+	public WebElement Teacher_LK;
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[3]/div/div/span")
+	public WebElement TeacherNoVisits_Text;
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[3]/div/div/div/span")
+	public WebElement TeacherTimeSpent_Text;
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[4]/div/a/span")
+	public WebElement Parent_LK;
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[4]/div/div/span")
+	public WebElement ParentNoVisits_Text;
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[4]/div/div/div/span")
+	public WebElement ParentTimeSpent_Text;
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[5]/div/a/span")
+	public WebElement Student_LK;
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[5]/div/div/span")
+	public WebElement StudentNoVisits_Text;
+	
+	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[5]/div/div/div/span")
+	public WebElement StudentTimeSpent_Text;
+	
+	@FindBy(xpath = "//div[@class='print_icn_usg ng-scope']")
+	public WebElement Print_Icon;
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -691,7 +769,7 @@ public class Reports_Methods extends Generic_Methods{
 	    Thread.sleep(2000);
 	    fn_Click(ViewStudent1Details_LK);
 	    Thread.sleep(3000);
-	    Assert.assertTrue(OverallPerformanceLearning_Text.getText().trim().equals("Overall  performance"), "Overall Performance text not correct: Fail");
+	    Assert.assertTrue(OverallPerformanceLearning_Text.getText().trim().equals("Overall performance"), "Overall Performance text not correct: Fail");
 	    Thread.sleep(2000);
 	    String avescore=AveScorePercent_Text.getText().trim();
 	    System.out.println(avescore);
@@ -709,6 +787,145 @@ public class Reports_Methods extends Generic_Methods{
 	     }
 	
 	
+	
+	public void fn_ViewNumberofVisitsandTimeSpentonDevices() throws InterruptedException, IOException{
+	    Thread.sleep(2000);
+		if(Reports_Lk.isDisplayed()){
+ 	    Thread.sleep(2000);
+ 	    fn_Click(Reports_Lk);
+ 	    Thread.sleep(3000);
+ 	    fn_Click(Menu_Icon);
+	    Thread.sleep(3000);
+	    fn_Click(TrackingReport_LK);
+	    Thread.sleep(3000);
+	    fn_Click(ApplicationUsageReport_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+	    Thread.sleep(2000);
+	    Assert.assertTrue(Desktop_LK.getText().trim().equals("Desktop"), "Desktop text not correct: Fail");
+	    Thread.sleep(2000);
+	    String desktopvisits=DesktopNoVisits_Text.getText().trim();
+	    System.out.println("No.of Visits for Desktop: " +desktopvisits);
+	    Thread.sleep(2000);
+	    String desktoptime=DesktopTimeSpent_Text.getText().trim();
+	    System.out.println("Time spent for Desktop: " +desktoptime);
+	    Thread.sleep(2000);
+	    Assert.assertTrue(Mobile_LK.getText().trim().equals("Mobile"), "Mobile text not correct: Fail");
+	    Thread.sleep(2000);
+	    String mobilevisits=MobileNoVisits_Text.getText().trim();
+	    System.out.println("No.of Visits for Mobile: " +mobilevisits);
+	    Thread.sleep(2000);
+	    String mobiletime=MobileTimeSpent_Text.getText().trim();
+	    System.out.println("Time spent for Mobile: " +mobiletime);
+	    Thread.sleep(2000);
+	    Assert.assertTrue(School_LK.getText().trim().equals("School"), "School text not correct: Fail");
+	    Thread.sleep(2000);
+	    String schoolvisits=SchoolNoVisits_Text.getText().trim();
+	    System.out.println("No.of Visits for School: " +schoolvisits);
+	    Thread.sleep(2000);
+	    String schooltime=SchoolTimeSpent_Text.getText().trim();
+	    System.out.println("Time spent for School: " +schooltime);
+	    Thread.sleep(2000);
+	    Assert.assertTrue(Web_LK.getText().trim().equals("Web"), "Web text not correct: Fail");
+	    Thread.sleep(2000);
+	    String Webvisits=WebNoVisits_Text.getText().trim();
+	    System.out.println("No.of Visits for Web: " +Webvisits);
+	    Thread.sleep(2000);
+	    String Webtime=WebTimeSpent_Text.getText().trim();
+	    System.out.println("Time spent for Web: " +Webtime);
+	    Thread.sleep(2000);
+	    readWriteExcel(77,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewNumberofVisitsandTimeSpentonDevices","Pass");
+  	    }
+	   else{
+	    readWriteExcel(77,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewNumberofVisitsandTimeSpentonDevices","Fail");
+  	    Thread.sleep(5000);
+           }
+	      }
+	     
+	
+	
+	public void fn_ViewNumberofVisitsandTimeSpentonAllRolls() throws InterruptedException, IOException{
+	    Thread.sleep(2000);
+		if(Reports_Lk.isDisplayed()){
+ 	    Thread.sleep(2000);
+ 	    fn_Click(Reports_Lk);
+ 	    Thread.sleep(3000);
+ 	    fn_Click(Menu_Icon);
+	    Thread.sleep(3000);
+	    fn_Click(TrackingReport_LK);
+	    Thread.sleep(3000);
+	    fn_Click(ApplicationUsageReport_LK);
+	    Thread.sleep(3000);
+	    
+	    fn_ScrollDown500();
+	    Thread.sleep(2000);
+	    fn_Click(Web_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+	    Thread.sleep(2000);
+	    Assert.assertTrue(Teacher_LK.getText().trim().equals("Teacher"), "Teacher text not correct: Fail");
+	    Thread.sleep(2000);
+	    String Teachervisits=TeacherNoVisits_Text.getText().trim();
+	    System.out.println("No.of Visits by Teacher: " +Teachervisits);
+	    Thread.sleep(2000);
+	    String Teachertime=TeacherTimeSpent_Text.getText().trim();
+	    System.out.println("Time spent by Teacher: " +Teachertime);
+	    Thread.sleep(2000);
+	    Assert.assertTrue(Parent_LK.getText().trim().equals("Parent"), "Parent text not correct: Fail");
+	    Thread.sleep(2000);
+	    String Parentvisits=ParentNoVisits_Text.getText().trim();
+	    System.out.println("No.of Visits by Parent: " +Parentvisits);
+	    Thread.sleep(2000);
+	    String Parenttime=ParentTimeSpent_Text.getText().trim();
+	    System.out.println("Time spent by Parent: " +Parenttime);
+	    Thread.sleep(2000);
+	    Assert.assertTrue(Student_LK.getText().trim().equals("Student"), "Student text not correct: Fail");
+	    Thread.sleep(2000);
+	    String Studentvisits=StudentNoVisits_Text.getText().trim();
+	    System.out.println("No.of Visits by Student: " +Studentvisits);
+	    Thread.sleep(2000);
+	    String Studenttime=StudentTimeSpent_Text.getText().trim();
+	    System.out.println("Time spent by Student: " +Studenttime);
+	    Thread.sleep(2000);
+	    readWriteExcel(78,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewNumberofVisitsandTimeSpentonAllRolls","Pass");
+  	    }
+	   else{
+	    readWriteExcel(78,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewNumberofVisitsandTimeSpentonAllRolls","Fail");
+  	    Thread.sleep(5000);
+           }
+	      }
+	
+	
+	
+	public void fn_PrintUsageReport() throws InterruptedException, IOException{
+	    Thread.sleep(2000);
+		if(Reports_Lk.isDisplayed()){
+ 	    Thread.sleep(2000);
+ 	    fn_Click(Reports_Lk);
+ 	    Thread.sleep(3000);
+ 	    fn_Click(Menu_Icon);
+	    Thread.sleep(3000);
+	    fn_Click(TrackingReport_LK);
+	    Thread.sleep(3000);
+	    fn_Click(ApplicationUsageReport_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+	    Thread.sleep(2000);
+	    fn_Click(Web_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+	    Thread.sleep(2000);
+	    fn_Click(Print_Icon);
+	    Thread.sleep(3000);
+	    driver.switchTo().alert().dismiss();
+	    Thread.sleep(2000);
+	    readWriteExcel(79,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PrintUsageReport","Pass");
+  	    }
+	   else{
+	    readWriteExcel(79,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PrintUsageReport","Fail");
+  	    Thread.sleep(5000);
+           }
+	      }
 	
 	
 	
