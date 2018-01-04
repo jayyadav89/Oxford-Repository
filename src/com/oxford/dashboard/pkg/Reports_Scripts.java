@@ -289,6 +289,37 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
+	@Test(priority=16,enabled=true)
+	public void fn_PrintUsageReport() throws IOException, InterruptedException{
+		logger=report.startTest("fn_PrintUsageReport");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_PrintUsageReport();
+			logger.log(LogStatus.INFO, "Print Usage Report method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "Print Usage Report method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	@Test(priority=17,enabled=true)
+	public void fn_ViewSectionwiseUsageReport() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewSectionwiseUsageReport");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewSectionwiseUsageReport();
+			logger.log(LogStatus.INFO, "View Sectionwise Usage Report method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Sectionwise Usage Report method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	
+	
+	
 	
 	
 	@AfterMethod

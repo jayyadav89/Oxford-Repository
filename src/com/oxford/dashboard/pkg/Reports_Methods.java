@@ -248,7 +248,26 @@ public class Reports_Methods extends Generic_Methods{
 	@FindBy(xpath = "//div[@class='print_icn_usg ng-scope']")
 	public WebElement Print_Icon;
 	
+	@FindBy(xpath = "//div[@id='containerUser']/div[2]/div/div/div[3]/div/a/span")
+	public WebElement RollName_LK;
 	
+	@FindBy(xpath = "//div[@id='containerSecGraphDetails']/div[2]/div/div/div[3]/div/a/span")
+	public WebElement SectionName1_LK;
+	
+	@FindBy(xpath = "//div[@id='containerSecWiseDetails']//div[3]/div/div/div")
+	public WebElement StartDate_Text;
+	
+	@FindBy(xpath = "//div[@class='col-xs-12 col-sm-12 col-md-2 wdthprnt'][2]/div")
+	public WebElement EndDate_Text;
+	
+	@FindBy(xpath = "//div[@class='col-xs-12 col-sm-12 col-md-2 wdthprnt'][3]/div")
+	public WebElement StartTime_Text;
+	
+	@FindBy(xpath = "//div[@class='col-xs-12 col-sm-12 col-md-2 wdthprnt'][4]/div")
+	public WebElement EndTime_Text;
+	
+	@FindBy(xpath = "//div[@class='col-xs-12 col-sm-12 col-md-3 wdthprnt']/div")
+	public WebElement TimeSpent_Text;
 	
 	
 	
@@ -927,6 +946,51 @@ public class Reports_Methods extends Generic_Methods{
            }
 	      }
 	
+	
+	
+	public void fn_ViewSectionwiseUsageReport() throws InterruptedException, IOException{
+	    Thread.sleep(2000);
+		if(Reports_Lk.isDisplayed()){
+ 	    Thread.sleep(2000);
+ 	    fn_Click(Reports_Lk);
+ 	    Thread.sleep(3000);
+ 	    fn_Click(Menu_Icon);
+	    Thread.sleep(3000);
+	    fn_Click(TrackingReport_LK);
+	    Thread.sleep(3000);
+	    fn_Click(ApplicationUsageReport_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+	    Thread.sleep(2000);
+	    fn_Click(Web_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+	    Thread.sleep(2000);
+	    fn_Click(Teacher_LK);
+	    Thread.sleep(3000);
+	    fn_Click(RollName_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+	    Thread.sleep(2000);
+	    fn_Click(SectionName1_LK);
+	    Thread.sleep(3000);
+	    Assert.assertTrue(StartDate_Text.getText().trim().equals("Start date"), "Start Date text not correct: Fail");
+	    Thread.sleep(2000);
+	    Assert.assertTrue(EndDate_Text.getText().trim().equals("End date"), "End Date text not correct: Fail");
+	    Thread.sleep(2000);
+	    Assert.assertTrue(StartTime_Text.getText().trim().equals("Start time"), "Start Time text not correct: Fail");
+	    Thread.sleep(2000);
+	    Assert.assertTrue(EndTime_Text.getText().trim().equals("End time"), "End Time text not correct: Fail");
+	    Thread.sleep(2000);
+	    Assert.assertTrue(TimeSpent_Text.getText().trim().contains("Time spent"), "Time Spent text not present: Fail");
+	    Thread.sleep(2000);
+	    readWriteExcel(80,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewSectionwiseUsageReport","Pass");
+  	    }
+	   else{
+	    readWriteExcel(80,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewSectionwiseUsageReport","Fail");
+  	    Thread.sleep(5000);
+           }
+	      }
 	
 	
 	
