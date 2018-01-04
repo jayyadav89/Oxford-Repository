@@ -215,7 +215,6 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	
 	@Test(priority=11,enabled=true)
 	public void fn_ViewTrackingLearningReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewTrackingLearningReport");
@@ -228,6 +227,39 @@ public class Reports_Scripts extends Generic_Methods{
 			logger.log(LogStatus.INFO, "View Tracking Learning Report method not executed successfully: Fail");
 			}
 	       }
+	
+	
+	@Test(priority=12,enabled=true)
+	public void fn_ViewAvrgPerformanceofLessonandActivitywisePerformance() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewAvrgPerformanceofLessonandActivitywisePerformance");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewAvrgPerformanceofLessonandActivitywisePerformance();
+			logger.log(LogStatus.INFO, "View Average Performance of Lesson and Activitywise Performance method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Average Performance of Lesson and Activitywise Performance method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	
+	@Test(priority=13,enabled=true)
+	public void fn_ViewSubjectwiseDetailedReportofRespectiveStudentLearning() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewSubjectwiseDetailedReportofRespectiveStudentLearning");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewSubjectwiseDetailedReportofRespectiveStudentLearning();
+			logger.log(LogStatus.INFO, "View Subjectwise Detailed Report of Respective Student method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Subjectwise Detailed Report of Respective Student method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	
+	
 	
 	
 	
