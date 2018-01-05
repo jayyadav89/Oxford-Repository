@@ -244,7 +244,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=13,enabled=true)
+	@Test(priority=13,enabled=false)
 	public void fn_ViewSubjectwiseDetailedReportofRespectiveStudentLearning() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewSubjectwiseDetailedReportofRespectiveStudentLearning");
 		try{
@@ -259,7 +259,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=14,enabled=true)
+	@Test(priority=14,enabled=false)
 	public void fn_ViewNumberofVisitsandTimeSpentonDevices() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewNumberofVisitsandTimeSpentonDevices");
 		try{
@@ -274,7 +274,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=15,enabled=true)
+	@Test(priority=15,enabled=false)
 	public void fn_ViewNumberofVisitsandTimeSpentonAllRolls() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewNumberofVisitsandTimeSpentonAllRolls");
 		try{
@@ -289,7 +289,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=16,enabled=true)
+	@Test(priority=16,enabled=false)
 	public void fn_PrintUsageReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_PrintUsageReport");
 		try{
@@ -303,7 +303,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=17,enabled=true)
+	@Test(priority=17,enabled=false)
 	public void fn_ViewSectionwiseUsageReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewSectionwiseUsageReport");
 		try{
@@ -315,6 +315,80 @@ public class Reports_Scripts extends Generic_Methods{
 			logger.log(LogStatus.INFO, "View Sectionwise Usage Report method not executed successfully: Fail");
 			}
 	       }
+	
+	
+	@Test(priority=18,enabled=false)
+	public void fn_ViewOverallandSubjectwisePerformanceofStudent() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewOverallandSubjectwisePerformanceofStudent");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewOverallandSubjectwisePerformanceofStudent();
+			logger.log(LogStatus.INFO, "View Overall and Subjectwise Performance of Student method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Overall and Subjectwise Performance of Student method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	@Test(priority=19,enabled=false)
+	public void fn_ViewAverageScoreofSelectedSubject() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewAverageScoreofSelectedSubject");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewAverageScoreofSelectedSubject();
+			logger.log(LogStatus.INFO, "View Average Score of Selected Subject method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Average Score of Selected Subject method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	//Practice test page not coming so can not execute
+	@Test(priority=20,enabled=false)
+	public void fn_DisplayPracticeTestDetails() throws IOException, InterruptedException{
+		logger=report.startTest("fn_DisplayPracticeTestDetails");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_DisplayPracticeTestDetails();
+			logger.log(LogStatus.INFO, "Display Practice Test Details method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "Display Practice Test Details method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	//Arrow is not available so can not execute
+	@Test(priority=21,enabled=false)
+	public void fn_ViewOverallPerformanceandStudentSubmissionStatusReport() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewOverallPerformanceandStudentSubmissionStatusReport");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewOverallPerformanceandStudentSubmissionStatusReport();
+			logger.log(LogStatus.INFO, "View Overall Performance and Student Submission Status Report method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Overall Performance and Student Submission Status Report method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	
+	@Test(priority=22,enabled=true)
+	public void fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport();
+			logger.log(LogStatus.INFO, "View The Question Answer Choice student Answer and right Report method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View The Question Answer Choice student Answer and right Report method not executed successfully: Fail");
+			}
+	       }
+	
 	
 	
 	

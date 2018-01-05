@@ -1,7 +1,9 @@
 package com.oxford.dashboard.pkg;
 
 import java.io.IOException;
+import java.util.Set;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -173,8 +175,6 @@ public class Reports_Methods extends Generic_Methods{
 	@FindBy(xpath = "//div[@id='overalldv']/div[8]/div[6]/div[3]/div/a")
 	public WebElement ViewDetails3_LK;
 	
-	
-	
 	@FindBy(id = "ancUsageRpt")
 	public WebElement ApplicationUsageReport_LK;
 	
@@ -217,7 +217,6 @@ public class Reports_Methods extends Generic_Methods{
 	@FindBy(xpath = "//table/tbody/tr/td[3]")
 	public WebElement Date_LK;
 	
-	
 	@FindBy(xpath = "//div[@id='containerRole']/div[3]/div/div/div[3]/div/a/span")
 	public WebElement Teacher_LK;
 	
@@ -251,6 +250,9 @@ public class Reports_Methods extends Generic_Methods{
 	@FindBy(xpath = "//div[@id='containerUser']/div[2]/div/div/div[3]/div/a/span")
 	public WebElement RollName_LK;
 	
+	@FindBy(id = "divjourney")
+	public WebElement BackArrow_LK;
+	
 	@FindBy(xpath = "//div[@id='containerSecGraphDetails']/div[2]/div/div/div[3]/div/a/span")
 	public WebElement SectionName1_LK;
 	
@@ -269,10 +271,44 @@ public class Reports_Methods extends Generic_Methods{
 	@FindBy(xpath = "//div[@class='col-xs-12 col-sm-12 col-md-3 wdthprnt']/div")
 	public WebElement TimeSpent_Text;
 	
+	@FindBy(id = "ancStudentReport")
+	public WebElement StudentIndividualReport_LK;
 	
+	@FindBy(xpath = "//div[@id='CPHBody_rptStudentAsset_dvPreview_0']/div[2]/div/span[2]")
+	public WebElement StudentName_LK;
 	
+	@FindBy(xpath = "//div[@id='overalldv']/div[6]/span")
+	public WebElement OverallPerformanceStudent_Text;
 	
+	@FindBy(id = "ContentPlaceHolder1_ucdivStdPerform_rptLODetails_ancViewUnitDetails_0")
+	public WebElement ViewDetailsSubject1_LK;
 	
+	@FindBy(id = "ContentPlaceHolder1_ucdivStdSubPerform_rptrTheme_spnName_0")
+	public WebElement SubjectName_Tab;
+	
+	@FindBy(xpath = "//div[@class='pull-left expn']/div")
+	public WebElement AverageScore_Text;
+	
+	@FindBy(id = "dvcenterTheme0")
+	public WebElement AverageScorePercent_Text;
+	
+	@FindBy(xpath = "//div[@id='ContentPlaceHolder1_ucdivStdSubPerform_rptrTheme_rptrThemeAssetTrack_0_dvAssetDetail_0']/div[2]/div/span[2]")
+	public WebElement Assessment1_LK;
+	
+	@FindBy(xpath = "//div[@id='ContentPlaceHolder1_ucdivStdSubPerform_rptrTheme_rptrThemeAssetTrack_0_dvAssetDetail_1']/div[2]/div/span[2]")
+	public WebElement Assessment2_LK;
+	
+	@FindBy(id = "lblModal")
+	public WebElement WindowHeading_Text;
+	
+	@FindBy(id = "btnViewQuestionsDetails")
+	public WebElement ViewQuestionsDetails_LK;
+	
+	@FindBy(xpath = "//div[@id='popupModal']/div/div/div/button")
+	public WebElement CancelWindow_Icon;
+	
+	@FindBy(xpath = "//button[@class='cancel']")
+	public WebElement Cancel_btn;
 	
 	
 	
@@ -906,6 +942,10 @@ public class Reports_Methods extends Generic_Methods{
 	    String Studenttime=StudentTimeSpent_Text.getText().trim();
 	    System.out.println("Time spent by Student: " +Studenttime);
 	    Thread.sleep(2000);
+	    fn_ScrollUP500();
+	    Thread.sleep(2000);
+	    fn_Click(BackArrow_LK);
+ 	    Thread.sleep(2000);
 	    readWriteExcel(78,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewNumberofVisitsandTimeSpentonAllRolls","Pass");
   	    }
 	   else{
@@ -934,10 +974,11 @@ public class Reports_Methods extends Generic_Methods{
 	    Thread.sleep(3000);
 	    fn_ScrollDown500();
 	    Thread.sleep(2000);
-	    fn_Click(Print_Icon);
-	    Thread.sleep(3000);
-	    driver.switchTo().alert().dismiss();
+	    Assert.assertTrue(Print_Icon.isDisplayed(), "Print icon not available");
+//	    fn_Click(Print_Icon);
 	    Thread.sleep(2000);
+	    fn_Click(BackArrow_LK);
+ 	    Thread.sleep(2000);
 	    readWriteExcel(79,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PrintUsageReport","Pass");
   	    }
 	   else{
@@ -993,9 +1034,215 @@ public class Reports_Methods extends Generic_Methods{
 	      }
 	
 	
+	public void fn_ViewOverallandSubjectwisePerformanceofStudent() throws InterruptedException, IOException{
+	    Thread.sleep(2000);
+		if(Reports_Lk.isDisplayed()){
+ 	    Thread.sleep(2000);
+ 	    fn_Click(Reports_Lk);
+ 	    Thread.sleep(3000);
+ 	    fn_Click(Menu_Icon);
+	    Thread.sleep(3000);
+	    fn_Click(StudentIndividualReport_LK);
+	    Thread.sleep(3000);
+	    fn_Click(StudentName_LK);
+	    Thread.sleep(3000);
+	    Assert.assertTrue(OverallPerformanceStudent_Text.getText().trim().equals("Overall performance"), "Overall Performance of Student text not correct: Fail");
+	    Thread.sleep(2000);
+	    String avescoreper=AveScorePercent_Text.getText().trim();
+	    System.out.println("Average score of Overall performance:" +avescoreper);
+	    Thread.sleep(2000);
+	    fn_ScrollDown500();
+        Thread.sleep(2000);
+        Assert.assertTrue(SubjectwisePerformanceLearning_Text.getText().trim().equals("Subjectwise Performance"), "Subjectwise Performance of student text not correct: Fail");
+	    Thread.sleep(2000);
+	    String avescore=ClassPerformancePercent_Text.getText().trim();
+	    System.out.println("Average score of subject:" +avescore);
+	    Thread.sleep(2000);
+        readWriteExcel(81,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewOverallandSubjectwisePerformanceofStudent","Pass");
+	      }
+	     else{
+	    readWriteExcel(81,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewOverallandSubjectwisePerformanceofStudent","Fail");
+  	    Thread.sleep(5000);
+           }
+	      }
+	     
+	     
+	
+		public void fn_ViewAverageScoreofSelectedSubject() throws InterruptedException, IOException{
+	    Thread.sleep(2000);
+		if(Reports_Lk.isDisplayed()){
+ 	    Thread.sleep(2000);
+ 	    fn_Click(Reports_Lk);
+ 	    Thread.sleep(3000);
+ 	    fn_Click(Menu_Icon);
+	    Thread.sleep(3000);
+	    fn_Click(StudentIndividualReport_LK);
+	    Thread.sleep(3000);
+	    fn_Click(StudentName_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+        Thread.sleep(2000);
+        fn_Click(ViewDetailsSubject1_LK);
+	    Thread.sleep(3000);
+	    fn_ScrollDown500();
+        Thread.sleep(2000);
+        if(SubjectName_Tab.isDisplayed()){
+        	fn_Click(SubjectName_Tab);
+    	    Thread.sleep(2000);
+        Assert.assertTrue(AverageScore_Text.getText().trim().equals("Average score"), "Average Score of selected subject text not correct: Fail");
+	    Thread.sleep(2000);
+	    String avescorepercent=AverageScorePercent_Text.getText().trim();
+	    System.out.println(avescorepercent);
+	    Thread.sleep(2000);
+	    readWriteExcel(82,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewAverageScoreofSelectedSubject","Pass");
+	      }
+	     else{
+	    readWriteExcel(82,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewAverageScoreofSelectedSubject","Fail");
+  	    Thread.sleep(5000);
+           }
+	      }
+	     }
 	
 	
 	
+		public void fn_DisplayPracticeTestDetails() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(StudentIndividualReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(StudentName_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetailsSubject1_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        if(SubjectName_Tab.isDisplayed()){
+	        	fn_Click(SubjectName_Tab);
+	    	    Thread.sleep(2000);
+	    	  if(Assessment1_LK.isDisplayed()){
+		        	fn_Click(Assessment1_LK);
+		    	    Thread.sleep(2000);   
+	    	//    driver.switchTo().
+	    	    
+	    	Assert.assertTrue(WindowHeading_Text.getText().trim().equals("Practice test"), "Practice test text not correct: Fail");
+		    Thread.sleep(2000);
+		    
+		   //Practice test page not coming ........... 
+		   
+		    readWriteExcel(83,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_DisplayPracticeTestDetails","Pass");
+		      }
+		     else{
+		    readWriteExcel(83,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_DisplayPracticeTestDetails","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		     }
+		
+		
+		
+		
+		public void fn_ViewOverallPerformanceandStudentSubmissionStatusReport() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(StudentIndividualReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(StudentName_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetailsSubject1_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        if(SubjectName_Tab.isDisplayed()){
+	        	fn_Click(SubjectName_Tab);
+	    	    Thread.sleep(2000);
+	    	  if(Assessment1_LK.isDisplayed()){
+		        	fn_Click(Assessment1_LK);
+		    	    Thread.sleep(2000);   
+	    	//    driver.switchTo().
+	    	    
+	    	Assert.assertTrue(WindowHeading_Text.getText().trim().equals("Practice test"), "Practice test text not correct: Fail");
+		    Thread.sleep(2000);
+		    
+		   //Arrow is not available so not able to code further......... 
+		   
+		    readWriteExcel(84,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewOverallPerformanceandStudentSubmissionStatusReport","Pass");
+		      }
+		     else{
+		    readWriteExcel(84,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewOverallPerformanceandStudentSubmissionStatusReport","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		     }
+		
+		
+		
+	
+		public void fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(StudentIndividualReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(StudentName_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetailsSubject1_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        if(SubjectName_Tab.isDisplayed()){
+	        	fn_Click(SubjectName_Tab);
+	    	    Thread.sleep(2000);
+	    	  if(Assessment2_LK.isDisplayed()){
+		        	fn_Click(Assessment2_LK);
+		    	    Thread.sleep(2000);
+		    	    
+		    	    String Parent_Window = driver.getWindowHandle();    
+		    	      // Switching from parent window to child window   
+		    	     for (String Child_Window : driver.getWindowHandles())  
+		    	     {  
+		    	     driver.switchTo().window(Child_Window);  
+		    	     // Performing actions on child window 
+		    	     Thread.sleep(2000);
+		    	     ViewQuestionsDetails_LK.click();
+		 //   	     fn_Click(ViewQuestionsDetails_LK);
+			    	    Thread.sleep(2000); 
+			    	    fn_Click(CancelWindow_Icon);
+			    	    Thread.sleep(2000);  
+		    	     }  
+		    	     //Switching back to Parent Window  
+		    	     driver.switchTo().window(Parent_Window);  
+	    	   readWriteExcel(85,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport","Pass");
+		      }
+		     else{
+		    readWriteExcel(85,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		     }
+		
 	
 	
 	
