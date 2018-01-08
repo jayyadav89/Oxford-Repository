@@ -1,13 +1,16 @@
 package com.oxford.dashboard.pkg;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.oxford.generic.pkg.Generic_Methods;
 
 public class Reports_Methods extends Generic_Methods{
@@ -309,6 +312,57 @@ public class Reports_Methods extends Generic_Methods{
 	
 	@FindBy(xpath = "//button[@class='cancel']")
 	public WebElement Cancel_btn;
+	
+	
+	@FindBy(id = "ancMarkSheet")
+	public WebElement MarkSheet_LK;
+	
+	@FindBy(xpath = "//div[@id='CPH_divHeader']/table/tbody/tr[53]/td[2]/a")
+	public WebElement View_LK;
+	
+	@FindBy(id= "popup_ok")
+	public WebElement Ok_BT;
+	
+	@FindBy(id= "popup_message")
+	public WebElement Popup_TX;
+	
+	@FindBy(id= "ContentPlaceHolder1_lblTotlsnplan")
+	public WebElement TotalLessonPlan_Text;
+	
+	@FindBy(id= "ContentPlaceHolder1_lblCLCount")
+	public WebElement TotalCompleted_Text;
+	
+	@FindBy(id= "ContentPlaceHolder1_lblIPLCount")
+	public WebElement TotalInProgress_Text;
+	
+	@FindBy(id= "ContentPlaceHolder1_lblOLCount")
+	public WebElement TotalOverDue_Text;
+	
+	@FindBy(id= "ContentPlaceHolder1_lblNYPLCount")
+	public WebElement TotalYettoStart_Text;
+	
+	@FindBy(id= "ContentPlaceHolder1_lblNotUsedCount")
+	public WebElement TotalNotYetPlanned_Text;
+	
+	@FindBy(id= "ContentPlaceHolder1_lblExtended")
+	public WebElement TotalExtended_Text;
+	
+	@FindBy(id= "ContentPlaceHolder1_expandAll")
+	public WebElement ExpandAll_LK;
+	
+	@FindBy(id= "ContentPlaceHolder1_ucdivStdPerform_rptLODetails_ancViewUnitDetails_0")
+	public WebElement ViewDetailsSubject_LK;
+	
+	@FindBy(xpath = "//div[@id='dvLessonperformance']/div")
+	public WebElement Lessonwiseperformance_Text;
+	
+	@FindBy(id= "ContentPlaceHolder1_ucdivStdSubPerform_dvExpand")
+	public WebElement ExpandAllSubject_LK;
+
+	@FindBy(xpath = "//div[@class='pull-right w8p']/div")
+	public WebElement Activitywiseperformance_Text;
+	
+	
 	
 	
 	
@@ -1245,8 +1299,560 @@ public class Reports_Methods extends Generic_Methods{
 		
 	
 	
+		public void fn_ViewMarkSheetofSelectedStudent() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(MarkSheet_LK);
+		    Thread.sleep(3000);
+		    fn_Click(View_LK);
+		    Thread.sleep(3000);
+		    
+		    try{
+		    WindowHandling();
+		    Thread.sleep(2000);
+		    fn_Click(Reports_Lk);
+	        Thread.sleep(3000);
+	 	    readWriteExcel(86,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewMarkSheetofSelectedStudent","Pass");
+			 }
+			catch(NoAlertPresentException  ex){
+				
+				if(Popup_TX.isDisplayed()){
+		 	    	Assert.assertTrue(Popup_TX.getText().trim().equals("No records found for the Term Test"));
+					Thread.sleep(2000);
+					 fn_Click(Ok_BT);
+					 Thread.sleep(2000);
+					 readWriteExcel(87,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PrintMarkSheet","No records found: Pass");
+		           }
+				   }
+		    catch(NoSuchElementException e){
+		    	readWriteExcel(86,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewMarkSheetofSelectedStudent","Fail");
+		  	    Thread.sleep(5000);
+		           }
+		    }
+		    
+		    
+		      }
+			
+			
+		
+		
+		
+		public void fn_PrintMarkSheet() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(MarkSheet_LK);
+		    Thread.sleep(3000);
+		    fn_Click(View_LK);
+		    Thread.sleep(3000);
+		    try{
+			    WindowHandling();
+			    Thread.sleep(2000);
+			    fn_Click(Reports_Lk);
+		        Thread.sleep(3000);
+		 	    readWriteExcel(87,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PrintMarkSheet","Pass");
+				 }
+				catch(NoAlertPresentException  ex){
+					
+					if(Popup_TX.isDisplayed()){
+			 	    	Assert.assertTrue(Popup_TX.getText().trim().equals("No records found for the Term Test"));
+						Thread.sleep(2000);
+						 fn_Click(Ok_BT);
+						 Thread.sleep(2000);
+						 readWriteExcel(87,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PrintMarkSheet","No records found: Pass");
+			           }
+					   }
+			    catch(NoSuchElementException e){
+			    	readWriteExcel(87,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PrintMarkSheet","Fail");
+			  	    Thread.sleep(5000);
+			           }
+			         }
+		             }
+		
+		
+		
+		public void fn_ViewLessonwiseoverview() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(TrackingReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(LearningReport_LK);
+		    Thread.sleep(3000);
+		    String lessonplan=TotalLessonPlan_Text.getText().trim();
+		    System.out.println("Total Lesson Plan is: " +lessonplan);
+		    Thread.sleep(2000);
+		    String completed=TotalCompleted_Text.getText().trim();
+		    System.out.println("No. of completed: " +completed);
+		    Thread.sleep(2000);
+		    String InProgress=TotalInProgress_Text.getText().trim();
+		    System.out.println("No. of In Progress: " +InProgress);
+		    Thread.sleep(2000);
+		    String Overdue=TotalOverDue_Text.getText().trim();
+		    System.out.println("No. of Overdue: " +Overdue);
+		    Thread.sleep(2000);
+		    String yettostart=TotalYettoStart_Text.getText().trim();
+		    System.out.println("No. of Yet to Start: " +yettostart);
+		    Thread.sleep(2000);
+		    String notyetplanned=TotalNotYetPlanned_Text.getText().trim();
+		    System.out.println("No. of Not yet Planned: " +notyetplanned);
+		    Thread.sleep(2000);
+		    String extended=TotalExtended_Text.getText().trim();
+		    System.out.println("No. of Extended: " +extended);
+		    Thread.sleep(2000);
+		    readWriteExcel(88,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewLessonwiseoverview","Pass");
+		      }
+		     else{
+		    readWriteExcel(88,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewLessonwiseoverview","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     
+		
+		
+		public void fn_ViewChapterwiseandLessonwiseperformance() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(TrackingReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(LearningReport_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetail1_LK);
+		    Thread.sleep(3000);
+	        Assert.assertTrue(AveragePerformanceofSubject_Text.getText().trim().equals("Average performance of the subject"), "Average Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avesubper=AveragePerformanceofSubjectPercent_Text.getText().trim();
+		    System.out.println(avesubper);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(ChapterwisePerformance_Text.getText().trim().equals("Chapterwise performance"), "Chapterwise Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        if(AveragePerformanceofChapter_Text.isDisplayed()){
+	        Assert.assertTrue(AveragePerformanceofChapter_Text.getText().trim().equals("Average performance of a chapter"), "Average Performance of Chapter text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avechapper=AveragePerformanceofChapterPercent_Text.getText().trim();
+		    System.out.println(avechapper);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(LessonwisePerformance_Text.getText().trim().equals("Lessonwise performance"), "Lessonwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    readWriteExcel(89,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewChapterwiseandLessonwiseperformance","Pass");
+		      }
+		     else{
+		    readWriteExcel(89,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewChapterwiseandLessonwiseperformance","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		
+		
+		
+		public void fn_ViewLessonsandActivitiesThatAreTaggedofRespectivelessons() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(TrackingReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(LearningReport_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetails3_LK);
+		    Thread.sleep(3000);
+	        Assert.assertTrue(AveragePerformanceofSubject_Text.getText().trim().equals("Average performance of the subject"), "Average Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avesubper=AveragePerformanceofSubjectPercent_Text.getText().trim();
+		    System.out.println(avesubper);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(ChapterwisePerformance_Text.getText().trim().equals("Chapterwise performance"), "Chapterwise Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        Assert.assertTrue(AveragePerformanceofChapter_Text.getText().trim().equals("Average performance of a chapter"), "Average Performance of Chapter text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avechapper=AveragePerformanceofChapterPercent_Text.getText().trim();
+		    System.out.println(avechapper);
+		    Thread.sleep(2000);
+	        Assert.assertTrue(LessonwisePerformance_Text.getText().trim().equals("Lessonwise performance"), "Lessonwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		   if(LessonPlanName_LK.isDisplayed()){
+	        	fn_Click(ExpandAll_LK);
+	    	    Thread.sleep(2000);
+	    	    
+	         if(ActivityName_LK.isDisplayed()){
+	    	    readWriteExcel(90,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewLessonsandActivitiesThatAreTaggedofRespectivelessons","Pass");
+		      }
+		     else{
+		    readWriteExcel(90,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewLessonsandActivitiesThatAreTaggedofRespectivelessons","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		     }
+		
+		
+		
+		
+		public void fn_ViewTheAverageofThelesson() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(TrackingReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(LearningReport_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetail1_LK);
+		    Thread.sleep(3000);
+	        Assert.assertTrue(AveragePerformanceofSubject_Text.getText().trim().equals("Average performance of the subject"), "Average Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avesubper=AveragePerformanceofSubjectPercent_Text.getText().trim();
+		    System.out.println(avesubper);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(ChapterwisePerformance_Text.getText().trim().equals("Chapterwise performance"), "Chapterwise Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        
+	        if(LessonPlanName_LK.isDisplayed()){
+	        	fn_Click(LessonPlanName_LK);
+	    	    Thread.sleep(2000);
+	        	
+	        Assert.assertTrue(AverageperformanceofLessonPlan_Text.getText().trim().equals("Average performance of a lesson plan"), "Average performance of Lesson Plan text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avelessonper=AverageperformanceofLessonPlanPercent_Text.getText().trim();
+		    System.out.println(avelessonper);
+		    Thread.sleep(2000);
+            readWriteExcel(91,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewTheAverageofThelesson","Pass");
+		      }
+		     else{
+		    readWriteExcel(91,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewTheAverageofThelesson","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		
+		
+		public void fn_ViewDetailsAboutSubmissionofparticularActivityBystudent() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(TrackingReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(LearningReport_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetails3_LK);
+		    Thread.sleep(3000);
+	        Assert.assertTrue(AveragePerformanceofSubject_Text.getText().trim().equals("Average performance of the subject"), "Average Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avesubper=AveragePerformanceofSubjectPercent_Text.getText().trim();
+		    System.out.println(avesubper);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(ChapterwisePerformance_Text.getText().trim().equals("Chapterwise performance"), "Chapterwise Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        Assert.assertTrue(AveragePerformanceofChapter_Text.getText().trim().equals("Average performance of a chapter"), "Average Performance of Chapter text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avechapper=AveragePerformanceofChapterPercent_Text.getText().trim();
+		    System.out.println(avechapper);
+		    Thread.sleep(2000);
+	        Assert.assertTrue(LessonwisePerformance_Text.getText().trim().equals("Lessonwise performance"), "Lessonwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		   if(LessonPlanName_LK.isDisplayed()){
+	        	fn_Click(LessonPlanName_LK);
+	    	    Thread.sleep(2000);
+	    	    Assert.assertTrue(AverageperformanceofLessonPlan_Text.getText().trim().equals("Average performance of a lesson plan"), "Average performance of Lesson Plan text not correct: Fail");
+	    	    Thread.sleep(2000);
+	    	    String avelessplanpper=AverageperformanceofLessonPlanPercent_Text.getText().trim();
+	    	    System.out.println(avelessplanpper);
+	    	    Thread.sleep(2000);
+	         if(ActivityName_LK.isDisplayed()){
+	    	fn_Click(ActivityName_LK);
+		    Thread.sleep(2000);
+	        String avelearning=AvePerformofLearningResourcePercent_Text.getText().trim();
+		    System.out.println(avelearning);
+		    Thread.sleep(2000);
+		    
+		    readWriteExcel(92,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewDetailsAboutSubmissionofparticularActivityBystudent","Pass");
+		      }
+		     else{
+		    readWriteExcel(92,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewDetailsAboutSubmissionofparticularActivityBystudent","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		     }
+		
+		
+		
+		public void fn_ViewOverallPerformanceAndSubjectWisePerformance() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(TrackingReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(LearningReport_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetails3_LK);
+		    Thread.sleep(3000);
+	        Assert.assertTrue(AveragePerformanceofSubject_Text.getText().trim().equals("Average performance of the subject"), "Average Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avesubper=AveragePerformanceofSubjectPercent_Text.getText().trim();
+		    System.out.println(avesubper);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(ChapterwisePerformance_Text.getText().trim().equals("Chapterwise performance"), "Chapterwise Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        Assert.assertTrue(AveragePerformanceofChapter_Text.getText().trim().equals("Average performance of a chapter"), "Average Performance of Chapter text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avechapper=AveragePerformanceofChapterPercent_Text.getText().trim();
+		    System.out.println(avechapper);
+		    Thread.sleep(2000);
+	        Assert.assertTrue(LessonwisePerformance_Text.getText().trim().equals("Lessonwise performance"), "Lessonwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		   if(LessonPlanName_LK.isDisplayed()){
+	        	fn_Click(LessonPlanName_LK);
+	    	    Thread.sleep(2000);
+	    	    Assert.assertTrue(AverageperformanceofLessonPlan_Text.getText().trim().equals("Average performance of a lesson plan"), "Average performance of Lesson Plan text not correct: Fail");
+	    	    Thread.sleep(2000);
+	    	    String avelessplanpper=AverageperformanceofLessonPlanPercent_Text.getText().trim();
+	    	    System.out.println(avelessplanpper);
+	    	    Thread.sleep(2000);
+	         if(ActivityName_LK.isDisplayed()){
+	    	fn_Click(ActivityName_LK);
+		    Thread.sleep(2000);
+	        String avelearning=AvePerformofLearningResourcePercent_Text.getText().trim();
+		    System.out.println(avelearning);
+		    Thread.sleep(2000);
+		    fn_Click(ViewStudent1Details_LK);
+		    Thread.sleep(3000);
+		    Assert.assertTrue(OverallPerformanceLearning_Text.getText().trim().equals("Overall performance"), "Overall Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avescore=AveScorePercent_Text.getText().trim();
+		    System.out.println(avescore);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(SubjectwisePerformanceLearning_Text.getText().trim().equals("Subjectwise Performance"), "Subjectwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    readWriteExcel(93,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewOverallPerformanceAndSubjectWisePerformance","Pass");
+		      }
+		     else{
+		    readWriteExcel(93,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewOverallPerformanceAndSubjectWisePerformance","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		     }
+		
+		
+		
+		public void fn_ViewLessonwisePerformancebytheStudent() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(TrackingReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(LearningReport_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetails3_LK);
+		    Thread.sleep(3000);
+	        Assert.assertTrue(AveragePerformanceofSubject_Text.getText().trim().equals("Average performance of the subject"), "Average Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avesubper=AveragePerformanceofSubjectPercent_Text.getText().trim();
+		    System.out.println(avesubper);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(ChapterwisePerformance_Text.getText().trim().equals("Chapterwise performance"), "Chapterwise Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        Assert.assertTrue(AveragePerformanceofChapter_Text.getText().trim().equals("Average performance of a chapter"), "Average Performance of Chapter text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avechapper=AveragePerformanceofChapterPercent_Text.getText().trim();
+		    System.out.println(avechapper);
+		    Thread.sleep(2000);
+	        Assert.assertTrue(LessonwisePerformance_Text.getText().trim().equals("Lessonwise performance"), "Lessonwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		   if(LessonPlanName_LK.isDisplayed()){
+	        	fn_Click(LessonPlanName_LK);
+	    	    Thread.sleep(2000);
+	    	    Assert.assertTrue(AverageperformanceofLessonPlan_Text.getText().trim().equals("Average performance of a lesson plan"), "Average performance of Lesson Plan text not correct: Fail");
+	    	    Thread.sleep(2000);
+	    	    String avelessplanpper=AverageperformanceofLessonPlanPercent_Text.getText().trim();
+	    	    System.out.println(avelessplanpper);
+	    	    Thread.sleep(2000);
+	         if(ActivityName_LK.isDisplayed()){
+	    	fn_Click(ActivityName_LK);
+		    Thread.sleep(2000);
+	        String avelearning=AvePerformofLearningResourcePercent_Text.getText().trim();
+		    System.out.println(avelearning);
+		    Thread.sleep(2000);
+		    fn_Click(ViewStudent1Details_LK);
+		    Thread.sleep(3000);
+		    Assert.assertTrue(OverallPerformanceLearning_Text.getText().trim().equals("Overall performance"), "Overall Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avescore=AveScorePercent_Text.getText().trim();
+		    System.out.println(avescore);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(SubjectwisePerformanceLearning_Text.getText().trim().equals("Subjectwise Performance"), "Subjectwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_Click(ViewDetailsSubject_LK);
+		    Thread.sleep(3000);
+		    Assert.assertTrue(Lessonwiseperformance_Text.getText().trim().equals("Lessonwise performance"), "Lessonwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avelesson=AveragePerformanceofChapterPercent_Text.getText().trim();
+		    System.out.println("Average lessonwise score :" +avelesson);
+		    Thread.sleep(2000);
+		    readWriteExcel(94,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewLessonwisePerformancebytheStudent","Pass");
+		      }
+		     else{
+		    readWriteExcel(94,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewLessonwisePerformancebytheStudent","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		     }
+		
+		
+		public void fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson() throws InterruptedException, IOException{
+		    Thread.sleep(2000);
+			if(Reports_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(Reports_Lk);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Menu_Icon);
+		    Thread.sleep(3000);
+		    fn_Click(TrackingReport_LK);
+		    Thread.sleep(3000);
+		    fn_Click(LearningReport_LK);
+		    Thread.sleep(3000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        fn_Click(ViewDetails3_LK);
+		    Thread.sleep(3000);
+	        Assert.assertTrue(AveragePerformanceofSubject_Text.getText().trim().equals("Average performance of the subject"), "Average Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avesubper=AveragePerformanceofSubjectPercent_Text.getText().trim();
+		    System.out.println(avesubper);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(ChapterwisePerformance_Text.getText().trim().equals("Chapterwise performance"), "Chapterwise Performance of Subject text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_ScrollDown500();
+	        Thread.sleep(2000);
+	        Assert.assertTrue(AveragePerformanceofChapter_Text.getText().trim().equals("Average performance of a chapter"), "Average Performance of Chapter text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avechapper=AveragePerformanceofChapterPercent_Text.getText().trim();
+		    System.out.println(avechapper);
+		    Thread.sleep(2000);
+	        Assert.assertTrue(LessonwisePerformance_Text.getText().trim().equals("Lessonwise performance"), "Lessonwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		   if(LessonPlanName_LK.isDisplayed()){
+	        	fn_Click(LessonPlanName_LK);
+	    	    Thread.sleep(2000);
+	    	    Assert.assertTrue(AverageperformanceofLessonPlan_Text.getText().trim().equals("Average performance of a lesson plan"), "Average performance of Lesson Plan text not correct: Fail");
+	    	    Thread.sleep(2000);
+	    	    String avelessplanpper=AverageperformanceofLessonPlanPercent_Text.getText().trim();
+	    	    System.out.println(avelessplanpper);
+	    	    Thread.sleep(2000);
+	         if(ActivityName_LK.isDisplayed()){
+	    	fn_Click(ActivityName_LK);
+		    Thread.sleep(2000);
+	        String avelearning=AvePerformofLearningResourcePercent_Text.getText().trim();
+		    System.out.println(avelearning);
+		    Thread.sleep(2000);
+		    fn_Click(ViewStudent1Details_LK);
+		    Thread.sleep(3000);
+		    Assert.assertTrue(OverallPerformanceLearning_Text.getText().trim().equals("Overall performance"), "Overall Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    String avescore=AveScorePercent_Text.getText().trim();
+		    System.out.println(avescore);
+		    Thread.sleep(2000);
+		    Assert.assertTrue(SubjectwisePerformanceLearning_Text.getText().trim().equals("Subjectwise Performance"), "Subjectwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_Click(ViewDetailsSubject_LK);
+		    Thread.sleep(3000);
+		    Assert.assertTrue(Lessonwiseperformance_Text.getText().trim().equals("Lessonwise performance"), "Lessonwise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    fn_Click(ExpandAllSubject_LK);
+		    Thread.sleep(3000);
+		    Assert.assertTrue(Activitywiseperformance_Text.getText().trim().equals("Activitywise performance"), "Activitywise Performance text not correct: Fail");
+		    Thread.sleep(2000);
+		    readWriteExcel(95,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson","Pass");
+		      }
+		     else{
+		    readWriteExcel(95,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson","Fail");
+	  	    Thread.sleep(5000);
+	           }
+		      }
+		     }
+		     }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
-	
+		
 
 }

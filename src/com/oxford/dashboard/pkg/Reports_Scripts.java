@@ -141,7 +141,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	//learning report are not available now
-	@Test(priority=6,enabled=false)
+//	@Test(priority=6,enabled=false)
 	public void fn_LandingSectionwiseLearningReports() throws IOException, InterruptedException{
 		logger=report.startTest("fn_LandingSectionwiseLearningReports");
 		try{
@@ -346,7 +346,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	//Practice test page not coming so can not execute
-	@Test(priority=20,enabled=false)
+//	@Test(priority=20,enabled=false)
 	public void fn_DisplayPracticeTestDetails() throws IOException, InterruptedException{
 		logger=report.startTest("fn_DisplayPracticeTestDetails");
 		try{
@@ -361,7 +361,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	//Arrow is not available so can not execute
-	@Test(priority=21,enabled=false)
+//	@Test(priority=21,enabled=false)
 	public void fn_ViewOverallPerformanceandStudentSubmissionStatusReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewOverallPerformanceandStudentSubmissionStatusReport");
 		try{
@@ -375,8 +375,8 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	
-	@Test(priority=22,enabled=true)
+	//to switch on window popup....
+//	@Test(priority=22,enabled=false)
 	public void fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport");
 		try{
@@ -388,6 +388,158 @@ public class Reports_Scripts extends Generic_Methods{
 			logger.log(LogStatus.INFO, "View The Question Answer Choice student Answer and right Report method not executed successfully: Fail");
 			}
 	       }
+	
+	
+	
+	@Test(priority=23,enabled=false)
+	public void fn_ViewMarkSheetofSelectedStudent() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewMarkSheetofSelectedStudent");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewMarkSheetofSelectedStudent();
+			logger.log(LogStatus.INFO, "View MarkSheet of Selected Student method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View MarkSheet of Selected Student method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	//print btn not available.......so do not run
+//	@Test(priority=24,enabled=false)
+	public void fn_PrintMarkSheet() throws IOException, InterruptedException{
+		logger=report.startTest("fn_PrintMarkSheet");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_PrintMarkSheet();
+			logger.log(LogStatus.INFO, "Print MarkSheet of Selected Student method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "Print MarkSheet of Selected Student method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	
+	@Test(priority=25,enabled=false)
+	public void fn_ViewLessonwiseoverview() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewLessonwiseoverview");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewLessonwiseoverview();
+			logger.log(LogStatus.INFO, "View Lessonwise overview method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Lessonwise overview method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	@Test(priority=26,enabled=false)
+	public void fn_ViewChapterwiseandLessonwiseperformance() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewChapterwiseandLessonwiseperformance");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewChapterwiseandLessonwiseperformance();
+			logger.log(LogStatus.INFO, "View Chapterwise and Lessonwise performance method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Chapterwise and Lessonwise performance method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	
+	@Test(priority=27,enabled=false)
+	public void fn_ViewLessonsandActivitiesThatAreTaggedofRespectivelessons() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewLessonsandActivitiesThatAreTaggedofRespectivelessons");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewLessonsandActivitiesThatAreTaggedofRespectivelessons();
+			logger.log(LogStatus.INFO, "View Lessons and Activities that are tagged of respective lessons method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Lessons and Activities that are tagged of respective lessons method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	@Test(priority=28,enabled=false)
+	public void fn_ViewTheAverageofThelesson() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewTheAverageofThelesson");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewTheAverageofThelesson();
+			logger.log(LogStatus.INFO, "View the average of the lesson method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View the average of the lesson method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	@Test(priority=29,enabled=false)
+	public void fn_ViewDetailsAboutSubmissionofparticularActivityBystudent() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewDetailsAboutSubmissionofparticularActivityBystudent");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewDetailsAboutSubmissionofparticularActivityBystudent();
+			logger.log(LogStatus.INFO, "View Details About Submission of particular Activity By student method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Details About Submission of particular Activity By student method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	@Test(priority=30,enabled=false)
+	public void fn_ViewOverallPerformanceAndSubjectWisePerformance() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewOverallPerformanceAndSubjectWisePerformance");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewOverallPerformanceAndSubjectWisePerformance();
+			logger.log(LogStatus.INFO, "View Overall Performance And Subjectwise Performance method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Overall Performance And Subjectwise Performance method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	@Test(priority=31,enabled=true)
+	public void fn_ViewLessonwisePerformancebytheStudent() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewLessonwisePerformancebytheStudent");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewLessonwisePerformancebytheStudent();
+			logger.log(LogStatus.INFO, "View Lessonwise Performance by the student method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Lessonwise Performance by the student method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	
+	
+	@Test(priority=32,enabled=true)
+	public void fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson() throws IOException, InterruptedException{
+		logger=report.startTest("fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson");
+		try{
+			Reports_Methods reports=PageFactory.initElements(driver, Reports_Methods.class);
+			reports.fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson();
+			logger.log(LogStatus.INFO, "View Activitywise Performance of the Student of Particular lesson method executed successfully");
+		}
+		catch(FileNotFoundException e){
+			logger.log(LogStatus.INFO, "View Activitywise Performance of the Student of Particular lesson method not executed successfully: Fail");
+			}
+	       }
+	
+	
+	
+	
+	
+	
 	
 	
 	
