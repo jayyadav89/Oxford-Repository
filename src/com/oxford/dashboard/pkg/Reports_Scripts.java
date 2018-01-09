@@ -522,7 +522,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=32,enabled=true)
+	@Test(priority=32,enabled=false)
 	public void fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson");
 		try{

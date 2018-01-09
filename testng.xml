@@ -10,7 +10,12 @@
 <!--            <class name="com.oxford.dashboard.pkg.Bookmark_Script"/> -->
 <!--            <class name="com.oxford.dashboard.pkg.MyClass_Script"/> -->
 <!--            <class name="com.oxford.dashboard.pkg.Notificatios_Script"/> -->
-                <class name="com.oxford.dashboard.pkg.Reports_Scripts"/>
+<!--            <class name="com.oxford.dashboard.pkg.Reports_Scripts"/> -->
+                <class name="com.oxford.subject.pkg.LessonPlans_Scripts"/>
+                
+                
+                
+                
    		</classes>
   	 
   	 </test> 

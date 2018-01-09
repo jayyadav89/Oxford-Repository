@@ -365,9 +365,6 @@ public class Reports_Methods extends Generic_Methods{
 	
 	
 	
-	
-	
-	
 	public void fn_NavigateReportPage() throws InterruptedException, IOException{
 	    Thread.sleep(2000);
 		if(Reports_Lk.isDisplayed()){
