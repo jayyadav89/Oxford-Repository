@@ -321,6 +321,14 @@ import org.testng.Assert;
 			   }
 		   
 		   
+		    
+		    
+		   public  static void fn_DragandDrop(WebElement drag,WebElement drop){
+		    Actions act=new Actions(driver);
+		    act.dragAndDrop(drag, drop).build().perform();
+		      }  
+		    
+		    		    
 		   
 		   
 //		   public  static void verifyUrl(String ExpColumnName, int rowNumber) throws IOException{
