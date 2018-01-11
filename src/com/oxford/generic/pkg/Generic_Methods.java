@@ -229,11 +229,21 @@ import org.testng.Assert;
 		   	
 		   
 		           
-		   	public static void fn_mouseOver(WebElement ElementToMouseOver){
+		   	public static void fn_mouseClick(WebElement ElementToMouseOver){
 		   		WebDriverWait wait = new WebDriverWait(driver, 30);
 			     wait.until(ExpectedConditions.visibilityOf(ElementToMouseOver));
 		   		   new Actions(driver).moveToElement(ElementToMouseOver).click().build().perform();
 		   		}
+		   	
+		   	
+		   	
+		   	public static void fn_mouseOver(WebElement ElementToMouseOver){
+		   		WebDriverWait wait = new WebDriverWait(driver, 30);
+			     wait.until(ExpectedConditions.visibilityOf(ElementToMouseOver));
+		   		   new Actions(driver).moveToElement(ElementToMouseOver).build().perform();
+		   		}
+		   	
+		   	
 		   	
 		   	
 		   	
