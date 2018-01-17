@@ -12,9 +12,9 @@
 <!--            <class name="com.oxford.dashboard.pkg.Notificatios_Script"/> -->
 <!--            <class name="com.oxford.dashboard.pkg.Reports_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.LessonPlans_Scripts"/> -->
-                <class name="com.oxford.subject.pkg.LearningResource_Scripts"/>
-                
-                
+<!--            <class name="com.oxford.subject.pkg.LearningResource_Scripts"/> -->
+<!--            <class name="com.oxford.subject.pkg.QuestionBank_Scripts"/> -->
+                <class name="com.oxford.subject.pkg.Test_Scripts"/>
                 
    		</classes>
   	 
