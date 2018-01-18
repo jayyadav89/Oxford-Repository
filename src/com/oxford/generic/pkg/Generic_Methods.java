@@ -151,9 +151,9 @@ import org.testng.Assert;
 			      }
 		   
 		   
-		   public static void fn_ScrollUp100() throws IOException  {
+		   public static void fn_ScrollUp250() throws IOException  {
 				 JavascriptExecutor scroll = (JavascriptExecutor)driver;
-			      scroll.executeScript("window.scrollBy(0,-100)", "");
+			      scroll.executeScript("window.scrollBy(0,-250)", "");
 			
 			      } 
 		   
@@ -177,6 +177,11 @@ import org.testng.Assert;
 			
 			      }
 		   
+		    public static void fn_ScrollUP1500() throws IOException  {
+				 JavascriptExecutor scroll = (JavascriptExecutor)driver;
+			      scroll.executeScript("window.scrollBy(0,-1500)", "");
+			
+			      }
 		   
 		    public static void TakesScreenShot() throws IOException{ 
 			     File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
