@@ -150,6 +150,11 @@ import org.testng.Assert;
 			
 			      }
 		   
+		   public static void fn_ScrollDown250() throws IOException  {
+				 JavascriptExecutor scroll = (JavascriptExecutor)driver;
+			      scroll.executeScript("window.scrollBy(0,250)", "");
+			
+			      }
 		   
 		   public static void fn_ScrollUp250() throws IOException  {
 				 JavascriptExecutor scroll = (JavascriptExecutor)driver;

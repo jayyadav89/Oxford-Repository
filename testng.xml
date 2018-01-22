@@ -14,7 +14,8 @@
 <!--            <class name="com.oxford.subject.pkg.LessonPlans_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.LearningResource_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.QuestionBank_Scripts"/> -->
-                <class name="com.oxford.subject.pkg.Test_Scripts"/>
+<!--            <class name="com.oxford.subject.pkg.Test_Scripts"/> -->
+                <class name="com.oxford.calendar.pkg.Calendar_Scripts"/>
                 
    		</classes>
   	 
