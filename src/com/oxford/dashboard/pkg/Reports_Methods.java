@@ -313,7 +313,6 @@ public class Reports_Methods extends Generic_Methods{
 	@FindBy(xpath = "//button[@class='cancel']")
 	public WebElement Cancel_btn;
 	
-	
 	@FindBy(id = "ancMarkSheet")
 	public WebElement MarkSheet_LK;
 	

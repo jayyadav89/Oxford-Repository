@@ -61,9 +61,7 @@ public class Bookmark_Method extends Generic_Methods {
  	    Thread.sleep(3000);
  	    fn_SelectbyIndex(ClassSubject_DD,1);
  	    Thread.sleep(2000);
- 	    
- 	    
-	    readWriteExcel(31,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewBookmarkedresources","Pass");
+ 	    readWriteExcel(31,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewBookmarkedresources","Pass");
 	      }
 	     else{
   	    	readWriteExcel(31,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewBookmarkedresources","Fail");
