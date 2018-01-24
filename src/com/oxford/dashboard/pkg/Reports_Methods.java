@@ -277,6 +277,9 @@ public class Reports_Methods extends Generic_Methods{
 	@FindBy(id = "ancStudentReport")
 	public WebElement StudentIndividualReport_LK;
 	
+	@FindBy(id = "ddlYear")
+	public WebElement Year_DD;
+	
 	@FindBy(xpath = "//div[@id='CPHBody_rptStudentAsset_dvPreview_0']/div[2]/div/span[2]")
 	public WebElement StudentName_LK;
 	
@@ -394,6 +397,8 @@ public class Reports_Methods extends Generic_Methods{
 	    Thread.sleep(3000);
 	    fn_Click(SectionwiseReport_LK);
 	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
+	    Thread.sleep(3000);
 	    fn_SelectbyIndex(ClassSubject_DD,0);
 	    Thread.sleep(2000);
 	    fn_SelectbyIndex(ReportType_DD,0);
@@ -423,6 +428,8 @@ public class Reports_Methods extends Generic_Methods{
  	    fn_Click(Menu_Icon);
 	    Thread.sleep(3000);
 	    fn_Click(SectionwiseReport_LK);
+	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
 	    Thread.sleep(3000);
 	    fn_SelectbyIndex(ClassSubject_DD,0);
 	    Thread.sleep(2000);
@@ -463,6 +470,8 @@ public class Reports_Methods extends Generic_Methods{
  	    fn_Click(Menu_Icon);
 	    Thread.sleep(3000);
 	    fn_Click(SectionwiseReport_LK);
+	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
 	    Thread.sleep(3000);
 	    fn_SelectbyIndex(ClassSubject_DD,0);
 	    Thread.sleep(2000);
@@ -507,6 +516,8 @@ public class Reports_Methods extends Generic_Methods{
  	    fn_Click(Menu_Icon);
 	    Thread.sleep(3000);
 	    fn_Click(SectionwiseReport_LK);
+	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
 	    Thread.sleep(3000);
 	    fn_SelectbyIndex(ClassSubject_DD,0);
 	    Thread.sleep(2000);
@@ -564,6 +575,8 @@ public class Reports_Methods extends Generic_Methods{
 	    Thread.sleep(3000);
 	    fn_Click(SectionwiseReport_LK);
 	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
+	    Thread.sleep(3000);
 	    fn_SelectbyIndex(ClassSubject_DD,0);
 	    Thread.sleep(2000);
 	    fn_SelectbyIndex(ReportType_DD,1);
@@ -596,6 +609,8 @@ public class Reports_Methods extends Generic_Methods{
  	    fn_Click(Menu_Icon);
 	    Thread.sleep(3000);
 	    fn_Click(SectionwiseReport_LK);
+	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
 	    Thread.sleep(3000);
 	    fn_SelectbyIndex(ClassSubject_DD,0);
 	    Thread.sleep(2000);
@@ -630,6 +645,8 @@ public class Reports_Methods extends Generic_Methods{
  	    fn_Click(Menu_Icon);
 	    Thread.sleep(3000);
 	    fn_Click(SectionwiseReport_LK);
+	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
 	    Thread.sleep(3000);
 	    fn_SelectbyIndex(ClassSubject_DD,0);
 	    Thread.sleep(2000);
@@ -666,6 +683,8 @@ public class Reports_Methods extends Generic_Methods{
  	    fn_Click(Menu_Icon);
 	    Thread.sleep(3000);
 	    fn_Click(SectionwiseReport_LK);
+	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
 	    Thread.sleep(3000);
 	    fn_SelectbyIndex(ClassSubject_DD,0);
 	    Thread.sleep(2000);
@@ -1094,6 +1113,8 @@ public class Reports_Methods extends Generic_Methods{
 	    Thread.sleep(3000);
 	    fn_Click(StudentIndividualReport_LK);
 	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
+	    Thread.sleep(3000);
 	    fn_Click(StudentName_LK);
 	    Thread.sleep(3000);
 	    Assert.assertTrue(OverallPerformanceStudent_Text.getText().trim().equals("Overall performance"), "Overall Performance of Student text not correct: Fail");
@@ -1127,6 +1148,8 @@ public class Reports_Methods extends Generic_Methods{
  	    fn_Click(Menu_Icon);
 	    Thread.sleep(3000);
 	    fn_Click(StudentIndividualReport_LK);
+	    Thread.sleep(3000);
+	    fn_SelectbyIndex(Year_DD,0);
 	    Thread.sleep(3000);
 	    fn_Click(StudentName_LK);
 	    Thread.sleep(3000);
@@ -1164,6 +1187,8 @@ public class Reports_Methods extends Generic_Methods{
 	 	    fn_Click(Menu_Icon);
 		    Thread.sleep(3000);
 		    fn_Click(StudentIndividualReport_LK);
+		    Thread.sleep(3000);
+		    fn_SelectbyIndex(Year_DD,0);
 		    Thread.sleep(3000);
 		    fn_Click(StudentName_LK);
 		    Thread.sleep(3000);
@@ -1209,6 +1234,8 @@ public class Reports_Methods extends Generic_Methods{
 		    Thread.sleep(3000);
 		    fn_Click(StudentIndividualReport_LK);
 		    Thread.sleep(3000);
+		    fn_SelectbyIndex(Year_DD,0);
+		    Thread.sleep(3000);
 		    fn_Click(StudentName_LK);
 		    Thread.sleep(3000);
 		    fn_ScrollDown500();
@@ -1252,6 +1279,8 @@ public class Reports_Methods extends Generic_Methods{
 	 	    fn_Click(Menu_Icon);
 		    Thread.sleep(3000);
 		    fn_Click(StudentIndividualReport_LK);
+		    Thread.sleep(3000);
+		    fn_SelectbyIndex(Year_DD,0);
 		    Thread.sleep(3000);
 		    fn_Click(StudentName_LK);
 		    Thread.sleep(3000);
@@ -1305,6 +1334,8 @@ public class Reports_Methods extends Generic_Methods{
 		    Thread.sleep(3000);
 		    fn_Click(MarkSheet_LK);
 		    Thread.sleep(3000);
+		    fn_SelectbyIndex(Year_DD,0);
+		    Thread.sleep(3000);
 		    fn_Click(View_LK);
 		    Thread.sleep(3000);
 		    
@@ -1347,6 +1378,8 @@ public class Reports_Methods extends Generic_Methods{
 	 	    fn_Click(Menu_Icon);
 		    Thread.sleep(3000);
 		    fn_Click(MarkSheet_LK);
+		    Thread.sleep(3000);
+		    fn_SelectbyIndex(Year_DD,0);
 		    Thread.sleep(3000);
 		    fn_Click(View_LK);
 		    Thread.sleep(3000);

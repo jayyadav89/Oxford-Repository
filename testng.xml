@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Parallel Test Suite" thread-count="1"  parallel="tests">
+    
+    <listeners>
+        <listener class-name="com.oxford.generic.pkg.RetryListener"/>
+  </listeners>
+    
+    
+    
  	 <test name="Test on Chrome">
          <parameter name="browser" value="chrome" />
          
@@ -10,7 +17,7 @@
 <!--            <class name="com.oxford.dashboard.pkg.Bookmark_Script"/> -->
 <!--            <class name="com.oxford.dashboard.pkg.MyClass_Script"/> -->
 <!--            <class name="com.oxford.dashboard.pkg.Notificatios_Script"/> -->
-<!--            <class name="com.oxford.dashboard.pkg.Reports_Scripts"/> -->
+                <class name="com.oxford.dashboard.pkg.Reports_Scripts"/>
 <!--            <class name="com.oxford.subject.pkg.LessonPlans_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.LearningResource_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.QuestionBank_Scripts"/> -->

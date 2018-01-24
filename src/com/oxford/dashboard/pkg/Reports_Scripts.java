@@ -376,7 +376,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	//to switch on window popup....
-//	@Test(priority=22,enabled=false)
+//	@Test(priority=22,enabled=true)
 	public void fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewTheQuestionAnswerChoicestudentAnswerandrightReport");
 		try{
@@ -506,7 +506,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=31,enabled=true)
+	@Test(priority=31,enabled=false)
 	public void fn_ViewLessonwisePerformancebytheStudent() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewLessonwisePerformancebytheStudent");
 		try{
