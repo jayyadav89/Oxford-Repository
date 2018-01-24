@@ -96,7 +96,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=3,enabled=true)
 	public void fn_ViewSectionwisedetailedreports() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewSectionwisedetailedreports");
 		try{
