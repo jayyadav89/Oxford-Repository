@@ -1,34 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Parallel Test Suite" thread-count="2"  parallel="classes">
+<suite name="Parallel Test Suite" thread-count="1"  parallel="tests">
     
     <listeners>
         <listener class-name="com.oxford.generic.pkg.RetryListener"/>
-  </listeners>
+    </listeners>
     
-    
-    
- 	 <test name="Test on Chrome">
+     <test name="Test on Chrome">
          <parameter name="browser" value="chrome" />
          
         <classes>
-                <class name="com.oxford.login.pkg.Login_Scripts"/> 
+<!--            <class name="com.oxford.login.pkg.Login_Scripts"/>  -->
 <!--            <class name="com.oxford.dashboard.pkg.Dashboard_Script"/> -->
 <!--            <class name="com.oxford.dashboard.pkg.Bookmark_Script"/> -->
-<!--            <class name="com.oxford.dashboard.pkg.MyClass_Script"/> -->
+              <class name="com.oxford.dashboard.pkg.MyClass_Script"/>
 <!--            <class name="com.oxford.dashboard.pkg.Notificatios_Script"/> -->
-                <class name="com.oxford.dashboard.pkg.Reports_Scripts"/>
+<!--            <class name="com.oxford.dashboard.pkg.Reports_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.LessonPlans_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.LearningResource_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.QuestionBank_Scripts"/> -->
 <!--            <class name="com.oxford.subject.pkg.Test_Scripts"/> -->
 <!--            <class name="com.oxford.calendar.pkg.Calendar_Scripts"/> -->
-                <class name="com.oxford.dashboard.pkg.MarksEntry_Scripts"/>
-   		</classes>
-  	 
+<!--            <class name="com.oxford.dashboard.pkg.MarksEntry_Scripts"/> -->
+   		
+   		 </classes>
   	 </test> 
   
   
+<!--       <test name="Test on firefox"> -->
+<!--          <parameter name="browser" value="Firefox" /> -->
+         
+<!--         <classes> -->
+<!--            <class name="com.oxford.login.pkg.Login_Scripts"/>  -->
+<!--            <class name="com.oxford.dashboard.pkg.Dashboard_Script"/> -->
+<!--            <class name="com.oxford.dashboard.pkg.Bookmark_Script"/> -->
+<!--            <class name="com.oxford.dashboard.pkg.MyClass_Script"/> -->
+<!--            <class name="com.oxford.dashboard.pkg.Notificatios_Script"/> -->
+<!--            <class name="com.oxford.dashboard.pkg.Reports_Scripts"/> -->
+<!--            <class name="com.oxford.subject.pkg.LessonPlans_Scripts"/> -->
+<!--            <class name="com.oxford.subject.pkg.LearningResource_Scripts"/> -->
+<!--            <class name="com.oxford.subject.pkg.QuestionBank_Scripts"/> -->
+<!--            <class name="com.oxford.subject.pkg.Test_Scripts"/> -->
+<!--            <class name="com.oxford.calendar.pkg.Calendar_Scripts"/> -->
+<!--            <class name="com.oxford.dashboard.pkg.MarksEntry_Scripts"/> -->
+   		
+<!--    		 </classes> -->
+  	 
+<!--   	 </test>  -->
+     
+     
+     
+     
+     
+     
 
 
 

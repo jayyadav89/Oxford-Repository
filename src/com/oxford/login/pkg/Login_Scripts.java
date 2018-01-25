@@ -64,7 +64,7 @@ public class Login_Scripts extends Generic_Methods {
          }
 	
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void fn_SignInLandingPage() throws IOException{
 		logger=report.startTest("fn_SignInLandingPage");
 		try{
@@ -80,7 +80,7 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
 	
-	@Test(priority=1,enabled=false)
+	@Test(priority=1,enabled=true)
      public void fn_ValidLogin() throws InterruptedException, IOException{
 		logger=report.startTest("fn_ValidLogin");
 		try{
@@ -105,7 +105,7 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
 	
-	@Test(priority=2,enabled=false)
+	@Test(priority=2,enabled=true)
 	public void fn_InvalidLogin() throws InterruptedException, IOException{
 		logger=report.startTest("fn_InValidLogin");
 		try{
@@ -122,7 +122,7 @@ public class Login_Scripts extends Generic_Methods {
 	}
 	
 	
-    @Test(priority=3,enabled=false)
+    @Test(priority=3,enabled=true)
 	public void fn_CaseSensitivitylogin() throws InterruptedException, IOException{
 		logger=report.startTest("fn_CaseSensitivitylogin");
 		try{
@@ -140,7 +140,7 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
     
-    @Test(priority=4,enabled=false)
+    @Test(priority=4,enabled=true)
 	public void fn_InValidLoginNameAndValidPass() throws InterruptedException, IOException{
 		logger=report.startTest("fn_InValidLoginNameAndValidPass");
 		try{
@@ -158,7 +158,7 @@ public class Login_Scripts extends Generic_Methods {
     
     
     
-    @Test(priority=5,enabled=false)
+    @Test(priority=5,enabled=true)
 	public void fn_ValidLoginNameAndInvalidPass() throws InterruptedException, IOException{
 		logger=report.startTest("fn_ValidLoginNameAndInvalidPass");
 		try{
@@ -176,7 +176,7 @@ public class Login_Scripts extends Generic_Methods {
     
 	
     
-    @Test(priority=6,enabled=false)
+    @Test(priority=6,enabled=true)
 	public void fn_ProfileDetails() throws InterruptedException, IOException{
 		logger=report.startTest("fn_ProfileDetails");
 		try{
@@ -194,7 +194,7 @@ public class Login_Scripts extends Generic_Methods {
     
     
     
-	 @Test(priority=7,enabled=false)
+	 @Test(priority=7,enabled=true)
 		public void fn_EditProfile() throws InterruptedException, IOException{
 			logger=report.startTest("fn_EditProfile");
 			try{
@@ -213,7 +213,7 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
 	
-	 @Test(priority=8,enabled=false)
+	 @Test(priority=8,enabled=true)
 		public void fn_Validation() throws InterruptedException, IOException{
 			logger=report.startTest("fn_Validation");
 			try{
@@ -231,7 +231,7 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
     
-		@Test(priority=9,enabled=false)
+		@Test(priority=9,enabled=true)
 		public void fn_InvalidEmail() throws InterruptedException, IOException{
 			logger=report.startTest("fn_InvalidEmail");
 			try{
@@ -249,7 +249,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=10,enabled=false)
+		@Test(priority=10,enabled=true)
 		public void fn_InvalidPhone() throws InterruptedException, IOException{
 			logger=report.startTest("fn_InvalidPhone");
 			try{
@@ -267,7 +267,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 	
-		@Test(priority=11,enabled=false)
+		@Test(priority=11,enabled=true)
 		public void fn_InvalidSecurityAns() throws InterruptedException, IOException{
 			logger=report.startTest("fn_InvalidSecurityAns");
 			try{
@@ -285,7 +285,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=12,enabled=false)
+		@Test(priority=12,enabled=true)
 		public void fn_InvalidSecurityDOB() throws InterruptedException, IOException{
 			logger=report.startTest("fn_InvalidSecurityDOB");
 			try{
@@ -304,7 +304,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=13,enabled=false)
+		@Test(priority=13,enabled=true)
 		public void fn_RemoveImg() throws InterruptedException, IOException{
 			logger=report.startTest("fn_RemoveImg");
 			try{
@@ -322,7 +322,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=14,enabled=false)
+		@Test(priority=14,enabled=true)
 		public void fn_CancelProfilePage() throws InterruptedException, IOException{
 			logger=report.startTest("fn_CancelProfilePage");
 			try{
@@ -341,7 +341,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=15,enabled=false)
+		@Test(priority=15,enabled=true)
 		public void fn_ChangePassword() throws InterruptedException, IOException{
 			logger=report.startTest("fn_ChangePassword");
 			try{
@@ -359,7 +359,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=16,enabled=false)
+		@Test(priority=16,enabled=true)
 		public void fn_ChangeCurrentPassword() throws InterruptedException, IOException{
 			logger=report.startTest("fn_ChangeCurrentPassword");
 			try{
@@ -377,7 +377,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=17, enabled=false)
+		@Test(priority=17, enabled=true)
 		public void fn_ValidationPassword() throws InterruptedException, IOException{
 			logger=report.startTest("fn_ValidationPassword");
 			try{
@@ -395,7 +395,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=18,enabled=false)
+		@Test(priority=18,enabled=true)
 		public void fn_CancelChangePassword() throws InterruptedException, IOException{
 			logger=report.startTest("fn_CancelChangePassword");
 			try{
@@ -413,7 +413,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=19,enabled=false)
+		@Test(priority=19,enabled=true)
 		public void fn_ForgotPassword() throws InterruptedException, IOException{
 			logger=report.startTest("fn_ForgotPassword");
 			try{
@@ -431,7 +431,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=20,enabled=false)
+		@Test(priority=20,enabled=true)
 		public void fn_ValidationForgotPassFields() throws InterruptedException, IOException{
 			logger=report.startTest("fn_ValidationForgotPassFields");
 			try{
@@ -449,7 +449,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=21,enabled=false)
+		@Test(priority=21,enabled=true)
 		public void fn_InvalidValidationForgotPassFields() throws InterruptedException, IOException{
 			logger=report.startTest("fn_InvalidValidationForgotPassFields");
 			try{
@@ -466,7 +466,7 @@ public class Login_Scripts extends Generic_Methods {
 		      }	
 		
 		
-		@Test(priority=22,enabled=false)
+		@Test(priority=22,enabled=true)
 		public void fn_SignOut() throws InterruptedException, IOException{
 			logger=report.startTest("fn_SignOut");
 			try{

@@ -125,7 +125,7 @@ import org.testng.Assert;
 			select.selectByIndex(index);
 		  }
 		  
-		  
+		   
 		  
 		   public static void fn_Input(WebElement ElementToInput, String value){
 			   ElementToInput.sendKeys(value);
@@ -748,12 +748,12 @@ import org.testng.Assert;
 		            XSSFSheet sh=wb.getSheet(Sheetname);
 		            int row=sh.getLastRowNum();
 		            
-		            System.out.println(row);
+		//            System.out.println(row);
 		  //          int noOfColumns =row.getLastCellNum();
-		            for(int i=0; i<row-1; i++){
+		            for(int i=0; i<row-5; i++){
 		            	XSSFRow rownum=sh.getRow(i);
 		            	for(int j=0; j<rownum.getLastCellNum(); j++){
-		            		String cellval=rownum.getCell(j).getStringCellValue();
+		            		String cellval=rownum.getCell(3).getStringCellValue();
 		            		if(cellval.equalsIgnoreCase(Testname)){
 		            			 FileOutputStream fos=new FileOutputStream(filepath);
 		            			 rownum.createCell(10).setCellValue(statusvalue);  //working
@@ -776,7 +776,7 @@ import org.testng.Assert;
 	    
 	    
 	    
-	    public void readWriteExcel2(String testname,String filepath,String Sheetname,String statusvalue) throws  IOException {
+	    public void readWriteExcel2(String filepath,String Sheetname,String testname,String statusvalue) throws  IOException {
 			//	String FilePath = "D:\\sampledoc.xls";
 				try
 		        {
@@ -788,11 +788,13 @@ import org.testng.Assert;
 		            
 		            
 		          int lastrownum =sh.getLastRowNum();
-		          
+		          //System.out.println(lastrownum);
 		          for(int i=0; i<=lastrownum-1; i++){
 		        	  XSSFRow row=sh.getRow(i);
-		        	 XSSFCell cell1=row.getCell(0);
+		        	 XSSFCell cell1=row.getCell(3);
 		        	String cellval=cell1.getStringCellValue();
+		        	
+		       // 	System.out.println(cellval);
 		          if(cellval.equals(testname)){
 		        		FileOutputStream fos=new FileOutputStream(filepath);
 			        	 row.createCell(10).setCellValue(statusvalue);  //working

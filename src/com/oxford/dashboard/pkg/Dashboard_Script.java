@@ -54,7 +54,7 @@ public class Dashboard_Script extends Generic_Methods {
 	
 	
 	
-	@Test(priority=23,enabled=false)
+	@Test(priority=1,enabled=true)
 	public void fn_HeaderDashboard() throws IOException, InterruptedException{
 		logger=report.startTest("fn_HeaderDashboard");
 		try{
@@ -69,7 +69,7 @@ public class Dashboard_Script extends Generic_Methods {
 	
 	
 	
-	@Test(priority=24,enabled=true)
+	@Test(priority=2,enabled=true)
 	public void fn_FooterDashboard() throws IOException, InterruptedException{
 		logger=report.startTest("fn_FooterDashboard");
 		try{
@@ -83,7 +83,7 @@ public class Dashboard_Script extends Generic_Methods {
 	     }
 	
 	
-	@Test(priority=25,enabled=false)
+	@Test(priority=3,enabled=true)
 	public void fn_VisibilitySubjectandCalendar() throws IOException, InterruptedException{
 		logger=report.startTest("fn_VisibilitySubjectandCalendar");
 		try{

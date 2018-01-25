@@ -67,7 +67,7 @@ public class Bookmark_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=1,enabled=false)
+	@Test(priority=1,enabled=true)
 	public void fn_ViewBookmarkedresources() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewBookmarkedresources");
 		try{

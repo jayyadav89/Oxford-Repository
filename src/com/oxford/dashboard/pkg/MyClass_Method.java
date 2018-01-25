@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.testng.Assert;
 
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.oxford.generic.pkg.Generic_Methods;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -76,7 +77,8 @@ public class MyClass_Method extends Generic_Methods{
 	@FindBy(id = "iTestUser")
 	public WebElement User_Iframe;
 	
-	
+	@FindBy(id = "CPH_ImageButton1")
+	public WebElement Closepoup_Icon;
 	
 	@FindBy(id = "repUsers_ChkItem_0")
 	public WebElement User1_CB;
@@ -134,11 +136,12 @@ public class MyClass_Method extends Generic_Methods{
 	 	    Thread.sleep(2000);
 //	 	   logger.log(LogStatus.INFO, "Students detail are present: Passed"); 
 	 	  if(Student_CB.isDisplayed()){
-	 	     readWriteExcel(37,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewStudentsDetail","Pass");
-		      }
+	// 	     readWriteExcel(37,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewStudentsDetail","Pass");
+	 		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ViewStudentsDetail","Pass");
+	 	  }
 		     else{
-//		    	 logger.log(LogStatus.INFO, "Students detail are not present: Passed");
-	  	    	readWriteExcel(37,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewStudentsDetail","Fail");
+		    	 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ViewStudentsDetail","Fail");
+	//  	    	readWriteExcel(37,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewStudentsDetail","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }
@@ -163,12 +166,12 @@ public class MyClass_Method extends Generic_Methods{
 	 		 Thread.sleep(2000);
 	 		 fn_Click(WelcomeLetter_Icon1);
 	 		 Thread.sleep(2000);
-	 		 
-	 		 readWriteExcel(38,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_WlcmLtrToAnAdmission","Pass");
+	 		readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_WlcmLtrToAnAdmission","Pass"); 
+//	 		 readWriteExcel(38,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_WlcmLtrToAnAdmission","Pass");
 		      }
 		     else{
-//		    	 logger.log(LogStatus.INFO, "Students detail are not present: Passed");
-	  	    	readWriteExcel(38,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_WlcmLtrToAnAdmission","Fail");
+		    	 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_WlcmLtrToAnAdmission","Fail"); 
+//	  	    	readWriteExcel(38,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_WlcmLtrToAnAdmission","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }
@@ -320,6 +323,94 @@ public class MyClass_Method extends Generic_Methods{
 		           }
 		      }
 	         }
+	
+	
+	
+	
+	
+	
+	public void fn_CreateNewGroup1() throws InterruptedException, IOException{
+		//	fn_Login();
+		    Properties obj = new Properties();   
+  	        FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
+  	        obj.load(objfile);
+			Thread.sleep(2000);
+			if(MyClass_Lk.isDisplayed()){
+	 	    Thread.sleep(2000);
+	 	    fn_Click(MyClass_Lk);
+	 	    Thread.sleep(2000);
+	 	    fn_Click(ManageGrp_LK);
+	 	    Thread.sleep(3000);
+	 	    fn_Click(Create_LK);
+	 	    Thread.sleep(3000);
+	 	    fn_Input(GroupName_TB,obj.getProperty("GroupName"));
+	 	    Thread.sleep(2000);
+	 	    fn_SelectbyIndex(Class_DD,0);
+	 	    Thread.sleep(2000);
+	 	    fn_SelectbyIndex(Section_DD,0);
+	 	    Thread.sleep(2000);
+	 	    fn_Input(Desc_TB,obj.getProperty("GroupDesc"));
+	 	    Thread.sleep(2000);
+	 	    fn_Click(AddRemove_LK);
+	 	    Thread.sleep(3000);
+	 	    driver.switchTo().frame(User_Iframe);
+	 	   
+	 	    try{
+	//		if(User1_CB.isDisplayed()){	    
+	 	    fn_Click(User1_CB);
+	 	    fn_Click(User2_CB);
+	 	    Thread.sleep(2000);
+	 	    fn_Click(AddRemove_BT);
+	 	    Thread.sleep(3000);
+	 	   Assert.assertTrue(Popup_TX.getText().trim().equals("Students updated to group successfully"));
+			Thread.sleep(2000);
+			 fn_Click(Ok_BT);
+			 Thread.sleep(3000);
+			 fn_Click(SelectAll_CB);
+			 Thread.sleep(2000);
+			 fn_Click(Save_BT);
+			 Thread.sleep(3000);
+//	 	   if(Popup_TX.isDisplayed()){
+		 	    	Assert.assertTrue(Popup_TX.getText().trim().equals("Group created successfully"));
+					Thread.sleep(2000);
+					 fn_Click(Ok_BT);
+					 Thread.sleep(2000);
+		 	    	readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Pass");
+			      }
+			     catch(ElementNotFoundException e){
+			    	 fn_Click(AddRemove_BT);
+				 	 Thread.sleep(3000);
+				 	 Assert.assertTrue(Popup_TX.getText().trim().equals("Atleast select any one user."));
+				     Thread.sleep(2000); 
+					 fn_Click(Ok_BT);
+					 Thread.sleep(2000);
+			    	 driver.switchTo().parentFrame();
+			    	 Thread.sleep(2000); 
+					 fn_Click(Closepoup_Icon);
+					 Thread.sleep(2000);
+			    	 fn_Click(Save_BT);
+					 Thread.sleep(3000);
+                     Assert.assertTrue(Popup_TX.getText().trim().equals("Group created successfully"));
+					 Thread.sleep(2000);
+					 fn_Click(Ok_BT);
+					 Thread.sleep(2000);
+			    	 readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Group created without students: Pass");
+		  	    	Thread.sleep(5000);
+		           }
+			    }
+			
+			else{
+	  	    	readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Fail");
+	  	    	Thread.sleep(5000);
+		      }
+	         
+	         }
+	
+	
+	
+	
+	
+	
 	
 	
 	

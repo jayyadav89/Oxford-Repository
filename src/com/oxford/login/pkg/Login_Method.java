@@ -177,11 +177,12 @@ public class Login_Method extends Generic_Methods {
   	  String actualtext=SignIn_TX.getText();
   	  System.out.println(actualtext);
   	  if(actualtext.equalsIgnoreCase(obj.getProperty("SignInText"))){
-  //		logger.log(LogStatus.INFO, "Sign In text is correct");
+  		
   		readWriteExcel(5,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
+ // 		readWriteExcel1("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
   	  }
   	else{
-  	//	logger.log(LogStatus.INFO, "Sign In text is incorrect");
+ // 		readWriteExcel1("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
   		readWriteExcel(5,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Fail");
   	   }
   	}

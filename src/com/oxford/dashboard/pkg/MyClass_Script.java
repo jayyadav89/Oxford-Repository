@@ -65,7 +65,7 @@ public class MyClass_Script extends Generic_Methods {
 	
 	
 	
-	@Test(priority=1,enabled=false)
+	@Test(priority=1,enabled=true)
 	public void fn_ViewStudentsDetail() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewStudentsDetail");
 		try{
@@ -137,7 +137,7 @@ public class MyClass_Script extends Generic_Methods {
 	     }
 	
 	
-	
+// currently no students are available in select users section...	
 	@Test(priority=6,enabled=false)
 	public void fn_CreateNewGroup() throws IOException, InterruptedException{
 		logger=report.startTest("fn_CreateNewGroup");
@@ -209,7 +209,7 @@ public class MyClass_Script extends Generic_Methods {
 	     }
 	
 	
-	@Test(priority=11,enabled=true)
+	@Test(priority=11,enabled=false)
 	public void fn_DeleteGroup() throws IOException, InterruptedException{
 		logger=report.startTest("fn_DeleteGroup");
 		try{
