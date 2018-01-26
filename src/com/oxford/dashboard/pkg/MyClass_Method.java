@@ -198,12 +198,12 @@ public class MyClass_Method extends Generic_Methods{
 	 		 Thread.sleep(2000);
 	 		 fn_Click(WelcomeLetter_Lk);
 	 		 Thread.sleep(2000);
-	 		 
-	 		 readWriteExcel(39,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_WlcmLtrMorethanOneAdmission","Pass");
+	 		readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_WlcmLtrMorethanOneAdmission","Pass"); 
+//	 		 readWriteExcel(39,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_WlcmLtrMorethanOneAdmission","Pass");
 		      }
 		     else{
-//		    	 logger.log(LogStatus.INFO, "Students detail are not present: Passed");
-	  	    	readWriteExcel(39,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_WlcmLtrMorethanOneAdmission","Fail");
+		    	 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_WlcmLtrMorethanOneAdmission","Fail"); 
+	  	//    	readWriteExcel(39,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_WlcmLtrMorethanOneAdmission","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }
@@ -226,12 +226,13 @@ public class MyClass_Method extends Generic_Methods{
 	 	    Thread.sleep(2000);
            if(TempPassword1_Text.isDisplayed()){
 	 		 Thread.sleep(2000);
-	 		readWriteExcel(40,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_TempPassword","Pass");
+	 		readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_TempPassword","Pass"); 
+	// 		readWriteExcel(40,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_TempPassword","Pass");
 		      }
-		     else{
-//		    	 logger.log(LogStatus.INFO, "Students detail are not present: Passed");
-	  	    	readWriteExcel(40,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_TempPassword","Fail");
-	  	    	Thread.sleep(5000);
+		   else{
+		    readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_TempPassword","Fail"); 
+	//  	readWriteExcel(40,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_TempPassword","Fail");
+	  	    Thread.sleep(5000);
 	           }
 		      }
 	         }
@@ -259,11 +260,12 @@ public class MyClass_Method extends Generic_Methods{
 	 	    Thread.sleep(2000);
            if(GroupName_Label.getText().trim().contains(obj.getProperty("GroupName"))){
 	 		 Thread.sleep(2000);
-	 		readWriteExcel(41,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewDetailsofGroup","Pass");
+	 		readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ViewDetailsofGroup","Pass");
+	// 		readWriteExcel(41,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewDetailsofGroup","Pass");
 		      }
 		     else{
-//		    	 logger.log(LogStatus.INFO, "Students detail are not present: Passed");
-	  	    	readWriteExcel(41,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewDetailsofGroup","Fail");
+		    	 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ViewDetailsofGroup","Fail");
+//	  	    	readWriteExcel(41,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewDetailsofGroup","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }
@@ -315,10 +317,12 @@ public class MyClass_Method extends Generic_Methods{
 					Thread.sleep(2000);
 					 fn_Click(Ok_BT);
 					 Thread.sleep(2000);
-		 	    	readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Pass");
+					readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CreateNewGroup","Pass");
+	//	 	    	readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Pass");
 			      }
 			     else{
-		  	    	readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Fail");
+			    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CreateNewGroup","Fail");
+	//	  	    	readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Fail");
 		  	    	Thread.sleep(5000);
 		           }
 		      }
@@ -394,17 +398,15 @@ public class MyClass_Method extends Generic_Methods{
 					 Thread.sleep(2000);
 					 fn_Click(Ok_BT);
 					 Thread.sleep(2000);
-			    	 readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Group created without students: Pass");
+				     readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CreateNewGroup","Pass");
+					//readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Pass");
+			      }}
+			     else{
+			    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CreateNewGroup","Fail");
+	//	  	    	readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Fail");
 		  	    	Thread.sleep(5000);
 		           }
-			    }
-			
-			else{
-	  	    	readWriteExcel(42,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CreateNewGroup","Fail");
-	  	    	Thread.sleep(5000);
-		      }
-	         
-	         }
+	               }
 	
 	
 	
@@ -431,15 +433,17 @@ public class MyClass_Method extends Generic_Methods{
 	 	    fn_Click(Save_BT);
 			 Thread.sleep(3000);
 	 	   if(Popup_TX.isDisplayed()){
-		 	    	Assert.assertTrue(Popup_TX.getText().trim().equals("Enter group name"));
-					Thread.sleep(2000);
-					 fn_Click(Ok_BT);
-					 Thread.sleep(2000);
-		 	    	readWriteExcel(43,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationGrpNameField","Pass");
+ 	    	Assert.assertTrue(Popup_TX.getText().trim().equals("Enter group name"));
+			Thread.sleep(2000);
+			 fn_Click(Ok_BT);
+			 Thread.sleep(2000);
+			 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ValidationGrpNameField","Pass");
+ //	    	 readWriteExcel(43,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationGrpNameField","Pass");
 			      }
-			     else{
-		  	    	readWriteExcel(43,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationGrpNameField","Fail");
-		  	    	Thread.sleep(5000);
+		   else{
+		     readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ValidationGrpNameField","Fail");
+	//	  	 readWriteExcel(43,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationGrpNameField","Fail");
+		  	   Thread.sleep(5000);
 		           }
 		      }
 	         }
@@ -463,13 +467,15 @@ public class MyClass_Method extends Generic_Methods{
 	 	    fn_Click(Cancel_BT);
 			 Thread.sleep(3000);
 	 	   if(ManageGroup_Label.isDisplayed()){
-		 	    	Assert.assertTrue(ManageGroup_Label.getText().trim().equalsIgnoreCase("Manage groups"));
-					Thread.sleep(2000);
-					 readWriteExcel(44,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelCreateGrpPage","Pass");
+ 	    	Assert.assertTrue(ManageGroup_Label.getText().trim().equalsIgnoreCase("Manage groups"));
+			Thread.sleep(2000);
+			readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CancelCreateGrpPage","Pass");
+//			readWriteExcel(44,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelCreateGrpPage","Pass");
 			      }
-			     else{
-		  	    	readWriteExcel(44,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelCreateGrpPage","Fail");
-		  	    	Thread.sleep(5000);
+		     else{
+		    	 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CancelCreateGrpPage","Fail");
+  //	    	 readWriteExcel(44,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelCreateGrpPage","Fail");
+	  	    	Thread.sleep(5000);
 		           }
 		          }
 	             }
@@ -521,11 +527,13 @@ public class MyClass_Method extends Generic_Methods{
 				 	Thread.sleep(2000);
 			       if(GroupName_Label.getText().trim().contains(obj.getProperty("GroupName"))){
 				 	Thread.sleep(2000);
-				    readWriteExcel(45,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditGroup","Pass");
+				 	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_EditGroup","Pass");
+//				    readWriteExcel(45,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditGroup","Pass");
 					      }	 
 					    }
 			     else{
-		  	    	readWriteExcel(45,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditGroup","Fail");
+			    	 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_EditGroup","Fail");
+//		  	    	readWriteExcel(45,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditGroup","Fail");
 		  	    	Thread.sleep(5000);
 		           }
 		          }
@@ -551,12 +559,14 @@ public class MyClass_Method extends Generic_Methods{
 	 	    fn_Click(Cancel_BT);
 			 Thread.sleep(3000);
 	 	   if(ManageGroup_Label.isDisplayed()){
-		 	    	Assert.assertTrue(ManageGroup_Label.getText().trim().equalsIgnoreCase("Manage groups"));
-					Thread.sleep(2000);
-					 readWriteExcel(46,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelEditGrpPage","Pass");
+	 	    	Assert.assertTrue(ManageGroup_Label.getText().trim().equalsIgnoreCase("Manage groups"));
+				Thread.sleep(2000);
+				readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CancelEditGrpPage","Pass");
+//					readWriteExcel(46,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelEditGrpPage","Pass");
 			      }
 			     else{
-		  	    	readWriteExcel(46,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelEditGrpPage","Fail");
+			    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CancelEditGrpPage","Fail");
+//		  	    	readWriteExcel(46,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelEditGrpPage","Fail");
 		  	    	Thread.sleep(5000);
 		           }
 		          }
@@ -594,10 +604,12 @@ public class MyClass_Method extends Generic_Methods{
 				 int totalgrpafter=TotalGroups_LK.size();
 				 	  System.out.println(totalgrpafter);
 				 	 if(totalgrpbefore>totalgrpafter){
-					readWriteExcel(47,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_DeleteGroup","Pass");
+				 	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_DeleteGroup","Pass");	 
+//					readWriteExcel(47,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_DeleteGroup","Pass");
 			      }
 			     else{
-		  	    	readWriteExcel(47,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_DeleteGroup","Fail");
+			    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_DeleteGroup","Fail");
+//		  	    	readWriteExcel(47,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_DeleteGroup","Fail");
 		  	    	Thread.sleep(5000);
 		           }
 		          }

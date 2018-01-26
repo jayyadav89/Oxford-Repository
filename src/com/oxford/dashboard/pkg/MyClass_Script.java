@@ -80,7 +80,7 @@ public class MyClass_Script extends Generic_Methods {
 	
 	
 	
-	@Test(priority=2,enabled=false)
+	@Test(priority=2,enabled=true)
 	public void fn_WlcmLtrToAnAdmission() throws IOException, InterruptedException{
 		logger=report.startTest("fn_WlcmLtrToAnAdmission");
 		try{

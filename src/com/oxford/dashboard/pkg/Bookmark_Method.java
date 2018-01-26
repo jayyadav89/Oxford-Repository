@@ -61,10 +61,12 @@ public class Bookmark_Method extends Generic_Methods {
  	    Thread.sleep(3000);
  	    fn_SelectbyIndex(ClassSubject_DD,1);
  	    Thread.sleep(2000);
- 	    readWriteExcel(31,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewBookmarkedresources","Pass");
+ 	    readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ViewBookmarkedresources","Pass"); 
+// 	    readWriteExcel(31,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewBookmarkedresources","Pass");
 	      }
 	     else{
-  	    	readWriteExcel(31,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewBookmarkedresources","Fail");
+	    	 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ViewBookmarkedresources","Fail"); 
+//  	    	readWriteExcel(31,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ViewBookmarkedresources","Fail");
   	    	Thread.sleep(5000);
            }
 	      }
@@ -83,12 +85,13 @@ public class Bookmark_Method extends Generic_Methods {
 	 	    fn_Input(search_TB,"test");
 	 	    fn_Click(Search_BT);
 	 	    Thread.sleep(2000);
-	 	    
 	 	    if(Searched_Text.getText().trim().contains("test")){
-	 	    	readWriteExcel(32,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SearchBookmark","Pass");
+	 	    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_SearchBookmark","Pass"); 
+//	 	    	readWriteExcel(32,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SearchBookmark","Pass");
 		      }
 		     else{
-	  	    	readWriteExcel(32,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SearchBookmark","Fail");
+		    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_SearchBookmark","Fail"); 
+//	  	    	readWriteExcel(32,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SearchBookmark","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }
@@ -109,10 +112,12 @@ public class Bookmark_Method extends Generic_Methods {
 		 	    Thread.sleep(2000);
 		 	   fn_Click(Close_Icon);
 		 	    Thread.sleep(2000);
-	 	    	readWriteExcel(33,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PlayBookmarkedOneByOne","Pass");
+		 	   readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_PlayBookmarkedOneByOne","Pass");
+//	 	    	readWriteExcel(33,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PlayBookmarkedOneByOne","Pass");
 		      }
 		     else{
-	  	    	readWriteExcel(33,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PlayBookmarkedOneByOne","Fail");
+		    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_PlayBookmarkedOneByOne","Fail");
+//	  	    	readWriteExcel(33,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PlayBookmarkedOneByOne","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }
@@ -135,10 +140,12 @@ public class Bookmark_Method extends Generic_Methods {
 		 	    Thread.sleep(2000);
 		 	    fn_Click(Close_Icon);
 		 	    Thread.sleep(2000);
-	 	    	readWriteExcel(34,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_IndividualBookmarked","Pass");
+		 	    readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_IndividualBookmarked","Pass");
+//	 	    	readWriteExcel(34,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_IndividualBookmarked","Pass");
 		      }
 		     else{
-	  	    	readWriteExcel(34,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_IndividualBookmarked","Fail");
+		    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_IndividualBookmarked","Fail");
+//	  	    	readWriteExcel(34,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_IndividualBookmarked","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }
@@ -159,10 +166,12 @@ public class Bookmark_Method extends Generic_Methods {
 		 	    Thread.sleep(2000);
 		 	    WindowHandling();
 		 	    Thread.sleep(2000);
-	 	    	readWriteExcel(35,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PreviewContent","Pass");
+		 	    readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_PreviewContent","Pass");
+//	 	    	readWriteExcel(35,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PreviewContent","Pass");
 		      }
 		     else{
-	  	    	readWriteExcel(35,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PreviewContent","Fail");
+		    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_PreviewContent","Fail");
+//	  	    	readWriteExcel(35,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_PreviewContent","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }
@@ -186,10 +195,12 @@ public class Bookmark_Method extends Generic_Methods {
 				Thread.sleep(2000);
 				 fn_Click(Ok_BT);
 				 Thread.sleep(2000);
-	 	    	readWriteExcel(36,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveBookmarked","Pass");
+				readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_RemoveBookmarked","Pass");
+//	 	    	readWriteExcel(36,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveBookmarked","Pass");
 		      }
 		     else{
-	  	    	readWriteExcel(36,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveBookmarked","Fail");
+		    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_RemoveBookmarked","Fail");
+//	  	    	readWriteExcel(36,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveBookmarked","Fail");
 	  	    	Thread.sleep(5000);
 	           }
 		      }

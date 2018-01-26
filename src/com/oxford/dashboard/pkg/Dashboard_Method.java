@@ -117,11 +117,12 @@ public class Dashboard_Method extends Generic_Methods {
 	     Assert.assertTrue(MarksEntry_Lk.getText().equals("Marks Entry"), "Marks Entry link does not match:  Fail");
 	     Thread.sleep(2000);
 	     Assert.assertTrue(Profile_Img.isDisplayed(), "Profile image is not available");
-	    
-	     readWriteExcel(28,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_HeaderDashboard","Pass");
+	     readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_HeaderDashboard","Pass"); 
+//	     readWriteExcel(28,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_HeaderDashboard","Pass");
 	      }
 	     else{
-  	    	readWriteExcel(28,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_HeaderDashboard","Fail");
+	    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_HeaderDashboard","Fail"); 
+//  	    	readWriteExcel(28,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_HeaderDashboard","Fail");
   	    	Thread.sleep(5000);
            }
 	      }
@@ -179,10 +180,12 @@ public class Dashboard_Method extends Generic_Methods {
  	    Thread.sleep(2000);
         fn_mouseOver(ServerDate_Icon);
         Thread.sleep(2000);
-	    readWriteExcel(29,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_FooterDashboard","Pass");
+        readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_FooterDashboard","Pass");
+//	    readWriteExcel(29,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_FooterDashboard","Pass");
 	      }
 	     else{
-  	    	readWriteExcel(29,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_FooterDashboard","Fail");
+	    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_FooterDashboard","Fail");
+//  	    readWriteExcel(29,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_FooterDashboard","Fail");
   	    	Thread.sleep(5000);
            }
 	      }
@@ -198,10 +201,12 @@ public class Dashboard_Method extends Generic_Methods {
         Thread.sleep(2000);
         Assert.assertTrue(Calendar_Text.getText().trim().equals("Calendar"), "Calendar text does not match:  Fail");
         Thread.sleep(2000);
-        readWriteExcel(30,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_VisibilitySubjectandCalendar","Pass");
+        readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_VisibilitySubjectandCalendar","Pass");
+//        readWriteExcel(30,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_VisibilitySubjectandCalendar","Pass");
 	      }
 	     else{
-  	    	readWriteExcel(30,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_VisibilitySubjectandCalendar","Fail");
+	    	 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_VisibilitySubjectandCalendar","Pass");
+ // 	     readWriteExcel(30,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_VisibilitySubjectandCalendar","Fail");
   	    	Thread.sleep(5000);
            }
 	      }
