@@ -177,13 +177,13 @@ public class Login_Method extends Generic_Methods {
   	  String actualtext=SignIn_TX.getText();
   	  System.out.println(actualtext);
   	  if(actualtext.equalsIgnoreCase(obj.getProperty("SignInText"))){
-  		
-  		readWriteExcel(5,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
+  		readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_SignInLandingPage","Pass"); 
+ // 		readWriteExcel(5,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
  // 		readWriteExcel1("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
   	  }
   	else{
- // 		readWriteExcel1("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
-  		readWriteExcel(5,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Fail");
+  		readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_SignInLandingPage","Fail"); 
+//  		readWriteExcel(5,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Fail");
   	   }
   	}
 	
@@ -215,12 +215,13 @@ public class Login_Method extends Generic_Methods {
 	    //   System.out.println(alertmsg);
 	       if(alertmsg.equals(obj.getProperty("LoginAlertMessage"))){
 	        fn_Click(AlertOk_BT);
-	        readWriteExcel(7,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InValidLogin","Pass");
+	        readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InValidLogin","Pass"); 
+//	        readWriteExcel(7,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InValidLogin","Pass");
 	        
 	       }
 	       else{
-	    	  	//	logger.log(LogStatus.INFO, "Sign In text is incorrect");
-	    	  		readWriteExcel(7,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InValidLogin","Fail");
+	    	   readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InValidLogin","Fail"); 
+//	    	  		readWriteExcel(7,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InValidLogin","Fail");
 	    	  	   }
 	  	  }
 	
@@ -241,12 +242,12 @@ public class Login_Method extends Generic_Methods {
 	    	   Thread.sleep(3000);
 	        fn_Click(AlertOk_BT);
 	        Thread.sleep(3000);
-	        readWriteExcel(8,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CaseSensitivitylogin","Pass");
-	//        logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+//	        readWriteExcel(8,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CaseSensitivitylogin","Pass");
+	        readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CaseSensitivitylogin","Pass");
 	       }
 	       else{
-	    	  //		logger.log(LogStatus.INFO, "Alert is not coming" +  ": Failed");
-	    	  readWriteExcel(8,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CaseSensitivitylogin","Fail");
+	    	   readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CaseSensitivitylogin","Fail");
+//	    	  readWriteExcel(8,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CaseSensitivitylogin","Fail");
 	    	  	   }
 	  	  }
 	
@@ -267,11 +268,13 @@ public class Login_Method extends Generic_Methods {
 	    	   Thread.sleep(3000);
 	        fn_Click(AlertOk_BT);
 	        Thread.sleep(3000);
-	        readWriteExcel(9,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InValidLoginNameAndValidPass","Pass");
+	        readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InValidLoginNameAndValidPass","Pass");
+//	        readWriteExcel(9,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InValidLoginNameAndValidPass","Pass");
 	      
 	       }
 	       else{
-	    	  readWriteExcel(9,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InValidLoginNameAndValidPass","Fail");
+	    	  readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InValidLoginNameAndValidPass","Fail");
+//	    	  readWriteExcel(9,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InValidLoginNameAndValidPass","Fail");
 	    	  Thread.sleep(3000);
 	    	  fn_Click(AlertOk_BT);  
 	       }
@@ -294,11 +297,12 @@ public class Login_Method extends Generic_Methods {
     	   Thread.sleep(3000);
         fn_Click(AlertOk_BT);
         Thread.sleep(3000);
-        readWriteExcel(10,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidLoginNameAndInvalidPass","Pass");
-      
-       }
+         readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ValidLoginNameAndInvalidPass","Pass");
+//        readWriteExcel(10,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidLoginNameAndInvalidPass","Pass");
+         }
        else{
-    	  readWriteExcel(10,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidLoginNameAndInvalidPass","Fail");
+    	  readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ValidLoginNameAndInvalidPass","Fail");
+//    	  readWriteExcel(10,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidLoginNameAndInvalidPass","Fail");
     	  Thread.sleep(3000);
     	  fn_Click(AlertOk_BT);  
        }
@@ -326,14 +330,15 @@ public class Login_Method extends Generic_Methods {
 	     Assert.assertTrue(Classes_Label.getText().trim().equals("Classes:"), "Classes label Does not match:  Fail");
 		 Assert.assertTrue(Subjects_Label.isDisplayed(), "Subjects label is not available");
 	     Assert.assertTrue(Subjects_Label.getText().trim().equals("Subjects:"), "Subjects label Does not match:  Fail");
-	     
-	     readWriteExcel(11,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ProfileDetails","Pass");
+	     readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ProfileDetails","Pass");
+//	     readWriteExcel(11,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ProfileDetails","Pass");
 //	     readWriteExcel2("fn_ProfileDetails","D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","Pass");
   	      driver.navigate().refresh();
   	    }
 	     
   	    else{
-  	    	readWriteExcel(11,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ProfileDetails","Fail");
+  	    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ProfileDetails","Fail");
+//  	    	readWriteExcel(11,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ProfileDetails","Fail");
   	    	driver.navigate().refresh();
   //	    	readWriteExcel2("fn_ProfileDetails","D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","Fail");
   	    }
@@ -379,7 +384,8 @@ public class Login_Method extends Generic_Methods {
 	  	  fn_Click(Update_BT);
 	  	  Thread.sleep(3000);
 	  	Assert.assertTrue(PopUp_Text.getText().equals("Profile updated successfully"), "Message Does not match:  Fail");
-	  	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Pass");
+	  	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_EditProfile","Pass");
+//	  	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Pass");
 	  	 fn_Click(Ok_BT);
 	  	 
 	  	  Thread.sleep(3000);
@@ -422,7 +428,8 @@ public class Login_Method extends Generic_Methods {
 	  		  	Thread.sleep(5000);
   	       }
   	      else{
-	    	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Fail");
+  	    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_EditProfile","Fail");
+//	    	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Fail");
 	    	Thread.sleep(5000);
   	       }
   	  
@@ -479,12 +486,14 @@ public class Login_Method extends Generic_Methods {
 		 fn_Click(Update_BT);
 		 fn_Click(Ok_BT);
 		 Thread.sleep(5000);
-		 readWriteExcel(13,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_Validation","Pass");
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_Validation","Pass");
+//		 readWriteExcel(13,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_Validation","Pass");
 		 
 		 }
 		 else{
-		    	readWriteExcel(12,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_EditProfile","Fail");
-		    	Thread.sleep(5000);
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_Validation","Fail");
+//		 readWriteExcel(13,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_Validation","Fail");
+		 Thread.sleep(5000);
 		 }
 		       }
 	
@@ -524,12 +533,13 @@ public class Login_Method extends Generic_Methods {
 		 Thread.sleep(2000);
 		 fn_Click(Ok_BT);
 		 Thread.sleep(5000);
-		 readWriteExcel(14,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidEmail","Pass");
-		 
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidEmail","Pass");
+//		 readWriteExcel(14,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidEmail","Pass");
 		 }
 		 else{
-		    	readWriteExcel(14,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidEmail","Fail");
-		    	Thread.sleep(5000);
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidEmail","Fail");
+//		 readWriteExcel(14,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidEmail","Fail");
+		 Thread.sleep(5000);
 		 }
 		 }
   	  }
@@ -566,12 +576,13 @@ public class Login_Method extends Generic_Methods {
 		 Thread.sleep(2000);
 		 fn_Click(Ok_BT);
 		 Thread.sleep(5000);
-		 readWriteExcel(15,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidPhone","Pass");
-		 
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidPhone","Pass");
+//		 readWriteExcel(15,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidPhone","Pass");
 		 }
 		 else{
-		    	readWriteExcel(15,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidPhone","Fail");
-		    	Thread.sleep(5000);
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidPhone","Fail");
+//		 readWriteExcel(15,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidPhone","Fail");
+		 Thread.sleep(5000);
 		 }
 		 }
   	  }
@@ -610,12 +621,13 @@ public class Login_Method extends Generic_Methods {
 		 Thread.sleep(2000);
 		 fn_Click(Ok_BT);
 		 Thread.sleep(5000);
-		 readWriteExcel(16,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityAns","Pass");
-		 
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidSecurityAns","Pass");
+//		 readWriteExcel(16,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityAns","Pass");
 		 }
 		 else{
-		    	readWriteExcel(16,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityAns","Fail");
-		    	Thread.sleep(5000);
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidSecurityAns","Fail");
+//		 readWriteExcel(16,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityAns","Fail");
+		 Thread.sleep(5000);
 		 }
 		 }
   	  }
@@ -655,13 +667,14 @@ public class Login_Method extends Generic_Methods {
 		 Thread.sleep(2000);
 		 fn_Click(Ok_BT);
 		 Thread.sleep(5000);
-		 readWriteExcel(17,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityDOB","Pass");
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidSecurityDOB","Pass");
+//		 readWriteExcel(17,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityDOB","Pass");
 		 
 		 }}
-		 catch(Exception e){
-	//		   fn_Click(Ok_BT);
-		    	readWriteExcel(17,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityDOB","Fail");
-		    	Thread.sleep(5000);
+	catch(Exception e){
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidSecurityDOB","Fail");
+//		 readWriteExcel(17,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidSecurityDOB","Fail");
+		 Thread.sleep(5000);
 		 }
 		 }
   	  }
@@ -681,7 +694,6 @@ public class Login_Method extends Generic_Methods {
 	  	  Thread.sleep(3000);
 		  fn_Click(EditProfile_LK);
 		  Thread.sleep(2000);
-		  
 		 if(RemoveImg_BT.isDisplayed()){
 			  fn_Click(RemoveImg_BT);
 			  Thread.sleep(3000);
@@ -694,11 +706,12 @@ public class Login_Method extends Generic_Methods {
   		  	  Thread.sleep(3000);
   		  	  fn_Click(Ok_BT);
   		  	  Thread.sleep(5000);
-			  readWriteExcel(18,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveImg","Pass");
-				 
-		 }
+  		  	  readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_RemoveImg","Pass");
+//			  readWriteExcel(18,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveImg","Pass");
+			 }
 		 else{
-		    	readWriteExcel(18,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveImg","Fail");
+			    readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_RemoveImg","Fail");
+//		    	readWriteExcel(18,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_RemoveImg","Fail");
 		    	Thread.sleep(5000);
 		 }
 		  
@@ -725,10 +738,12 @@ public class Login_Method extends Generic_Methods {
 	  	  Thread.sleep(3000);
 	if(Class_Label.isDisplayed()){
 		Thread.sleep(5000);
-		readWriteExcel(19,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelProfilePage","Pass");
+		readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CancelProfilePage","Pass");
+//		readWriteExcel(19,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelProfilePage","Pass");
 	  }
 	 else{
-	    	readWriteExcel(19,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelProfilePage","Fail");
+		 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_CancelProfilePage","Fail");
+//	    	readWriteExcel(19,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_CancelProfilePage","Fail");
 	    	Thread.sleep(5000);
 	    }
 	     }
@@ -778,11 +793,13 @@ public class Login_Method extends Generic_Methods {
 		  	  Thread.sleep(3000);
 		  	  fn_Click(Ok_BT);
 			  Thread.sleep(5000);
-			  readWriteExcel(20,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangePassword","Pass");
+			  readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ChangePassword","Pass");
+//			  readWriteExcel(20,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangePassword","Pass");
 		    }
 			 else{
-			    	readWriteExcel(20,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangePassword","Fail");
-			    	Thread.sleep(5000);
+			  readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ChangePassword","Fail");
+//			  readWriteExcel(20,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangePassword","Fail");
+			  Thread.sleep(5000);
 			    }
 			     }
 	  	       }
@@ -805,11 +822,13 @@ public class Login_Method extends Generic_Methods {
 		  if(CurrentPassword_TX.isDisplayed()){
 				Assert.assertFalse(CurrentPassword_TX.isEnabled(),"Current Password is Enabled: Fail");
 				Thread.sleep(5000);
-				readWriteExcel(21,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangeCurrentPassword","Pass");
+				readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ChangeCurrentPassword","Pass");
+//				readWriteExcel(21,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangeCurrentPassword","Pass");
 			    }
 				 else{
-				    	readWriteExcel(21,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangeCurrentPassword","Fail");
-				    	Thread.sleep(5000);
+				readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ChangeCurrentPassword","Fail");
+//				readWriteExcel(21,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ChangeCurrentPassword","Fail");
+				Thread.sleep(5000);
 				    }
 				  }
 	          }
@@ -835,11 +854,13 @@ public class Login_Method extends Generic_Methods {
 				Thread.sleep(2000);
 				 fn_Click(Ok_BT);
 				 Thread.sleep(5000);
-				 readWriteExcel(22,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationPassword","Pass");
-		    }
+				 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ValidationPassword","Pass");
+//				 readWriteExcel(22,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationPassword","Pass");
+		        }
 			 else{
-			    	readWriteExcel(22,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationPassword","Fail");
-			    	Thread.sleep(5000);
+				readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ValidationPassword","Fail");
+//			    readWriteExcel(22,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationPassword","Fail");
+			    Thread.sleep(5000);
 			    }
 		        }
 	          }
@@ -862,11 +883,13 @@ public class Login_Method extends Generic_Methods {
 		  Thread.sleep(3000);
 		  if(Class_Label.isDisplayed()){
 				Thread.sleep(5000);
-				readWriteExcel(23,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fh_CancelChangePassword","Pass");
+				readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fh_CancelChangePassword","Pass");
+//				readWriteExcel(23,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fh_CancelChangePassword","Pass");
 			  }
 			 else{
-			    	readWriteExcel(23,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fh_CancelChangePassword","Fail");
-			    	Thread.sleep(5000);
+				 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fh_CancelChangePassword","Fail");
+//			     readWriteExcel(23,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fh_CancelChangePassword","Fail");
+			     Thread.sleep(5000);
 			    }
 			     }
 			   }
@@ -932,10 +955,12 @@ public class Login_Method extends Generic_Methods {
 			 Thread.sleep(2000);
 			 fn_Login();
 			 Thread.sleep(5000);
-			readWriteExcel(24,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ForgotPassword","Pass");
+			readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ForgotPassword","Pass");
+//			readWriteExcel(24,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ForgotPassword","Pass");
 	  	   }
   	      else{
-	    	readWriteExcel(24,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ForgotPassword","Fail");
+  	    	readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ForgotPassword","Fail");
+//	    	readWriteExcel(24,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ForgotPassword","Fail");
 	    	Thread.sleep(5000);
   	       }
   	      }
@@ -997,11 +1022,13 @@ public class Login_Method extends Generic_Methods {
 				Thread.sleep(2000);
 				fn_Login();
 				Thread.sleep(5000);
-				readWriteExcel(25,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationForgotPassFields","Pass");
+				readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ValidationForgotPassFields","Pass");
+//				readWriteExcel(25,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationForgotPassFields","Pass");
 		    }
 			 else{
-			    	readWriteExcel(25,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationForgotPassFields","Fail");
-			    	Thread.sleep(5000);
+			    readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_ValidationForgotPassFields","Fail");
+//		    	readWriteExcel(25,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidationForgotPassFields","Fail");
+		    	Thread.sleep(5000);
 			    }
 		        }
 	          }
@@ -1070,11 +1097,13 @@ public class Login_Method extends Generic_Methods {
 				Thread.sleep(2000);
 				fn_Login();
 				Thread.sleep(5000);
-				readWriteExcel(26,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidValidationForgotPassFields","Pass");
-		    }
+				readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidValidationForgotPassFields","Pass");
+//				readWriteExcel(26,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidValidationForgotPassFields","Pass");
+		      }
 			 else{
-			    	readWriteExcel(26,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidValidationForgotPassFields","Fail");
-			    	Thread.sleep(5000);
+				 readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_InvalidValidationForgotPassFields","Fail");
+//			     readWriteExcel(26,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_InvalidValidationForgotPassFields","Fail");
+			     Thread.sleep(5000);
 			    }
 		        }
 	          }
@@ -1089,10 +1118,12 @@ public class Login_Method extends Generic_Methods {
 			fn_LogOut();
 			Thread.sleep(3000);
 			fn_Login();
-			readWriteExcel(27,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignOut","Pass");
+			readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_SignOut","Pass");
+//			readWriteExcel(27,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignOut","Pass");
 			}
 		else{
-			readWriteExcel(27,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignOut","Fail");
+			readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_SignOut","Fail");
+//			readWriteExcel(27,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignOut","Fail");
 			}
 		    }
 	

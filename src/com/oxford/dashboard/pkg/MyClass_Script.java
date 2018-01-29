@@ -94,7 +94,7 @@ public class MyClass_Script extends Generic_Methods {
 	     }
 	
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=3,enabled=true)
 	public void fn_WlcmLtrMorethanOneAdmission() throws IOException, InterruptedException{
 		logger=report.startTest("fn_WlcmLtrMorethanOneAdmission");
 		try{
@@ -108,7 +108,7 @@ public class MyClass_Script extends Generic_Methods {
 	     }
 	
 	
-	@Test(priority=4,enabled=false)
+	@Test(priority=4,enabled=true)
 	public void fn_TempPassword() throws IOException, InterruptedException{
 		logger=report.startTest("fn_TempPassword");
 		try{
@@ -123,7 +123,7 @@ public class MyClass_Script extends Generic_Methods {
 	
 	
 	
-	@Test(priority=5,enabled=false)
+	@Test(priority=5,enabled=true)
 	public void fn_ViewDetailsofGroup() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewDetailsofGroup");
 		try{
@@ -152,7 +152,7 @@ public class MyClass_Script extends Generic_Methods {
 	     }
 	
 	
-	@Test(priority=7,enabled=false)
+	@Test(priority=7,enabled=true)
 	public void fn_ValidationGrpNameField() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ValidationGrpNameField");
 		try{
@@ -166,7 +166,7 @@ public class MyClass_Script extends Generic_Methods {
 	     }
 	
 	
-	@Test(priority=8,enabled=false)
+	@Test(priority=8,enabled=true)
 	public void fn_CancelCreateGrpPage() throws IOException, InterruptedException{
 		logger=report.startTest("fn_CancelCreateGrpPage");
 		try{
@@ -181,7 +181,7 @@ public class MyClass_Script extends Generic_Methods {
 	
 	
 	
-	@Test(priority=9,enabled=false)
+	@Test(priority=9,enabled=true)
 	public void fn_EditGroup() throws IOException, InterruptedException{
 		logger=report.startTest("fn_EditGroup");
 		try{
@@ -195,7 +195,7 @@ public class MyClass_Script extends Generic_Methods {
 	     }
 	
 	
-	@Test(priority=10,enabled=false)
+	@Test(priority=10,enabled=true)
 	public void fn_CancelEditGrpPage() throws IOException, InterruptedException{
 		logger=report.startTest("fn_CancelEditGrpPage");
 		try{
@@ -209,7 +209,7 @@ public class MyClass_Script extends Generic_Methods {
 	     }
 	
 	
-	@Test(priority=11,enabled=false)
+	@Test(priority=11,enabled=true)
 	public void fn_DeleteGroup() throws IOException, InterruptedException{
 		logger=report.startTest("fn_DeleteGroup");
 		try{
