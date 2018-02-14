@@ -169,7 +169,7 @@ public class Login_Method extends Generic_Methods {
 	
 	
 	
-	public void fn_SignInPage() throws IOException{
+	public void fn_SignInPage() throws IOException, InterruptedException{
 		Properties obj = new Properties();   
   	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
   	    obj.load(objfile);
@@ -177,8 +177,10 @@ public class Login_Method extends Generic_Methods {
   	  String actualtext=SignIn_TX.getText();
   	  System.out.println(actualtext);
   	  if(actualtext.equalsIgnoreCase(obj.getProperty("SignInText"))){
+  		fn_Login();
   		readWriteExcel2("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Automation","fn_SignInLandingPage","Pass"); 
- // 		readWriteExcel(5,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
+  		  
+  		// 		readWriteExcel(5,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
  // 		readWriteExcel1("D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_SignInLandingPage","Pass");
   	  }
   	else{
@@ -194,7 +196,9 @@ public class Login_Method extends Generic_Methods {
     	Properties obj = new Properties();   
   	    FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"\\src\\ObjectRepo\\objects.properties");
   	    obj.load(objfile);
+  	     LoginName_TX.clear();
   	    fn_Input(LoginName_TX, obj.getProperty("LoginName"));
+  	     Password_TX.clear();
   	    fn_Input(Password_TX, obj.getProperty("Password"));
         fn_Click(SignIn_BT);
         Thread.sleep(10000);

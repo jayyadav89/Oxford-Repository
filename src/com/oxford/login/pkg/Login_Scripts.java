@@ -65,7 +65,7 @@ public class Login_Scripts extends Generic_Methods {
 	
 	
 	@Test(enabled=true)
-	public void fn_SignInLandingPage() throws IOException{
+	public void fn_SignInLandingPage() throws IOException, InterruptedException{
 		logger=report.startTest("fn_SignInLandingPage");
 		try{
 			fn_LandingHome();
@@ -91,13 +91,13 @@ public class Login_Scripts extends Generic_Methods {
 		login.fn_Login();
 		logger.log(LogStatus.INFO, "Login is done successfully");
 		
-		readWriteExcel(6,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidLogin","Pass");
-		Thread.sleep(5000);
-		login.fn_LogOut();
+//		readWriteExcel(6,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidLogin","Pass");
+//		Thread.sleep(5000);
+//		login.fn_LogOut();
 		}
 		catch(FileNotFoundException e){
-	    readWriteExcel(6,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidLogin","Fail");
-			logger.log(LogStatus.INFO, "Login failed");
+//	    readWriteExcel(6,3,"D:\\Oxford Workspace\\Oxford Advantage\\Advantage Test Cases.xlsx","Advantage","fn_ValidLogin","Fail");
+//			logger.log(LogStatus.INFO, "Login failed");
 		//	login.fn_LogOut();
 	         Thread.sleep(5000);
 		}
@@ -115,6 +115,7 @@ public class Login_Scripts extends Generic_Methods {
         Login_Method login=PageFactory.initElements(driver, Login_Method.class);
 		login.fn_InValidLogin();
 		logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+		login.fn_Login();
 		}
 		catch(FileNotFoundException e){
 			logger.log(LogStatus.INFO, "Alert is not coming" + ": Failed");
@@ -132,6 +133,7 @@ public class Login_Scripts extends Generic_Methods {
         Login_Method login=PageFactory.initElements(driver, Login_Method.class);
 		login.fn_CaseSensitivitylogin();
 		logger.log(LogStatus.INFO, "Credentials are case sensitive" +  ": Passed");
+		login.fn_Login();
 		}
 		catch(FileNotFoundException e){
 	       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
@@ -150,6 +152,7 @@ public class Login_Scripts extends Generic_Methods {
         Login_Method login=PageFactory.initElements(driver, Login_Method.class);
 		login.fn_InValidLoginNameAndValidPass();
 		logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+		login.fn_Login();
 		}
 		catch(FileNotFoundException e){
 	//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");
@@ -168,6 +171,7 @@ public class Login_Scripts extends Generic_Methods {
         Login_Method login=PageFactory.initElements(driver, Login_Method.class);
 		login.fn_ValidLoginNameAndInvalidPass();
 		logger.log(LogStatus.INFO, "Alert is coming" +  ": Passed");
+		login.fn_Login();
 		}
 		catch(FileNotFoundException e){
 	//       logger.log(LogStatus.INFO, "Credentials are not case sensitive" +  ": Failed");

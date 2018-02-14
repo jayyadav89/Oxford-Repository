@@ -466,7 +466,7 @@ import org.testng.Assert;
 //		   	}
 
 		   	
-		   public  static void verifyTextBoxValue(WebElement WebObj, String ExpectedValue){
+		   public static void verifyTextBoxValue(WebElement WebObj, String ExpectedValue){
 		   	   String ActualTextboxValue=WebObj.getAttribute("value").trim();
 		   	    
 		   	    if(ActualTextboxValue.equals(ExpectedValue)){

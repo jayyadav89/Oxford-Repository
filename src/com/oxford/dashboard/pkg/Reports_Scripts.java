@@ -66,7 +66,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=1,enabled=false)
+	@Test(priority=1,enabled=true)
 	public void fn_NavigateReportPage() throws IOException, InterruptedException{
 		logger=report.startTest("fn_NavigateReportPage");
 		try{
@@ -81,7 +81,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 
 	
-	@Test(priority=2,enabled=false)
+	@Test(priority=2,enabled=true)
 	public void fn_LandingSectionwiseAssessmentReports() throws IOException, InterruptedException{
 		logger=report.startTest("fn_LandingSectionwiseAssessmentReports");
 		try{
@@ -111,7 +111,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=4,enabled=false)
+	@Test(priority=4,enabled=true)
 	public void fn_ViewAssessmentReports() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewAssessmentReports");
 		try{
@@ -126,7 +126,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=5,enabled=false)
+	@Test(priority=5,enabled=true)
 	public void fn_SubjectwiseDetailedReportofStudent() throws IOException, InterruptedException{
 		logger=report.startTest("fn_SubjectwiseDetailedReportofStudent");
 		try{
@@ -141,7 +141,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	//learning report are not available now
-//	@Test(priority=6,enabled=false)
+//	@Test(priority=6,enabled=true)
 	public void fn_LandingSectionwiseLearningReports() throws IOException, InterruptedException{
 		logger=report.startTest("fn_LandingSectionwiseLearningReports");
 		try{
@@ -156,7 +156,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=7,enabled=false)
+	@Test(priority=7,enabled=true)
 	public void fn_ViewSectionwiseDetailedLearningReports() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewSectionwiseDetailedLearningReports");
 		try{
@@ -171,7 +171,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=8,enabled=false)
+	@Test(priority=8,enabled=true)
 	public void fn_ViewAveragePerformanceofaLessonPlanandActivitywisePerformance() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewAveragePerformanceofaLessonPlanandActivitywisePerformance");
 		try{
@@ -186,7 +186,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=9,enabled=false)
+	@Test(priority=9,enabled=true)
 	public void fn_ViewSubjectwiseDetailedReportofRespectiveStudent() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewSubjectwiseDetailedReportofRespectiveStudent");
 		try{
@@ -201,7 +201,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=10,enabled=false)
+	@Test(priority=10,enabled=true)
 	public void fn_ViewTrackingReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewTrackingReport");
 		try{
@@ -215,7 +215,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=11,enabled=false)
+	@Test(priority=11,enabled=true)
 	public void fn_ViewTrackingLearningReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewTrackingLearningReport");
 		try{
@@ -229,7 +229,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=12,enabled=false)
+	@Test(priority=12,enabled=true)
 	public void fn_ViewAvrgPerformanceofLessonandActivitywisePerformance() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewAvrgPerformanceofLessonandActivitywisePerformance");
 		try{
@@ -244,7 +244,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=13,enabled=false)
+	@Test(priority=13,enabled=true)
 	public void fn_ViewSubjectwiseDetailedReportofRespectiveStudentLearning() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewSubjectwiseDetailedReportofRespectiveStudentLearning");
 		try{
@@ -259,7 +259,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=14,enabled=false)
+	@Test(priority=14,enabled=true)
 	public void fn_ViewNumberofVisitsandTimeSpentonDevices() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewNumberofVisitsandTimeSpentonDevices");
 		try{
@@ -274,7 +274,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=15,enabled=false)
+	@Test(priority=15,enabled=true)
 	public void fn_ViewNumberofVisitsandTimeSpentonAllRolls() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewNumberofVisitsandTimeSpentonAllRolls");
 		try{
@@ -289,7 +289,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=16,enabled=false)
+	@Test(priority=16,enabled=true)
 	public void fn_PrintUsageReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_PrintUsageReport");
 		try{
@@ -303,7 +303,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=17,enabled=false)
+	@Test(priority=17,enabled=true)
 	public void fn_ViewSectionwiseUsageReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewSectionwiseUsageReport");
 		try{
@@ -317,7 +317,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=18,enabled=false)
+	@Test(priority=18,enabled=true)
 	public void fn_ViewOverallandSubjectwisePerformanceofStudent() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewOverallandSubjectwisePerformanceofStudent");
 		try{
@@ -331,7 +331,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=19,enabled=false)
+	@Test(priority=19,enabled=true)
 	public void fn_ViewAverageScoreofSelectedSubject() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewAverageScoreofSelectedSubject");
 		try{
@@ -346,7 +346,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	//Practice test page not coming so can not execute
-//	@Test(priority=20,enabled=false)
+//	@Test(priority=20,enabled=true)
 	public void fn_DisplayPracticeTestDetails() throws IOException, InterruptedException{
 		logger=report.startTest("fn_DisplayPracticeTestDetails");
 		try{
@@ -361,7 +361,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	//Arrow is not available so can not execute
-//	@Test(priority=21,enabled=false)
+//	@Test(priority=21,enabled=true)
 	public void fn_ViewOverallPerformanceandStudentSubmissionStatusReport() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewOverallPerformanceandStudentSubmissionStatusReport");
 		try{
@@ -391,7 +391,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=23,enabled=false)
+	@Test(priority=23,enabled=true)
 	public void fn_ViewMarkSheetofSelectedStudent() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewMarkSheetofSelectedStudent");
 		try{
@@ -406,7 +406,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	//print btn not available.......so do not run
-//	@Test(priority=24,enabled=false)
+//	@Test(priority=24,enabled=true)
 	public void fn_PrintMarkSheet() throws IOException, InterruptedException{
 		logger=report.startTest("fn_PrintMarkSheet");
 		try{
@@ -421,7 +421,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=25,enabled=false)
+	@Test(priority=25,enabled=true)
 	public void fn_ViewLessonwiseoverview() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewLessonwiseoverview");
 		try{
@@ -435,7 +435,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=26,enabled=false)
+	@Test(priority=26,enabled=true)
 	public void fn_ViewChapterwiseandLessonwiseperformance() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewChapterwiseandLessonwiseperformance");
 		try{
@@ -450,7 +450,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=27,enabled=false)
+	@Test(priority=27,enabled=true)
 	public void fn_ViewLessonsandActivitiesThatAreTaggedofRespectivelessons() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewLessonsandActivitiesThatAreTaggedofRespectivelessons");
 		try{
@@ -464,7 +464,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=28,enabled=false)
+	@Test(priority=28,enabled=true)
 	public void fn_ViewTheAverageofThelesson() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewTheAverageofThelesson");
 		try{
@@ -478,7 +478,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=29,enabled=false)
+	@Test(priority=29,enabled=true)
 	public void fn_ViewDetailsAboutSubmissionofparticularActivityBystudent() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewDetailsAboutSubmissionofparticularActivityBystudent");
 		try{
@@ -492,7 +492,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=30,enabled=false)
+	@Test(priority=30,enabled=true)
 	public void fn_ViewOverallPerformanceAndSubjectWisePerformance() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewOverallPerformanceAndSubjectWisePerformance");
 		try{
@@ -506,7 +506,7 @@ public class Reports_Scripts extends Generic_Methods{
 	       }
 	
 	
-	@Test(priority=31,enabled=false)
+	@Test(priority=31,enabled=true)
 	public void fn_ViewLessonwisePerformancebytheStudent() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewLessonwisePerformancebytheStudent");
 		try{
@@ -522,7 +522,7 @@ public class Reports_Scripts extends Generic_Methods{
 	
 	
 	
-	@Test(priority=32,enabled=false)
+	@Test(priority=32,enabled=true)
 	public void fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewActivityWisePerformanceOfTheStudentofParticularlesson");
 		try{
@@ -534,16 +534,6 @@ public class Reports_Scripts extends Generic_Methods{
 			logger.log(LogStatus.INFO, "View Activitywise Performance of the Student of Particular lesson method not executed successfully: Fail");
 			}
 	       }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -560,17 +550,4 @@ public class Reports_Scripts extends Generic_Methods{
 		login.fn_LogOut();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
+	   }

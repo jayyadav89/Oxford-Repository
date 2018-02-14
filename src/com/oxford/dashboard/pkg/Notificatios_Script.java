@@ -66,7 +66,7 @@ public class Notificatios_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=1,enabled=false)
+	@Test(priority=1,enabled=true)
 	public void fn_ViewNotificationDetails() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewNotificationDetails");
 		try{
@@ -81,7 +81,7 @@ public class Notificatios_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=2,enabled=false)
+	@Test(priority=2,enabled=true)
 	public void fn_ViewNotificationBetweenSpecifiedDates() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewNotificationBetweenSpecifiedDates");
 		try{
@@ -96,7 +96,7 @@ public class Notificatios_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=3,enabled=false)
+	@Test(priority=3,enabled=true)
 	public void fn_SelectDateGreaterThanCurrentDate() throws IOException, InterruptedException{
 		logger=report.startTest("fn_SelectDateGreaterThanCurrentDate");
 		try{
@@ -110,7 +110,7 @@ public class Notificatios_Script extends Generic_Methods{
 	     }
 	
 	
-	@Test(priority=4,enabled=false)
+	@Test(priority=4,enabled=true)
 	public void fn_CreateNotification() throws IOException, InterruptedException{
 		logger=report.startTest("fn_CreateNotification");
 		try{
@@ -125,7 +125,7 @@ public class Notificatios_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=5,enabled=false)
+	@Test(priority=5,enabled=true)
 	public void fn_ViewUserNotification() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewUserNotification");
 		try{
@@ -140,7 +140,7 @@ public class Notificatios_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=6,enabled=false)
+	@Test(priority=6,enabled=true)
 	public void fn_DeleteNotification() throws IOException, InterruptedException{
 		logger=report.startTest("fn_DeleteNotification");
 		try{
@@ -155,7 +155,7 @@ public class Notificatios_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=7,enabled=false)
+	@Test(priority=7,enabled=true)
 	public void fn_ClearFilterResult() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ClearFilterResult");
 		try{
@@ -169,7 +169,7 @@ public class Notificatios_Script extends Generic_Methods{
 	     }
 	
 	
-	@Test(priority=8,enabled=false)
+	@Test(priority=8,enabled=true)
 	public void fn_ViewSystemNotification() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ViewSystemNotification");
 		try{
@@ -184,7 +184,7 @@ public class Notificatios_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=9,enabled=false)
+	@Test(priority=9,enabled=true)
 	public void fn_ValidationMandatoryfields() throws IOException, InterruptedException{
 		logger=report.startTest("fn_ValidationMandatoryfields");
 		try{
@@ -199,7 +199,7 @@ public class Notificatios_Script extends Generic_Methods{
 	
 	
 	
-	@Test(priority=10,enabled=false)
+	@Test(priority=10,enabled=true)
 	public void fn_SelectUserCategory() throws IOException, InterruptedException{
 		logger=report.startTest("fn_SelectUserCategory");
 		try{
