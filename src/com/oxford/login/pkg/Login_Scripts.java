@@ -39,7 +39,7 @@ public class Login_Scripts extends Generic_Methods {
 	}
 	
 	
-	@BeforeClass(alwaysRun = true)
+	@BeforeClass(alwaysRun= true)
 	@Parameters("browser")
 //	@Test()
 	public void setup(String browser) throws IOException, InterruptedException {
@@ -102,7 +102,6 @@ public class Login_Scripts extends Generic_Methods {
 	         Thread.sleep(5000);
 		}
 	}
-	
 	
 	
 	
@@ -181,7 +180,7 @@ public class Login_Scripts extends Generic_Methods {
     
 	
     
-    @Test(priority=6,enabled=true)
+    @Test(priority=6,enabled=false)
 	public void fn_ProfileDetails() throws InterruptedException, IOException{
 		logger=report.startTest("fn_ProfileDetails");
 		try{
@@ -199,7 +198,7 @@ public class Login_Scripts extends Generic_Methods {
     
     
     
-	 @Test(priority=7,enabled=true)
+	 @Test(priority=7,enabled=false)
 		public void fn_EditProfile() throws InterruptedException, IOException{
 			logger=report.startTest("fn_EditProfile");
 			try{
@@ -309,7 +308,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=13,enabled=true)
+		@Test(priority=13,enabled=false)
 		public void fn_RemoveImg() throws InterruptedException, IOException{
 			logger=report.startTest("fn_RemoveImg");
 			try{
@@ -346,7 +345,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=15,enabled=true)
+		@Test(priority=15,enabled=false)
 		public void fn_ChangePassword() throws InterruptedException, IOException{
 			logger=report.startTest("fn_ChangePassword");
 			try{
@@ -364,7 +363,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=16,enabled=true)
+		@Test(priority=16,enabled=false)
 		public void fn_ChangeCurrentPassword() throws InterruptedException, IOException{
 			logger=report.startTest("fn_ChangeCurrentPassword");
 			try{
@@ -418,7 +417,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 		
 		
-		@Test(priority=19,enabled=true)
+		@Test(priority=19,enabled=false)
 		public void fn_ForgotPassword() throws InterruptedException, IOException{
 			logger=report.startTest("fn_ForgotPassword");
 			try{
@@ -494,7 +493,7 @@ public class Login_Scripts extends Generic_Methods {
 		
 	
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun= true)
 	public void TearDown(ITestResult result) throws IOException, InterruptedException{
 		if(result.getStatus()==ITestResult.FAILURE){
 			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

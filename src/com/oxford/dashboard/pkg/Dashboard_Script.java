@@ -99,7 +99,7 @@ public class Dashboard_Script extends Generic_Methods {
 	
 	
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun= true)
 	public void TearDown(ITestResult result) throws IOException, InterruptedException{
 		if(result.getStatus()==ITestResult.FAILURE){
 			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

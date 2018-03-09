@@ -10,9 +10,9 @@
          <parameter name="browser" value="chrome" />
          
         <classes>
-                <class name="com.oxford.login.pkg.Login_Scripts"/> 
+           <class name="com.oxford.login.pkg.Login_Scripts"/> 
 <!--            <class name="com.oxford.dashboard.pkg.Dashboard_Script"/> -->
-<!--            <class name="com.oxford.dashboard.pkg.Bookmark_Script"/> -->
+               <class name="com.oxford.dashboard.pkg.Bookmark_Script"/>
 <!--            <class name="com.oxford.dashboard.pkg.MyClass_Script"/> -->
 <!--            <class name="com.oxford.dashboard.pkg.Notificatios_Script"/> -->
 <!--            <class name="com.oxford.dashboard.pkg.Reports_Scripts"/> -->

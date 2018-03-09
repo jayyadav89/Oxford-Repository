@@ -57,7 +57,7 @@ public class LessonPlans_Scripts extends Generic_Methods{
 	
 	
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun= true)
 	public void Login() throws IOException, InterruptedException{
 		fn_LandingHome();
 		Login_Method login=PageFactory.initElements(driver, Login_Method.class);
@@ -328,7 +328,7 @@ public class LessonPlans_Scripts extends Generic_Methods{
 	
 	
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun= true)
 	public void TearDown(ITestResult result) throws IOException, InterruptedException{
 		if(result.getStatus()==ITestResult.FAILURE){
 			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
